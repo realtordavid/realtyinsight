@@ -1,0 +1,459 @@
+/* ============================================
+   계산기 페이지 공통 스타일시트
+   (3개 계산기 모두 공유)
+   ============================================ */
+
+/* ========== 기본 리셋 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', sans-serif;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a8e 100%);
+    min-height: 100vh;
+    padding: 2rem;
+    color: #333;
+}
+
+/* ========== 컨테이너 ========== */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ========== 뒤로가기 링크 ========== */
+.back-link {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    display: inline-block;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    opacity: 0.8;
+}
+
+/* ========== 헤더 ========== */
+.calc-header {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calc-header h1 {
+    font-size: 2rem;
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+}
+
+.calc-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* ========== 메인 레이아웃 (좌: 입력 / 우: 결과) ========== */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.input-section {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ecf0f1;
+}
+
+.result-section {
+    padding: 2rem;
+    background-color: white;
+}
+
+/* ========== 폼 요소 ========== */
+.form-group {
+    margin-bottom: 1.75rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    background-color: white;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    outline: none;
+    border-color: #1a365d;
+}
+
+.currency-symbol,
+.percent-symbol {
+    font-weight: bold;
+    color: #1a365d;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: white;
+    transition: border-color 0.3s;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #1a365d;
+}
+
+.info-text {
+    font-size: 0.83rem;
+    color: #888;
+    margin-top: 0.35rem;
+}
+
+/* ========== 슬라이더 ========== */
+.slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #1a365d 0%, #d4af37 100%);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1a365d;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1a365d;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: #aaa;
+    margin-top: 0.3rem;
+}
+
+/* ========== 카테고리 구분선 ========== */
+.cost-category {
+    background-color: #eef2f7;
+    padding: 0.6rem 0.75rem;
+    margin: 1.25rem 0 1rem;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #1a365d;
+    font-size: 0.88rem;
+    border-left: 3px solid #1a365d;
+}
+
+/* ========== 결과 박스 (상단 강조) ========== */
+.result-box {
+    background: linear-gradient(135deg, #1a365d 0%, #d4af37 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.result-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.result-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.result-subtext {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+/* ========== 상세 분석 박스 ========== */
+.breakdown {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.25rem;
+}
+
+.breakdown h3 {
+    font-size: 0.95rem;
+    color: #1a365d;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.breakdown-item:last-child {
+    border-bottom: none;
+}
+
+.breakdown-label {
+    color: #666;
+    font-size: 0.93rem;
+}
+
+.breakdown-value {
+    font-weight: 600;
+    color: #1a365d;
+    font-size: 0.93rem;
+}
+
+.total-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0 0;
+    margin-top: 0.5rem;
+    border-top: 2px solid #d4af37;
+    font-weight: bold;
+    color: #b8860b;
+}
+
+/* ========== 팁 박스 ========== */
+.tips-box {
+    background-color: #e8f4f8;
+    border-left: 4px solid #3498db;
+    padding: 1rem 1.25rem;
+    border-radius: 5px;
+    margin-top: 1.25rem;
+}
+
+.tips-box h4 {
+    color: #1a365d;
+    font-size: 0.92rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.tips-box p {
+    color: #555;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* ========== 정보 강조 박스 ========== */
+.highlight-box {
+    background-color: #fff3cd;
+    border-left: 4px solid #d4af37;
+    padding: 1rem 1.25rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-box h4 {
+    color: #1a365d;
+    font-size: 0.92rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.highlight-box p {
+    color: #666;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* ========== 버튼 ========== */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-reset,
+.btn-download {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-reset {
+    background-color: #ecf0f1;
+    color: #1a365d;
+}
+
+.btn-reset:hover {
+    background-color: #bdc3c7;
+}
+
+.btn-download {
+    background-color: #d4af37;
+    color: #1a365d;
+}
+
+.btn-download:hover {
+    background-color: #b8860b;
+    color: white;
+}
+
+/* ========== 하단 비교/정보 테이블 섹션 ========== */
+.extra-section {
+    background-color: white;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.extra-section h2 {
+    color: #1a365d;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.93rem;
+}
+
+.comparison-table th {
+    background-color: #1a365d;
+    color: white;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #ecf0f1;
+    color: #444;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #f5f7fa;
+}
+
+/* ========== 비용 설명 그리드 ========== */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+}
+
+.info-grid-item h3 {
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.info-grid-item p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
+/* ========== 반응형 ========== */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .calc-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .input-section {
+        border-right: none;
+        border-bottom: 1px solid #ecf0f1;
+    }
+
+    .result-value {
+        font-size: 2rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .calc-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .result-value {
+        font-size: 1.8rem;
+    }
+}

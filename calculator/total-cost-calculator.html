@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체 구매 비용 계산기 - LA/OC 부동산 인사이트</title>
+    <meta name="description" content="구매 가격을 입력하면 다운페이, 클로징 비용, 검사비 등 전체 필요 자금을 계산하세요.">
+    <link rel="stylesheet" href="../css/calculator.css">
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="../index.html">← 돌아가기</a>
+
+        <div class="calc-header">
+            <h1>💰 전체 구매 비용 계산기</h1>
+            <p>구매 가격을 입력하면 다운페이, 클로징 비용, 검사비 등 전체 필요 자금을 계산하세요.</p>
+        </div>
+
+        <div class="main-content">
+
+            <!-- ========== 입력 섹션 ========== -->
+            <div class="input-section">
+
+                <div class="form-group">
+                    <label for="homePrice">구매 가격</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="homePrice" value="500000" min="0" step="10000">
+                    </div>
+                    <input type="range" id="homePriceSlider" min="50000" max="2000000" value="500000" step="10000" class="slider">
+                    <div class="slider-labels"><span>$50K</span><span>$2M</span></div>
+                </div>
+
+                <div class="cost-category">📌 다운페이</div>
+
+                <div class="form-group">
+                    <label for="downPaymentPercent">다운페이 비율</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="downPaymentPercent" value="20" min="3" max="50" step="1">
+                        <span class="percent-symbol">%</span>
+                    </div>
+                    <p class="info-text">20% 이상이면 PMI 면제</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="downPaymentAmount">다운페이 금액</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="downPaymentAmount" value="100000" min="0" step="10000">
+                    </div>
+                    <p class="info-text">비율 입력 시 자동 계산</p>
+                </div>
+
+                <div class="cost-category">🏦 클로징 비용 (Closing Costs)</div>
+
+                <div class="form-group">
+                    <label for="closingCostsPercent">클로징 비용 비율</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="closingCostsPercent" value="2.5" min="1" max="5" step="0.1">
+                        <span class="percent-symbol">%</span>
+                    </div>
+                    <p class="info-text">평균: 2~3% (론 오리지네이션, 타이틀 보험 등)</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="inspectionFee">검사비 (Home Inspection)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="inspectionFee" value="500" min="0" step="50">
+                    </div>
+                    <p class="info-text">평균: $300 ~ $800</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="appraisalFee">감정료 (Appraisal)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="appraisalFee" value="500" min="0" step="50">
+                    </div>
+                    <p class="info-text">평균: $400 ~ $600</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="titleInsurance">타이틀 보험료 (Title Insurance)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="titleInsurance" value="1200" min="0" step="100">
+                    </div>
+                    <p class="info-text">구매가의 약 0.5~0.8% (일회성)</p>
+                </div>
+
+                <div class="cost-category">📋 기타 비용</div>
+
+                <div class="form-group">
+                    <label for="homeInsurance">첫 해 주택 보험료</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="homeInsurance" value="1500" min="0" step="100">
+                    </div>
+                    <p class="info-text">평균: $1,000 ~ $2,000 / 년</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="pmiPercent">PMI (사설 모기지 보험, 첫 해)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="pmiPercent" value="0.5" min="0" max="2" step="0.1">
+                        <span class="percent-symbol">%</span>
+                    </div>
+                    <p class="info-text">다운페이 20% 미만일 때만 적용</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="otherFees">기타 비용</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="otherFees" value="0" min="0" step="100">
+                    </div>
+                    <p class="info-text">이사비, 등기비 등</p>
+                </div>
+
+            </div>
+
+            <!-- ========== 결과 섹션 ========== -->
+            <div class="result-section">
+
+                <div class="result-box">
+                    <div class="result-label">클로징 시 필요한 총 현금</div>
+                    <div class="result-value" id="totalCash">$0</div>
+                    <div class="result-subtext">다운페이 + 모든 비용 합산</div>
+                </div>
+
+                <div class="breakdown">
+                    <h3>필요 자금 분류</h3>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">다운페이</span>
+                        <span class="breakdown-value" id="downPayment">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">클로징 비용</span>
+                        <span class="breakdown-value" id="closingCosts">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">검사비</span>
+                        <span class="breakdown-value" id="inspection">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">감정료</span>
+                        <span class="breakdown-value" id="appraisal">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">타이틀 보험료</span>
+                        <span class="breakdown-value" id="title">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">기타 비용</span>
+                        <span class="breakdown-value" id="other">$0</span>
+                    </div>
+                    <div class="total-item">
+                        <span>필요한 총 현금</span>
+                        <span id="totalCashBreakdown">$0</span>
+                    </div>
+                </div>
+
+                <div class="breakdown">
+                    <h3>예상 월간 비용 (6.5%, 30년 기준)</h3>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">모기지 원리금</span>
+                        <span class="breakdown-value" id="estimatedMortgage">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">재산세 (1.2% 기준)</span>
+                        <span class="breakdown-value" id="estimatedPropertyTax">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">주택 보험</span>
+                        <span class="breakdown-value" id="estimatedInsurance">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">PMI</span>
+                        <span class="breakdown-value" id="estimatedPMI">$0</span>
+                    </div>
+                    <div class="total-item">
+                        <span>월간 총 비용</span>
+                        <span id="totalMonthly">$0</span>
+                    </div>
+                </div>
+
+                <div class="breakdown">
+                    <h3>첫 해 비용 요약</h3>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">클로징 시 현금</span>
+                        <span class="breakdown-value" id="yearOneUpfront">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">연간 월간 비용 합산</span>
+                        <span class="breakdown-value" id="yearOneMonthly">$0</span>
+                    </div>
+                    <div class="total-item">
+                        <span>첫 해 총 비용</span>
+                        <span id="yearOneTotal">$0</span>
+                    </div>
+                </div>
+
+                <div class="tips-box">
+                    <h4>💡 팁</h4>
+                    <p id="tipsText">클로징 시 필요한 현금 외에 추가로 구매가의 5~10%를 예비금으로 준비하세요.</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-reset" onclick="resetCalculator()">초기화</button>
+                    <button class="btn-download" onclick="downloadResults()">결과 다운로드</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 비용 항목 설명 -->
+        <div class="extra-section">
+            <h2>📖 비용 항목 설명</h2>
+            <div class="info-grid">
+                <div class="info-grid-item">
+                    <h3>다운페이</h3>
+                    <p>구매 가격의 일부를 미리 지불하는 금액입니다. 20% 이상이면 PMI를 피할 수 있습니다. 일반적으로 3~20% 범위입니다.</p>
+                </div>
+                <div class="info-grid-item">
+                    <h3>클로징 비용 (Closing Costs)</h3>
+                    <p>론 오리지네이션 비용, 타이틀 조사, 에스크로 수수료, 기록 수수료 등이 포함됩니다. 일반적으로 구매가의 2~3%입니다.</p>
+                </div>
+                <div class="info-grid-item">
+                    <h3>검사비 (Home Inspection)</h3>
+                    <p>전문 검사자가 주택의 구조, 전기, 배관 등을 검사하고 보고서를 작성합니다. 일반적으로 $300~$800 범위입니다.</p>
+                </div>
+                <div class="info-grid-item">
+                    <h3>감정료 (Appraisal)</h3>
+                    <p>대출기관이 주택 가치를 확인하기 위해 요구하는 감정입니다. 일반적으로 $400~$600 범위입니다.</p>
+                </div>
+                <div class="info-grid-item">
+                    <h3>PMI (사설 모기지 보험)</h3>
+                    <p>다운페이가 20% 미만일 때 대출기관이 요구하는 보험입니다. 에퀴티가 20%에 도달하면 해지 요청이 가능합니다.</p>
+                </div>
+                <div class="info-grid-item">
+                    <h3>타이틀 보험 (Title Insurance)</h3>
+                    <p>소유권 문제로부터 보호하는 일회성 보험입니다. 일반적으로 구매가의 0.5~0.8% 정도입니다.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const homePriceEl          = document.getElementById('homePrice');
+        const homePriceSliderEl    = document.getElementById('homePriceSlider');
+        const downPercentEl        = document.getElementById('downPaymentPercent');
+        const downAmountEl         = document.getElementById('downPaymentAmount');
+        const closingPercentEl     = document.getElementById('closingCostsPercent');
+        const inspectionEl         = document.getElementById('inspectionFee');
+        const appraisalEl          = document.getElementById('appraisalFee');
+        const titleEl              = document.getElementById('titleInsurance');
+        const homeInsuranceEl      = document.getElementById('homeInsurance');
+        const pmiPercentEl         = document.getElementById('pmiPercent');
+        const otherFeesEl          = document.getElementById('otherFees');
+
+        homePriceEl.addEventListener('input', () => { homePriceSliderEl.value = homePriceEl.value; syncDown(); calc(); });
+        homePriceSliderEl.addEventListener('input', () => { homePriceEl.value = homePriceSliderEl.value; syncDown(); calc(); });
+        downPercentEl.addEventListener('input', () => { syncDown(); calc(); });
+        downAmountEl.addEventListener('input', () => {
+            const price = parseFloat(homePriceEl.value) || 0;
+            if (price > 0) downPercentEl.value = ((parseFloat(downAmountEl.value) / price) * 100).toFixed(1);
+            calc();
+        });
+        [closingPercentEl, inspectionEl, appraisalEl, titleEl, homeInsuranceEl, pmiPercentEl, otherFeesEl]
+            .forEach(el => el.addEventListener('input', calc));
+
+        function syncDown() {
+            const price  = parseFloat(homePriceEl.value) || 0;
+            const pct    = parseFloat(downPercentEl.value) || 0;
+            downAmountEl.value = Math.round(price * pct / 100);
+        }
+
+        function calc() {
+            const price      = parseFloat(homePriceEl.value)       || 0;
+            const down       = parseFloat(downAmountEl.value)       || 0;
+            const loan       = price - down;
+            const closingPct = parseFloat(closingPercentEl.value)   || 0;
+            const insp       = parseFloat(inspectionEl.value)       || 0;
+            const appr       = parseFloat(appraisalEl.value)        || 0;
+            const title      = parseFloat(titleEl.value)            || 0;
+            const ins        = parseFloat(homeInsuranceEl.value)    || 0;
+            const pmiRate    = parseFloat(pmiPercentEl.value)       || 0;
+            const other      = parseFloat(otherFeesEl.value)        || 0;
+
+            const closing    = price * (closingPct / 100);
+            const downRatio  = price > 0 ? (down / price) * 100 : 0;
+            const pmiCost    = downRatio < 20 ? loan * (pmiRate / 100) : 0;
+            const totalCash  = down + closing + insp + appr + title + other;
+
+            // 월간 비용 (추정 6.5%, 30년)
+            const mRate    = 6.5 / 100 / 12;
+            const nPay     = 30 * 12;
+            const mMortgage = mRate === 0 ? loan / nPay
+                : loan * (mRate * Math.pow(1 + mRate, nPay)) / (Math.pow(1 + mRate, nPay) - 1);
+            const mTax     = (price * 0.012) / 12;
+            const mIns     = ins / 12;
+            const mPMI     = pmiCost / 12;
+            const mTotal   = mMortgage + mTax + mIns + mPMI;
+
+            const yearMonthly = mTotal * 12;
+            const yearTotal   = totalCash + yearMonthly;
+
+            setText('totalCash',           fmt(totalCash));
+            setText('downPayment',         fmt(down));
+            setText('closingCosts',        fmt(closing));
+            setText('inspection',          fmt(insp));
+            setText('appraisal',           fmt(appr));
+            setText('title',               fmt(title));
+            setText('other',               fmt(other));
+            setText('totalCashBreakdown',  fmt(totalCash));
+
+            setText('estimatedMortgage',   fmt(mMortgage));
+            setText('estimatedPropertyTax',fmt(mTax));
+            setText('estimatedInsurance',  fmt(mIns));
+            setText('estimatedPMI',        fmt(mPMI));
+            setText('totalMonthly',        fmt(mTotal));
+
+            setText('yearOneUpfront',  fmt(totalCash));
+            setText('yearOneMonthly',  fmt(yearMonthly));
+            setText('yearOneTotal',    fmt(yearTotal));
+
+            const cashRatio = price > 0 ? (totalCash / price * 100).toFixed(1) : 0;
+            setText('tipsText',
+                `클로징 시 필요한 현금은 구매가의 ${cashRatio}%입니다. 예기치 못한 수리 등을 대비해 구매가의 5~10% 추가 예비금을 준비하세요.`);
+        }
+
+        function setText(id, val) { document.getElementById(id).textContent = val; }
+
+        function fmt(n) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency', currency: 'USD',
+                minimumFractionDigits: 0, maximumFractionDigits: 0
+            }).format(n);
+        }
+
+        function resetCalculator() {
+            homePriceEl.value       = 500000;
+            homePriceSliderEl.value = 500000;
+            downPercentEl.value     = 20;
+            downAmountEl.value      = 100000;
+            closingPercentEl.value  = 2.5;
+            inspectionEl.value      = 500;
+            appraisalEl.value       = 500;
+            titleEl.value           = 1200;
+            homeInsuranceEl.value   = 1500;
+            pmiPercentEl.value      = 0.5;
+            otherFeesEl.value       = 0;
+            calc();
+        }
+
+        function downloadResults() {
+            const price    = parseFloat(homePriceEl.value)       || 0;
+            const down     = parseFloat(downAmountEl.value)      || 0;
+            const closing  = price * (parseFloat(closingPercentEl.value) || 0) / 100;
+            const insp     = parseFloat(inspectionEl.value)      || 0;
+            const appr     = parseFloat(appraisalEl.value)       || 0;
+            const title    = parseFloat(titleEl.value)           || 0;
+            const other    = parseFloat(otherFeesEl.value)       || 0;
+            const totalCash = down + closing + insp + appr + title + other;
+            const loan     = price - down;
+            const mRate    = 6.5 / 100 / 12;
+            const nPay     = 30 * 12;
+            const mMortgage = mRate === 0 ? loan / nPay
+                : loan * (mRate * Math.pow(1 + mRate, nPay)) / (Math.pow(1 + mRate, nPay) - 1);
+            const mTax  = (price * 0.012) / 12;
+            const mIns  = parseFloat(homeInsuranceEl.value) / 12 || 0;
+            const mTotal = mMortgage + mTax + mIns;
+
+            const text = `전체 구매 비용 계산기 결과
+==================
+구매 가격: $${price.toLocaleString()}
+다운페이: $${down.toLocaleString()} (${((down/price)*100).toFixed(1)}%)
+클로징 비용: ${fmt(closing)}
+검사비: ${fmt(insp)}
+감정료: ${fmt(appr)}
+타이틀 보험료: ${fmt(title)}
+기타 비용: ${fmt(other)}
+
+클로징 시 필요한 총 현금: ${fmt(totalCash)}
+
+예상 월간 비용 (6.5%, 30년):
+  모기지: ${fmt(mMortgage)}
+  재산세: ${fmt(mTax)}
+  보험료: ${fmt(mIns)}
+  합계:   ${fmt(mTotal)}
+
+첫 해 총 비용: ${fmt(totalCash + mTotal * 12)}
+
+생성일: ${new Date().toLocaleDateString('ko-KR')}`;
+
+            const a = document.createElement('a');
+            a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(text);
+            a.download = '전체구매비용_계산결과.txt';
+            a.click();
+        }
+
+        calc();
+    </script>
+</body>
+</html>

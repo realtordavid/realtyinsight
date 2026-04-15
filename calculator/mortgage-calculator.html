@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모기지 계산기 - LA/OC 부동산 인사이트</title>
+    <meta name="description" content="구매 가격, 다운페이, 이자율을 입력하여 월간 모기지 비용을 계산하세요.">
+    <link rel="stylesheet" href="../css/calculator.css">
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="../index.html">← 돌아가기</a>
+
+        <div class="calc-header">
+            <h1>🏦 모기지 계산기</h1>
+            <p>구매 가격, 다운페이, 이자율을 입력하여 월간 모기지 비용을 계산하세요.</p>
+        </div>
+
+        <div class="main-content">
+
+            <!-- ========== 입력 섹션 ========== -->
+            <div class="input-section">
+
+                <div class="form-group">
+                    <label for="homePrice">구매 가격</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="homePrice" value="400000" min="0" step="10000">
+                    </div>
+                    <input type="range" id="homePriceSlider" min="50000" max="2000000" value="400000" step="10000" class="slider">
+                    <div class="slider-labels"><span>$50K</span><span>$2M</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="downPayment">다운페이 (금액)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="downPayment" value="80000" min="0" step="10000">
+                    </div>
+                    <p class="info-text">구매 가격의 <span id="downPaymentPercent">20</span>%</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="interestRate">이자율 (%)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="interestRate" value="6.5" min="0" max="15" step="0.1">
+                        <span class="percent-symbol">%</span>
+                    </div>
+                    <input type="range" id="interestRateSlider" min="2" max="12" value="6.5" step="0.1" class="slider">
+                    <div class="slider-labels"><span>2%</span><span>12%</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loanTerm">대출 기간</label>
+                    <select id="loanTerm">
+                        <option value="30">30년 (일반적)</option>
+                        <option value="20">20년</option>
+                        <option value="15">15년 (더 빠른 상환)</option>
+                        <option value="10">10년</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="propertyTax">연간 재산세 (%)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="propertyTax" value="1.25" min="0" max="5" step="0.01">
+                        <span class="percent-symbol">%</span>
+                    </div>
+                    <p class="info-text">CA 평균: 1.05~1.25% (지역별로 다름)</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="homeInsurance">연간 주택 보험료</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="homeInsurance" value="1200" min="0" step="100">
+                    </div>
+                    <p class="info-text">평균: $1,000 ~ $1,500 / 년</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="hoa">월간 HOA 비용</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="hoa" value="0" min="0" step="50">
+                    </div>
+                    <p class="info-text">주택 소유자 협회 비용 (없으면 0)</p>
+                </div>
+
+            </div>
+
+            <!-- ========== 결과 섹션 ========== -->
+            <div class="result-section">
+
+                <div class="result-box">
+                    <div class="result-label">예상 월간 총 비용</div>
+                    <div class="result-value" id="totalMonthly">$0</div>
+                    <div class="result-subtext">이자, 세금, 보험 포함</div>
+                </div>
+
+                <div class="breakdown">
+                    <h3>월간 비용 분석</h3>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">모기지 원리금</span>
+                        <span class="breakdown-value" id="principal">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">재산세</span>
+                        <span class="breakdown-value" id="taxAmount">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">주택 보험</span>
+                        <span class="breakdown-value" id="insuranceAmount">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">HOA 비용</span>
+                        <span class="breakdown-value" id="hoaAmount">$0</span>
+                    </div>
+                    <div class="total-item">
+                        <span>총 월간 비용</span>
+                        <span id="totalMonthlyBreakdown">$0</span>
+                    </div>
+                </div>
+
+                <div class="breakdown">
+                    <h3>대출 정보</h3>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">대출 금액</span>
+                        <span class="breakdown-value" id="loanAmount">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">총 상환액</span>
+                        <span class="breakdown-value" id="totalPayment">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">총 이자</span>
+                        <span class="breakdown-value" id="totalInterest">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">월간 모기지 (원리금)</span>
+                        <span class="breakdown-value" id="monthlyPayment">$0</span>
+                    </div>
+                </div>
+
+                <div class="tips-box">
+                    <h4>💡 팁</h4>
+                    <p id="tipsText">월간 모기지 비용이 월 소득의 28% 이하일 때 가장 안정적입니다.</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-reset" onclick="resetCalculator()">초기화</button>
+                    <button class="btn-download" onclick="downloadResults()">결과 다운로드</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 이자율 비교 테이블 -->
+        <div class="extra-section">
+            <h2>📊 이자율 비교표</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>이자율</th>
+                        <th>월간 모기지</th>
+                        <th>총 이자</th>
+                        <th>총 상환액</th>
+                    </tr>
+                </thead>
+                <tbody id="comparisonTable"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        /* ── 요소 참조 ── */
+        const homePriceEl        = document.getElementById('homePrice');
+        const homePriceSliderEl  = document.getElementById('homePriceSlider');
+        const downPaymentEl      = document.getElementById('downPayment');
+        const downPercentEl      = document.getElementById('downPaymentPercent');
+        const interestRateEl     = document.getElementById('interestRate');
+        const interestSliderEl   = document.getElementById('interestRateSlider');
+        const loanTermEl         = document.getElementById('loanTerm');
+        const propertyTaxEl      = document.getElementById('propertyTax');
+        const homeInsuranceEl    = document.getElementById('homeInsurance');
+        const hoaEl              = document.getElementById('hoa');
+
+        /* ── 이벤트 ── */
+        homePriceEl.addEventListener('input', () => { homePriceSliderEl.value = homePriceEl.value; calc(); });
+        homePriceSliderEl.addEventListener('input', () => { homePriceEl.value = homePriceSliderEl.value; calc(); });
+        downPaymentEl.addEventListener('input', calc);
+        interestRateEl.addEventListener('input', () => { interestSliderEl.value = interestRateEl.value; calc(); });
+        interestSliderEl.addEventListener('input', () => { interestRateEl.value = interestSliderEl.value; calc(); });
+        loanTermEl.addEventListener('change', calc);
+        propertyTaxEl.addEventListener('input', calc);
+        homeInsuranceEl.addEventListener('input', calc);
+        hoaEl.addEventListener('input', calc);
+
+        /* ── 계산 ── */
+        function calc() {
+            const price    = parseFloat(homePriceEl.value)     || 0;
+            const down     = parseFloat(downPaymentEl.value)    || 0;
+            const rate     = parseFloat(interestRateEl.value)   || 0;
+            const term     = parseFloat(loanTermEl.value)       || 30;
+            const tax      = parseFloat(propertyTaxEl.value)    || 0;
+            const ins      = parseFloat(homeInsuranceEl.value)  || 0;
+            const hoa      = parseFloat(hoaEl.value)            || 0;
+
+            downPercentEl.textContent = price > 0 ? ((down / price) * 100).toFixed(1) : 0;
+
+            const loan       = price - down;
+            const mRate      = rate / 100 / 12;
+            const nPay       = term * 12;
+            const monthly    = mRate === 0 ? loan / nPay
+                : loan * (mRate * Math.pow(1 + mRate, nPay)) / (Math.pow(1 + mRate, nPay) - 1);
+            const totalPay   = monthly * nPay;
+            const totalInt   = totalPay - loan;
+            const monthlyTax = (price * tax / 100) / 12;
+            const monthlyIns = ins / 12;
+            const total      = monthly + monthlyTax + monthlyIns + hoa;
+
+            setText('loanAmount',            fmt(loan));
+            setText('monthlyPayment',        fmt(monthly));
+            setText('principal',             fmt(monthly));
+            setText('totalPayment',          fmt(totalPay));
+            setText('totalInterest',         fmt(totalInt));
+            setText('taxAmount',             fmt(monthlyTax));
+            setText('insuranceAmount',       fmt(monthlyIns));
+            setText('hoaAmount',             fmt(hoa));
+            setText('totalMonthly',          fmt(total));
+            setText('totalMonthlyBreakdown', fmt(total));
+
+            const recIncome = monthly / 0.28;
+            setText('tipsText',
+                `월간 모기지 ${fmt(monthly)} 기준, 월 소득의 28% 이하를 유지하려면 최소 ${fmt(recIncome)} 이상이 필요합니다.`);
+
+            updateComparisonTable(price, down, term);
+        }
+
+        function updateComparisonTable(price, down, term) {
+            const loan  = price - down;
+            const nPay  = term * 12;
+            const rates = [3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0];
+
+            document.getElementById('comparisonTable').innerHTML = rates.map(r => {
+                const mRate   = r / 100 / 12;
+                const monthly = mRate === 0 ? loan / nPay
+                    : loan * (mRate * Math.pow(1 + mRate, nPay)) / (Math.pow(1 + mRate, nPay) - 1);
+                const total   = monthly * nPay;
+                const intOnly = total - loan;
+                return `<tr>
+                    <td>${r.toFixed(1)}%</td>
+                    <td>${fmt(monthly)}</td>
+                    <td>${fmt(intOnly)}</td>
+                    <td>${fmt(total)}</td>
+                </tr>`;
+            }).join('');
+        }
+
+        function setText(id, val) { document.getElementById(id).textContent = val; }
+
+        function fmt(n) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency', currency: 'USD',
+                minimumFractionDigits: 0, maximumFractionDigits: 0
+            }).format(n);
+        }
+
+        function resetCalculator() {
+            homePriceEl.value       = 400000;
+            homePriceSliderEl.value = 400000;
+            downPaymentEl.value     = 80000;
+            interestRateEl.value    = 6.5;
+            interestSliderEl.value  = 6.5;
+            loanTermEl.value        = 30;
+            propertyTaxEl.value     = 1.25;
+            homeInsuranceEl.value   = 1200;
+            hoaEl.value             = 0;
+            calc();
+        }
+
+        function downloadResults() {
+            const price    = parseFloat(homePriceEl.value)    || 0;
+            const down     = parseFloat(downPaymentEl.value)  || 0;
+            const rate     = parseFloat(interestRateEl.value) || 0;
+            const term     = parseFloat(loanTermEl.value)     || 30;
+            const tax      = parseFloat(propertyTaxEl.value)  || 0;
+            const ins      = parseFloat(homeInsuranceEl.value)|| 0;
+            const hoa      = parseFloat(hoaEl.value)          || 0;
+            const loan     = price - down;
+            const mRate    = rate / 100 / 12;
+            const nPay     = term * 12;
+            const monthly  = mRate === 0 ? loan / nPay
+                : loan * (mRate * Math.pow(1 + mRate, nPay)) / (Math.pow(1 + mRate, nPay) - 1);
+            const totalPay = monthly * nPay;
+            const totalInt = totalPay - loan;
+            const mTax     = (price * tax / 100) / 12;
+            const mIns     = ins / 12;
+            const total    = monthly + mTax + mIns + hoa;
+
+            const text = `모기지 계산기 결과
+==================
+구매 가격: $${price.toLocaleString()}
+다운페이: $${down.toLocaleString()} (${((down/price)*100).toFixed(1)}%)
+이자율: ${rate}%  /  대출 기간: ${term}년
+재산세: ${tax}%  /  주택 보험: $${ins.toLocaleString()}  /  HOA: $${hoa.toLocaleString()}
+
+대출 금액: $${loan.toLocaleString()}
+월간 모기지 (원리금): ${fmt(monthly)}
+월간 재산세: ${fmt(mTax)}
+월간 보험료: ${fmt(mIns)}
+월간 HOA: ${fmt(hoa)}
+총 월간 비용: ${fmt(total)}
+
+총 상환액: ${fmt(totalPay)}
+총 이자: ${fmt(totalInt)}
+
+생성일: ${new Date().toLocaleDateString('ko-KR')}`;
+
+            const a = document.createElement('a');
+            a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(text);
+            a.download = '모기지계산_결과.txt';
+            a.click();
+        }
+
+        calc();
+    </script>
+</body>
+</html>

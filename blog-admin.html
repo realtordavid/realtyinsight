@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그 관리자 - LA/OC 부동산</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- ========== 비밀번호 화면 ========== -->
+    <div id="password-screen">
+        <div class="password-box">
+            <h2>🔐 블로그 관리자 로그인</h2>
+            <input type="password"
+                   id="password-input"
+                   placeholder="비밀번호를 입력하세요"
+                   autocomplete="current-password">
+            <button onclick="checkPassword()">로그인</button>
+            <p class="error-text" id="error-msg">비밀번호가 틀렸습니다.</p>
+        </div>
+    </div>
+
+    <!-- ========== 관리자 콘텐츠 ========== -->
+    <div id="admin-content" class="hidden">
+        <div class="admin-container">
+
+            <!-- 헤더 -->
+            <header class="admin-header">
+                <h1>📝 블로그 관리자</h1>
+                <a href="index.html" class="back-btn">🏠 메인으로</a>
+            </header>
+
+            <!-- 탭 메뉴 -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('write', this)">✍️ 새 글 작성</button>
+                <button class="tab-btn"        onclick="switchTab('edit',  this)">✏️ 글 목록 / 수정</button>
+            </div>
+
+            <!-- ========== 새 글 작성 탭 ========== -->
+            <div id="write-tab" class="tab-content form-section">
+                <p class="success-msg" id="success-msg"></p>
+
+                <h2>새 글 작성</h2>
+
+                <form id="blog-form">
+                    <div class="form-group">
+                        <label for="title">제목 <span style="color:#e74c3c;">*</span></label>
+                        <input type="text" id="title" placeholder="예) LA 집살 때 실수하는 5가지" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meta-description">메타 설명 <span style="color:#e74c3c;">*</span></label>
+                        <textarea id="meta-description"
+                                  placeholder="검색 결과에 표시될 짧은 설명 (150자 내외)"
+                                  style="min-height:80px;"
+                                  required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="slug">URL 슬러그 <span style="color:#e74c3c;">*</span></label>
+                        <input type="text" id="slug"
+                               placeholder="예) la-home-buying-mistakes (영문 소문자, 하이픈 사용)"
+                               required>
+                        <p class="form-hint">💡 생성 파일명: <code>[슬러그]-index.html</code></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">카테고리 <span style="color:#e74c3c;">*</span></label>
+                        <select id="category" required>
+                            <option value="">선택하세요</option>
+                            <option value="실수형">실수형</option>
+                            <option value="정보형">정보형</option>
+                            <option value="법/제도형">법/제도형</option>
+                            <option value="지역정보형">지역정보형</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author">작성자</label>
+                        <input type="text" id="author" value="David Lee">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="keywords">주요 키워드 <span style="color:#e74c3c;">*</span></label>
+                        <input type="text" id="keywords"
+                               placeholder="예) LA 부동산, 집 사기, 모기지 (쉼표로 구분)"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">본문 (마크다운 형식) <span style="color:#e74c3c;">*</span></label>
+                        <textarea id="content"
+                                  placeholder="## 큰 제목&#10;&#10;단락 내용을 입력하세요.&#10;&#10;### 소제목&#10;&#10;- 리스트 항목 1&#10;- 리스트 항목 2&#10;&#10;**굵은 글씨** / *이탤릭*"
+                                  required></textarea>
+                        <p class="form-hint">💡 팁: 단락 사이에 빈 줄을 꼭 넣어야 문단이 나뉩니다.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banner-image">배너 이미지 URL</label>
+                        <input type="url" id="banner-image"
+                               placeholder="https://images.unsplash.com/...">
+                        <p class="form-hint">비워두면 기본 이미지가 사용됩니다.</p>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn-preview" onclick="showPreview()">📋 미리보기</button>
+                        <button type="submit" class="btn-submit">✅ HTML 생성</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ========== 글 목록 / 수정 탭 ========== -->
+            <div id="edit-tab" class="tab-content form-section hidden">
+                <h2>생성된 글 목록</h2>
+                <div id="blog-list-container"></div>
+            </div>
+
+        </div><!-- /.admin-container -->
+    </div><!-- /#admin-content -->
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
