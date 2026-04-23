@@ -16,10 +16,7 @@
             color: #333;
         }
 
-        .container {
-            max-width: 860px;
-            margin: 0 auto;
-        }
+        .container { max-width: 860px; margin: 0 auto; }
 
         .back-link {
             color: rgba(255,255,255,0.85);
@@ -39,200 +36,174 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
-        h1 {
-            font-size: 1.6rem;
-            color: #1a365d;
-            margin-bottom: 0.4rem;
-        }
+        h1 { font-size: 1.6rem; color: #1a365d; margin-bottom: 0.4rem; }
+        .subtitle { color: #888; font-size: 0.95rem; margin-bottom: 1.75rem; }
 
-        .subtitle {
-            color: #888;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* ── 사용 방법 안내 ── */
-        .steps {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 1.75rem;
-        }
-
+        /* ── 사용 방법 ── */
+        .steps { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.75rem; }
         .step {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            background: #f5f8ff;
-            border-radius: 8px;
-            padding: 0.85rem 1rem;
-            font-size: 0.93rem;
-            color: #444;
-            line-height: 1.5;
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            background: #f5f8ff; border-radius: 8px;
+            padding: 0.85rem 1rem; font-size: 0.93rem; color: #444; line-height: 1.5;
         }
-
         .step-num {
-            background: #1a365d;
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.78rem;
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-top: 1px;
+            background: #1a365d; color: white;
+            width: 24px; height: 24px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.78rem; font-weight: 700; flex-shrink: 0; margin-top: 1px;
         }
-
         .step code {
-            background: #e8edf5;
-            padding: 1px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.88rem;
-            color: #1a365d;
+            background: #e8edf5; padding: 1px 6px; border-radius: 4px;
+            font-family: monospace; font-size: 0.88rem; color: #1a365d;
         }
 
-        /* ── 페이지 목록 테이블 ── */
-        .page-table-wrap { overflow-x: auto; }
+        /* ── 섹션 제목 ── */
+        .section-title {
+            font-size: 1rem; font-weight: 700; color: #1a365d;
+            margin-bottom: 1rem; padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
 
-        table {
+        /* ── 페이지 목록 ── */
+        .page-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+
+        .page-item {
+            display: grid;
+            grid-template-columns: 80px 1fr 120px 80px 36px;
+            gap: 0.5rem;
+            align-items: center;
+            background: #f9f9f9;
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            padding: 0.65rem 0.85rem;
+            transition: border-color 0.2s;
+        }
+        .page-item:hover { border-color: #b0c4de; }
+
+        .page-item input, .page-item select {
             width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
+            padding: 0.4rem 0.6rem;
+            border: 1.5px solid #dde3ec;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-family: inherit;
+            background: white;
+            transition: border-color 0.2s;
         }
-
-        thead th {
-            background: #1a365d;
-            color: white;
-            padding: 0.65rem 0.9rem;
-            text-align: left;
-            font-weight: 600;
-            white-space: nowrap;
+        .page-item input:focus, .page-item select:focus {
+            outline: none; border-color: #1a365d;
         }
-
-        tbody td {
-            padding: 0.6rem 0.9rem;
-            border-bottom: 1px solid #ecf0f1;
-            color: #444;
-        }
-
-        tbody tr:hover { background: #f9f9f9; }
 
         .badge {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: 600;
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 3px 10px; border-radius: 20px;
+            font-size: 0.78rem; font-weight: 600; white-space: nowrap;
+        }
+        .badge-main  { background: #1a365d22; color: #1a365d; }
+        .badge-blog  { background: #27ae6022; color: #1e8449; }
+        .badge-calc  { background: #e67e2222; color: #ca6f1e; }
+        .badge-guide { background: #8e44ad22; color: #7d3c98; }
+
+        .btn-del {
+            background: #fee; border: 1.5px solid #fcc;
+            color: #c0392b; border-radius: 5px;
+            cursor: pointer; font-size: 0.9rem;
+            width: 32px; height: 32px;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s;
+        }
+        .btn-del:hover { background: #fcc; }
+
+        .col-header {
+            display: grid;
+            grid-template-columns: 80px 1fr 120px 80px 36px;
+            gap: 0.5rem;
+            padding: 0 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+        .col-header span {
+            font-size: 0.78rem; font-weight: 600; color: #999; text-transform: uppercase;
         }
 
-        .badge-main   { background: #1a365d22; color: #1a365d; }
-        .badge-blog   { background: #27ae6022; color: #1e8449; }
-        .badge-calc   { background: #e67e2222; color: #ca6f1e; }
-        .badge-guide  { background: #8e44ad22; color: #7d3c98; }
+        /* ── 추가 버튼들 ── */
+        .add-buttons {
+            display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem;
+        }
+        .btn-add {
+            padding: 0.5rem 1rem; border: 2px dashed #b0c4de;
+            background: white; border-radius: 7px;
+            font-size: 0.88rem; font-weight: 600; color: #1a365d;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .btn-add:hover { background: #f0f4ff; border-color: #1a365d; }
 
         /* ── 생성 버튼 ── */
         .btn-generate {
-            width: 100%;
-            padding: 1rem;
+            width: 100%; padding: 1rem;
             background: linear-gradient(135deg, #1a365d, #2d5a8e);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: opacity 0.2s, transform 0.1s;
-            margin-top: 1.25rem;
+            color: white; border: none; border-radius: 8px;
+            font-size: 1.05rem; font-weight: 700;
+            cursor: pointer; transition: opacity 0.2s, transform 0.1s;
+            margin-top: 1rem;
         }
-
         .btn-generate:hover  { opacity: 0.9; }
         .btn-generate:active { transform: scale(0.99); }
 
-        /* ── 생성 결과 ── */
+        /* ── 결과 ── */
         #output-section { display: none; }
 
         .output-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.75rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            display: flex; justify-content: space-between;
+            align-items: center; margin-bottom: 0.75rem;
+            flex-wrap: wrap; gap: 0.5rem;
         }
-
         .output-header h2 { color: #1a365d; font-size: 1.1rem; }
 
-        .btn-row {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
+        .btn-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
         .btn-copy, .btn-download {
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.2s;
+            padding: 0.5rem 1rem; border: none; border-radius: 6px;
+            font-size: 0.88rem; font-weight: 600;
+            cursor: pointer; transition: opacity 0.2s;
         }
-
         .btn-copy     { background: #d4af37; color: #1a365d; }
         .btn-download { background: #27ae60; color: white; }
         .btn-copy:hover, .btn-download:hover { opacity: 0.85; }
 
         #xml-output {
-            width: 100%;
-            height: 340px;
+            width: 100%; height: 320px;
             font-family: 'Courier New', monospace;
-            font-size: 0.82rem;
-            line-height: 1.6;
-            border: 2px solid #ecf0f1;
-            border-radius: 8px;
-            padding: 1rem;
-            resize: vertical;
-            color: #2d5a8e;
-            background: #f8faff;
+            font-size: 0.82rem; line-height: 1.6;
+            border: 2px solid #ecf0f1; border-radius: 8px;
+            padding: 1rem; resize: vertical;
+            color: #2d5a8e; background: #f8faff;
         }
 
         .success-msg {
             display: none;
-            background: #d5f5e3;
-            color: #1e8449;
+            background: #d5f5e3; color: #1e8449;
             border-left: 4px solid #27ae60;
-            padding: 0.75rem 1rem;
-            border-radius: 6px;
-            margin-top: 0.75rem;
-            font-size: 0.9rem;
-            font-weight: 600;
+            padding: 0.75rem 1rem; border-radius: 6px;
+            margin-top: 0.75rem; font-size: 0.9rem; font-weight: 600;
         }
 
-        /* ── 안내 박스 ── */
         .info-box {
-            background: #fff8e1;
-            border-left: 4px solid #d4af37;
-            padding: 1rem 1.25rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.7;
+            background: #fff8e1; border-left: 4px solid #d4af37;
+            padding: 1rem 1.25rem; border-radius: 6px;
+            font-size: 0.9rem; color: #555; line-height: 1.7;
         }
-
         .info-box strong { color: #1a365d; }
 
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
             body { padding: 1rem; }
             h1 { font-size: 1.3rem; }
+            .page-item  { grid-template-columns: 1fr 1fr; }
+            .col-header { display: none; }
         }
     </style>
 </head>
 <body>
-
 <div class="container">
 
     <a class="back-link" href="index.html">← 메인으로 돌아가기</a>
@@ -240,47 +211,54 @@
     <!-- ── 헤더 카드 ── -->
     <div class="card">
         <h1>🗺️ Sitemap 자동 생성기</h1>
-        <p class="subtitle">새 페이지를 추가할 때마다 여기서 클릭 한 번으로 sitemap.xml을 갱신하세요.</p>
+        <p class="subtitle">새 페이지를 추가하고 버튼 한 번으로 sitemap.xml을 생성하세요. 로컬에서도 바로 작동합니다.</p>
 
         <div class="steps">
             <div class="step">
                 <span class="step-num">1</span>
-                <span>새 블로그 글 / 가이드를 추가했다면 <code>js/pages.js</code> 파일에 항목을 추가하세요.</span>
+                <span>아래 목록에서 <strong>"+ 블로그 추가"</strong> 버튼을 눌러 새 항목을 입력하세요.</span>
             </div>
             <div class="step">
                 <span class="step-num">2</span>
-                <span>아래 <strong>"Sitemap 생성"</strong> 버튼을 클릭하면 XML이 자동으로 만들어집니다.</span>
+                <span><strong>"Sitemap 생성"</strong> 버튼을 클릭하면 XML이 자동으로 만들어집니다.</span>
             </div>
             <div class="step">
                 <span class="step-num">3</span>
-                <span><strong>"sitemap.xml 다운로드"</strong> 버튼으로 파일을 받은 뒤, 저장소 루트(<code>/</code>)에 덮어쓰고 GitHub에 Push 하세요.</span>
-            </div>
-            <div class="step">
-                <span class="step-num">4</span>
-                <span>Google Search Console → Sitemaps → <code>sitemap.xml</code> 제출하면 구글이 새 페이지를 바로 인식합니다.</span>
+                <span><strong>"sitemap.xml 다운로드"</strong>로 파일을 받아 저장소 루트(<code>/</code>)에 덮어쓰고 GitHub에 Push하세요.</span>
             </div>
         </div>
 
-        <!-- 현재 등록된 페이지 목록 -->
-        <h2 style="color:#1a365d; font-size:1rem; margin-bottom:0.75rem;">📋 현재 등록된 페이지 목록</h2>
-        <div class="page-table-wrap">
-            <table id="page-table">
-                <thead>
-                    <tr>
-                        <th>종류</th>
-                        <th>제목</th>
-                        <th>URL</th>
-                        <th>최종 수정일</th>
-                        <th>중요도</th>
-                    </tr>
-                </thead>
-                <tbody id="page-list"></tbody>
-            </table>
+        <!-- ── 사이트 기본 URL ── -->
+        <div class="section-title">⚙️ 기본 설정</div>
+        <div style="margin-bottom:1.5rem;">
+            <label style="font-size:0.88rem; font-weight:600; color:#1a365d; display:block; margin-bottom:0.4rem;">사이트 베이스 URL</label>
+            <input type="text" id="base-url"
+                   value="https://realtordavid.github.io/realtyinsight"
+                   style="width:100%; padding:0.6rem 0.85rem; border:2px solid #dde3ec; border-radius:7px; font-size:0.95rem; font-family:inherit;">
         </div>
 
-        <button class="btn-generate" onclick="generateSitemap()">
-            🚀 Sitemap 생성하기
-        </button>
+        <!-- ── 페이지 목록 ── -->
+        <div class="section-title">📋 페이지 목록</div>
+
+        <div class="col-header">
+            <span>종류</span>
+            <span>URL 경로</span>
+            <span>최종 수정일</span>
+            <span>중요도</span>
+            <span></span>
+        </div>
+
+        <div class="page-list" id="page-list"></div>
+
+        <!-- ── 추가 버튼 ── -->
+        <div class="add-buttons">
+            <button class="btn-add" onclick="addPage('blog')">＋ 블로그 추가</button>
+            <button class="btn-add" onclick="addPage('guide')">＋ 가이드 추가</button>
+            <button class="btn-add" onclick="addPage('calculator')">＋ 계산기 추가</button>
+            <button class="btn-add" onclick="addPage('other')">＋ 기타 추가</button>
+        </div>
+
+        <button class="btn-generate" onclick="generateSitemap()">🚀 Sitemap 생성하기</button>
     </div>
 
     <!-- ── 결과 카드 ── -->
@@ -296,88 +274,167 @@
         <div class="success-msg" id="copy-msg">✅ 클립보드에 복사되었습니다!</div>
     </div>
 
-    <!-- ── 안내 박스 ── -->
     <div class="info-box">
-        <strong>💡 pages.js 파일 위치:</strong> <code>js/pages.js</code><br>
-        블로그 글을 새로 추가할 때마다 그 파일의 <strong>블로그 섹션</strong>에 항목 하나를 추가하면 끝입니다.<br>
-        예시가 주석으로 작성되어 있으니 복사해서 쓰세요.
+        💡 <strong>목록은 이 파일 안의 <code>INITIAL_PAGES</code> 배열에 저장됩니다.</strong><br>
+        새 항목을 추가한 뒤 sitemap을 생성하고 싶다면, 항목을 입력하고 "Sitemap 생성" 버튼만 누르면 됩니다.<br>
+        다음번에 또 열어도 목록이 유지되도록 하려면 <strong>아래 항목을 <code>INITIAL_PAGES</code>에 직접 추가</strong>해두세요.
     </div>
 
 </div>
 
-<script src="js/pages.js"></script>
 <script>
-    /* ── 페이지 종류 판별 ── */
-    function getCategory(url) {
-        if (url === '/')                    return { label: '메인',    cls: 'badge-main'  };
-        if (url.includes('/blog/'))         return { label: '블로그',  cls: 'badge-blog'  };
-        if (url.includes('/calculator/'))   return { label: '계산기',  cls: 'badge-calc'  };
-        if (url.includes('/guides/'))       return { label: '가이드',  cls: 'badge-guide' };
-        return { label: '기타', cls: 'badge-main' };
-    }
+/* ==============================================
+   ✅ 새 페이지를 영구 등록하려면 여기에 추가하세요!
+   (이 파일 자체를 저장하면 다음에 열어도 유지됨)
+   ============================================== */
+const INITIAL_PAGES = [
 
-    /* ── 테이블 렌더 ── */
-    function renderTable() {
-        const tbody = document.getElementById('page-list');
-        tbody.innerHTML = SITE_PAGES.map(p => {
-            const cat = getCategory(p.url);
-            return `<tr>
-                <td><span class="badge ${cat.cls}">${cat.label}</span></td>
-                <td>${p.title}</td>
-                <td style="font-family:monospace; font-size:0.83rem; color:#2d5a8e;">${p.url}</td>
-                <td>${p.lastmod}</td>
-                <td>${p.priority}</td>
-            </tr>`;
-        }).join('');
-    }
+    /* ── 메인 ── */
+    { type: 'main',       url: '/',                                             lastmod: '2026-04-23', priority: '1.0' },
 
-    /* ── Sitemap XML 생성 ── */
-    function generateSitemap() {
-        const today = new Date().toISOString().slice(0, 10);
+    /* ── 블로그 ── 새 글 추가 시 여기에 복사해서 붙여넣으세요 ↓ */
+    { type: 'blog',       url: '/blog/la-home-buying-5-mistakes/',              lastmod: '2026-02-27', priority: '0.8' },
 
-        const urls = SITE_PAGES.map(p => `
+    /* ── 계산기 ── */
+    { type: 'calculator', url: '/calculator/mortgage-calculator.html',          lastmod: '2026-04-23', priority: '0.7' },
+    { type: 'calculator', url: '/calculator/property-tax-calculator.html',      lastmod: '2026-04-23', priority: '0.7' },
+    { type: 'calculator', url: '/calculator/total-cost-calculator.html',        lastmod: '2026-04-23', priority: '0.7' },
+
+    /* ── 가이드 ── 추후 추가 예정 */
+    // { type: 'guide', url: '/guides/first-buyer-guide/', lastmod: '2026-05-01', priority: '0.8' },
+
+];
+
+/* ── 종류별 설정 ── */
+const TYPE_CONFIG = {
+    main:       { label: '메인',   cls: 'badge-main',  defaultUrl: '/',                      defaultPriority: '1.0' },
+    blog:       { label: '블로그', cls: 'badge-blog',  defaultUrl: '/blog/새글-슬러그/',      defaultPriority: '0.8' },
+    guide:      { label: '가이드', cls: 'badge-guide', defaultUrl: '/guides/새가이드/',       defaultPriority: '0.8' },
+    calculator: { label: '계산기', cls: 'badge-calc',  defaultUrl: '/calculator/새계산기.html', defaultPriority: '0.7' },
+    other:      { label: '기타',   cls: 'badge-main',  defaultUrl: '/새페이지/',              defaultPriority: '0.6' },
+};
+
+let pages = INITIAL_PAGES.map((p, i) => ({ ...p, id: i }));
+let nextId = pages.length;
+
+/* ── 렌더 ── */
+function render() {
+    const today = new Date().toISOString().slice(0, 10);
+    const list  = document.getElementById('page-list');
+
+    list.innerHTML = pages.map(p => {
+        const cfg     = TYPE_CONFIG[p.type] || TYPE_CONFIG.other;
+        const isMain  = p.type === 'main';
+
+        return `
+        <div class="page-item" id="item-${p.id}">
+            <!-- 종류 배지 -->
+            <span class="badge ${cfg.cls}">${cfg.label}</span>
+
+            <!-- URL -->
+            <input type="text"
+                   value="${p.url}"
+                   placeholder="/blog/슬러그/"
+                   ${isMain ? 'readonly style="background:#f5f5f5;color:#999;"' : ''}
+                   onchange="updatePage(${p.id}, 'url', this.value)">
+
+            <!-- 최종 수정일 -->
+            <input type="date"
+                   value="${p.lastmod}"
+                   max="${today}"
+                   onchange="updatePage(${p.id}, 'lastmod', this.value)">
+
+            <!-- 중요도 -->
+            <select onchange="updatePage(${p.id}, 'priority', this.value)">
+                ${['1.0','0.9','0.8','0.7','0.6','0.5'].map(v =>
+                    `<option value="${v}" ${p.priority === v ? 'selected' : ''}>${v}</option>`
+                ).join('')}
+            </select>
+
+            <!-- 삭제 -->
+            <button class="btn-del"
+                    onclick="deletePage(${p.id})"
+                    title="삭제"
+                    ${isMain ? 'disabled style="opacity:0.3;cursor:not-allowed;"' : ''}>✕</button>
+        </div>`;
+    }).join('');
+}
+
+function updatePage(id, field, value) {
+    const p = pages.find(p => p.id === id);
+    if (p) p[field] = value;
+}
+
+function deletePage(id) {
+    if (!confirm('이 항목을 삭제할까요?')) return;
+    pages = pages.filter(p => p.id !== id);
+    render();
+}
+
+function addPage(type) {
+    const cfg   = TYPE_CONFIG[type] || TYPE_CONFIG.other;
+    const today = new Date().toISOString().slice(0, 10);
+    pages.push({ id: nextId++, type, url: cfg.defaultUrl, lastmod: today, priority: cfg.defaultPriority });
+    render();
+    // 새 항목으로 스크롤
+    setTimeout(() => {
+        const last = document.querySelector('.page-item:last-child');
+        if (last) last.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // URL 입력창에 포커스
+        const input = last?.querySelector('input[type="text"]');
+        if (input) { input.select(); }
+    }, 50);
+}
+
+/* ── Sitemap 생성 ── */
+function generateSitemap() {
+    const base  = document.getElementById('base-url').value.replace(/\/$/, '');
+    const today = new Date().toISOString().slice(0, 10);
+
+    const urls = pages.map(p => `
     <url>
-        <loc>${SITE_BASE_URL}${p.url}</loc>
+        <loc>${base}${p.url}</loc>
         <lastmod>${p.lastmod}</lastmod>
-        <changefreq>${p.changefreq}</changefreq>
+        <changefreq>${p.type === 'main' ? 'weekly' : 'monthly'}</changefreq>
         <priority>${p.priority}</priority>
     </url>`).join('');
 
-        const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<!-- 생성일: ${today} | 총 ${SITE_PAGES.length}개 페이지 -->
+    const xml =
+`<?xml version="1.0" encoding="UTF-8"?>
+<!-- 생성일: ${today} | 총 ${pages.length}개 페이지 -->
 <!-- 이 파일은 sitemap-generator.html 에서 자동 생성됩니다. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}
 </urlset>`;
 
-        document.getElementById('xml-output').value = xml;
-        const section = document.getElementById('output-section');
-        section.style.display = 'block';
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    document.getElementById('xml-output').value = xml;
+    const sec = document.getElementById('output-section');
+    sec.style.display = 'block';
+    sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
-    /* ── 복사 ── */
-    function copyXml() {
-        const el = document.getElementById('xml-output');
-        el.select();
-        navigator.clipboard.writeText(el.value).then(() => {
-            const msg = document.getElementById('copy-msg');
-            msg.style.display = 'block';
-            setTimeout(() => msg.style.display = 'none', 2500);
-        });
-    }
+/* ── 복사 ── */
+function copyXml() {
+    const el = document.getElementById('xml-output');
+    el.select();
+    navigator.clipboard.writeText(el.value).then(() => {
+        const msg = document.getElementById('copy-msg');
+        msg.style.display = 'block';
+        setTimeout(() => msg.style.display = 'none', 2500);
+    });
+}
 
-    /* ── 다운로드 ── */
-    function downloadXml() {
-        const xml = document.getElementById('xml-output').value;
-        if (!xml) { alert('먼저 Sitemap 생성 버튼을 눌러주세요.'); return; }
-        const a = document.createElement('a');
-        a.href = 'data:application/xml;charset=utf-8,' + encodeURIComponent(xml);
-        a.download = 'sitemap.xml';
-        a.click();
-    }
+/* ── 다운로드 ── */
+function downloadXml() {
+    const xml = document.getElementById('xml-output').value;
+    if (!xml) { alert('먼저 "Sitemap 생성" 버튼을 눌러주세요.'); return; }
+    const a = document.createElement('a');
+    a.href = 'data:application/xml;charset=utf-8,' + encodeURIComponent(xml);
+    a.download = 'sitemap.xml';
+    a.click();
+}
 
-    /* 초기 렌더 */
-    renderTable();
+/* 초기 렌더 */
+render();
 </script>
 </body>
 </html>

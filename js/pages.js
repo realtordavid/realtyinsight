@@ -39,11 +39,11 @@ const SITE_PAGES = [
         title:       'LA 집살 때 가장 많이 망하는 포인트 5가지'
     },
     // {
-    //     url:         '/blog/escrow-explained/',
-    //     lastmod:     '2026-05-01',
+    //     url:         '/blog/california-escrow-guide/',
+    //     lastmod:     '2026.02.25',
     //     changefreq:  'monthly',
     //     priority:    '0.8',
-    //     title:       '에스크로란 무엇인가 - 완벽 이해하기'
+    //     title:       '캘리포니아 에스크로 완벽하게 이해하기'
     // },
 
     /* ───────────────── 계산기 ───────────────── */
