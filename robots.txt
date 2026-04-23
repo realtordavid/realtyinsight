@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 관리자 페이지 크롤링 차단
+Disallow: /blog-admin.html
+
+# Sitemap 위치
+Sitemap: https://realtordavid.github.io/realtyinsight/sitemap.xml
