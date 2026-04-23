@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap 자동 생성기 - 미국 부동산 인사이트 관리도구</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a365d, #2d5a8e);
+            min-height: 100vh;
+            padding: 2rem;
+            color: #333;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: #1a365d;
+            margin-bottom: 0.4rem;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ── 사용 방법 안내 ── */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: #f5f8ff;
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            font-size: 0.93rem;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .step-num {
+            background: #1a365d;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .step code {
+            background: #e8edf5;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.88rem;
+            color: #1a365d;
+        }
+
+        /* ── 페이지 목록 테이블 ── */
+        .page-table-wrap { overflow-x: auto; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        thead th {
+            background: #1a365d;
+            color: white;
+            padding: 0.65rem 0.9rem;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        tbody td {
+            padding: 0.6rem 0.9rem;
+            border-bottom: 1px solid #ecf0f1;
+            color: #444;
+        }
+
+        tbody tr:hover { background: #f9f9f9; }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .badge-main   { background: #1a365d22; color: #1a365d; }
+        .badge-blog   { background: #27ae6022; color: #1e8449; }
+        .badge-calc   { background: #e67e2222; color: #ca6f1e; }
+        .badge-guide  { background: #8e44ad22; color: #7d3c98; }
+
+        /* ── 생성 버튼 ── */
+        .btn-generate {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #1a365d, #2d5a8e);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+            margin-top: 1.25rem;
+        }
+
+        .btn-generate:hover  { opacity: 0.9; }
+        .btn-generate:active { transform: scale(0.99); }
+
+        /* ── 생성 결과 ── */
+        #output-section { display: none; }
+
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .output-header h2 { color: #1a365d; font-size: 1.1rem; }
+
+        .btn-row {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-copy, .btn-download {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-copy     { background: #d4af37; color: #1a365d; }
+        .btn-download { background: #27ae60; color: white; }
+        .btn-copy:hover, .btn-download:hover { opacity: 0.85; }
+
+        #xml-output {
+            width: 100%;
+            height: 340px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
+            padding: 1rem;
+            resize: vertical;
+            color: #2d5a8e;
+            background: #f8faff;
+        }
+
+        .success-msg {
+            display: none;
+            background: #d5f5e3;
+            color: #1e8449;
+            border-left: 4px solid #27ae60;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* ── 안내 박스 ── */
+        .info-box {
+            background: #fff8e1;
+            border-left: 4px solid #d4af37;
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .info-box strong { color: #1a365d; }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <a class="back-link" href="index.html">← 메인으로 돌아가기</a>
+
+    <!-- ── 헤더 카드 ── -->
+    <div class="card">
+        <h1>🗺️ Sitemap 자동 생성기</h1>
+        <p class="subtitle">새 페이지를 추가할 때마다 여기서 클릭 한 번으로 sitemap.xml을 갱신하세요.</p>
+
+        <div class="steps">
+            <div class="step">
+                <span class="step-num">1</span>
+                <span>새 블로그 글 / 가이드를 추가했다면 <code>js/pages.js</code> 파일에 항목을 추가하세요.</span>
+            </div>
+            <div class="step">
+                <span class="step-num">2</span>
+                <span>아래 <strong>"Sitemap 생성"</strong> 버튼을 클릭하면 XML이 자동으로 만들어집니다.</span>
+            </div>
+            <div class="step">
+                <span class="step-num">3</span>
+                <span><strong>"sitemap.xml 다운로드"</strong> 버튼으로 파일을 받은 뒤, 저장소 루트(<code>/</code>)에 덮어쓰고 GitHub에 Push 하세요.</span>
+            </div>
+            <div class="step">
+                <span class="step-num">4</span>
+                <span>Google Search Console → Sitemaps → <code>sitemap.xml</code> 제출하면 구글이 새 페이지를 바로 인식합니다.</span>
+            </div>
+        </div>
+
+        <!-- 현재 등록된 페이지 목록 -->
+        <h2 style="color:#1a365d; font-size:1rem; margin-bottom:0.75rem;">📋 현재 등록된 페이지 목록</h2>
+        <div class="page-table-wrap">
+            <table id="page-table">
+                <thead>
+                    <tr>
+                        <th>종류</th>
+                        <th>제목</th>
+                        <th>URL</th>
+                        <th>최종 수정일</th>
+                        <th>중요도</th>
+                    </tr>
+                </thead>
+                <tbody id="page-list"></tbody>
+            </table>
+        </div>
+
+        <button class="btn-generate" onclick="generateSitemap()">
+            🚀 Sitemap 생성하기
+        </button>
+    </div>
+
+    <!-- ── 결과 카드 ── -->
+    <div class="card" id="output-section">
+        <div class="output-header">
+            <h2>✅ 생성된 sitemap.xml</h2>
+            <div class="btn-row">
+                <button class="btn-copy"     onclick="copyXml()">📋 복사</button>
+                <button class="btn-download" onclick="downloadXml()">⬇️ sitemap.xml 다운로드</button>
+            </div>
+        </div>
+        <textarea id="xml-output" readonly></textarea>
+        <div class="success-msg" id="copy-msg">✅ 클립보드에 복사되었습니다!</div>
+    </div>
+
+    <!-- ── 안내 박스 ── -->
+    <div class="info-box">
+        <strong>💡 pages.js 파일 위치:</strong> <code>js/pages.js</code><br>
+        블로그 글을 새로 추가할 때마다 그 파일의 <strong>블로그 섹션</strong>에 항목 하나를 추가하면 끝입니다.<br>
+        예시가 주석으로 작성되어 있으니 복사해서 쓰세요.
+    </div>
+
+</div>
+
+<script src="js/pages.js"></script>
+<script>
+    /* ── 페이지 종류 판별 ── */
+    function getCategory(url) {
+        if (url === '/')                    return { label: '메인',    cls: 'badge-main'  };
+        if (url.includes('/blog/'))         return { label: '블로그',  cls: 'badge-blog'  };
+        if (url.includes('/calculator/'))   return { label: '계산기',  cls: 'badge-calc'  };
+        if (url.includes('/guides/'))       return { label: '가이드',  cls: 'badge-guide' };
+        return { label: '기타', cls: 'badge-main' };
+    }
+
+    /* ── 테이블 렌더 ── */
+    function renderTable() {
+        const tbody = document.getElementById('page-list');
+        tbody.innerHTML = SITE_PAGES.map(p => {
+            const cat = getCategory(p.url);
+            return `<tr>
+                <td><span class="badge ${cat.cls}">${cat.label}</span></td>
+                <td>${p.title}</td>
+                <td style="font-family:monospace; font-size:0.83rem; color:#2d5a8e;">${p.url}</td>
+                <td>${p.lastmod}</td>
+                <td>${p.priority}</td>
+            </tr>`;
+        }).join('');
+    }
+
+    /* ── Sitemap XML 생성 ── */
+    function generateSitemap() {
+        const today = new Date().toISOString().slice(0, 10);
+
+        const urls = SITE_PAGES.map(p => `
+    <url>
+        <loc>${SITE_BASE_URL}${p.url}</loc>
+        <lastmod>${p.lastmod}</lastmod>
+        <changefreq>${p.changefreq}</changefreq>
+        <priority>${p.priority}</priority>
+    </url>`).join('');
+
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<!-- 생성일: ${today} | 총 ${SITE_PAGES.length}개 페이지 -->
+<!-- 이 파일은 sitemap-generator.html 에서 자동 생성됩니다. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}
+</urlset>`;
+
+        document.getElementById('xml-output').value = xml;
+        const section = document.getElementById('output-section');
+        section.style.display = 'block';
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    /* ── 복사 ── */
+    function copyXml() {
+        const el = document.getElementById('xml-output');
+        el.select();
+        navigator.clipboard.writeText(el.value).then(() => {
+            const msg = document.getElementById('copy-msg');
+            msg.style.display = 'block';
+            setTimeout(() => msg.style.display = 'none', 2500);
+        });
+    }
+
+    /* ── 다운로드 ── */
+    function downloadXml() {
+        const xml = document.getElementById('xml-output').value;
+        if (!xml) { alert('먼저 Sitemap 생성 버튼을 눌러주세요.'); return; }
+        const a = document.createElement('a');
+        a.href = 'data:application/xml;charset=utf-8,' + encodeURIComponent(xml);
+        a.download = 'sitemap.xml';
+        a.click();
+    }
+
+    /* 초기 렌더 */
+    renderTable();
+</script>
+</body>
+</html>
