@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산 구매 과정, 한 번에 정리하세요 - LA/OC 부동산</title>
+    <meta name="description" content="LA/OC 부동산 구매 완벽 가이드. 9단계 구매 과정, 타임라인, 필수 서류, 실수하기 쉬운 부분까지 완전 정리.">
+    <meta name="keywords" content="부동산 구매, LA 부동산, OC 부동산, 집 사는 법, 첫 구매자, 부동산 구매 과정, 모기지">
+    
+    <meta property="og:title" content="부동산 구매 과정, 한 번에 정리하세요">
+    <meta property="og:description" content="LA/OC에서 성공적인 집 사기 위한 모든 정보를 제공합니다">
+    <meta property="og:url" content="https://realtordavid.github.io/realtyinsight/home-buying-process.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* ========== 헤더 ========== */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1a365d;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #d4af37;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #d4af37;
+        }
+        
+        /* ========== 메인 컨테이너 ========== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        /* ========== 히어로 섹션 ========== */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #0f1f3c 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+        
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* ========== 목차 섹션 ========== */
+        .table-of-contents {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .table-of-contents h2 {
+            color: #1a365d;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 1rem;
+        }
+        
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .toc-item {
+            padding: 1rem;
+            background: #f9f9f9;
+            border-left: 4px solid #d4af37;
+            border-radius: 5px;
+        }
+        
+        .toc-item h3 {
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .toc-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+        }
+        
+        /* ========== 섹션 ========== */
+        .guide-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .guide-section h2 {
+            color: #1a365d;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 1rem;
+        }
+        
+        .guide-section h3 {
+            color: #1a365d;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .guide-section h4 {
+            color: #1a365d;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .guide-section p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .guide-section ul, .guide-section ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .guide-section li {
+            margin-bottom: 0.75rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* ========== 특별 박스 ========== */
+        .highlight-box {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-box h4 {
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+        
+        .error-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+        
+        /* ========== 테이블 ========== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        table th {
+            background: #1a365d;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        table tr:hover {
+            background: #f9f9f9;
+        }
+        
+        /* ========== 체크리스트 ========== */
+        .checklist {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+        
+        .checklist-item input {
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+            cursor: pointer;
+        }
+        
+        .checklist-item label {
+            cursor: pointer;
+            flex-grow: 1;
+        }
+        
+        /* ========== FAQ ========== */
+        .faq-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 1.5rem;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #1a365d;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-toggle.active {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            color: #666;
+            margin-top: 1rem;
+            display: none;
+            line-height: 1.8;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* ========== 푸터 ========== */
+        footer {
+            background-color: #1a365d;
+            color: #ecf0f1;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* ========== 반응형 ========== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .guide-section {
+                padding: 1.5rem;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            table th, table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== 헤더 ========== -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">🏠 LA/OC <span>부동산</span></a>
+            <nav>
+                <a href="index.html">홈</a>
+                <a href="index.html#blog">블로그</a>
+                <a href="index.html#tools">도구</a>
+                <a href="index.html#contact">문의</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== 메인 컨텐츠 ========== -->
+    <main class="container">
+        <!-- 히어로 섹션 -->
+        <div class="hero">
+            <h1>부동산 구매 과정, 한 번에 정리하세요</h1>
+            <p>LA/OC에서 성공적인 집 사기 위한 모든 정보를 제공합니다</p>
+            <div class="hero-meta">
+                <span>📄 완벽 가이드</span>
+                <span>⏱️ 읽는 시간: 20-25분</span>
+                <span>✅ 실제 사례 + 체크리스트</span>
+            </div>
+        </div>
+
+        <!-- 목차 -->
+        <div class="table-of-contents">
+            <h2>📑 목차</h2>
+            <div class="toc-grid">
+                <div class="toc-item">
+                    <h3>Step 1️⃣ 재정 상황 파악</h3>
+                    <p>신용점수, DTI 계산, 저축 목표</p>
+                </div>
+                <div class="toc-item">
+                    <h3>Step 2️⃣ 모기지 사전 승인</h3>
+                    <p>사전 적격 vs 사전 승인 비교</p>
+                </div>
+                <div class="toc-item">
+                    <h3>Step 3️⃣ 에이전트 선택</h3>
+                    <p>경험 있는 에이전트 찾기</p>
+                </div>
+                <div class="toc-item">
+                    <h3>Step 4️⃣ 집 찾기 & 비교</h3>
+                    <p>온라인 검색, CMA 작성</p>
+                </div>
+                <div class="toc-item">
+                    <h3>Step 5️⃣ 오퍼 제출</h3>
+                    <p>구매 제안서 작성, 협상</p>
+                </div>
+                <div class="toc-item">
+                    <h3>Step 6️⃣ 검사 & 감정</h3>
+                    <p>주택 검사, 부동산 감정</p>
+                </div>
+                <div class="toc-item">
+                    <h3>Step 7️⃣ 모기지 최종 승인</h3>
+                    <p>언더라이팅, Clear to Close</p>
+                </div>
+                <div class="toc-item">
+                    <h3>Step 8️⃣ 폐기 준비</h3>
+                    <p>서류 검토, 최종 점검</p>
+                </div>
+                <div class="toc-item">
+                    <h3>Step 9️⃣ 폐기 & 입주</h3>
+                    <p>서명, 자금 이체, 열쇠 수령</p>
+                </div>
+                <div class="toc-item">
+                    <h3>⏰ 타임라인</h3>
+                    <p>3~6개월 전체 소요 시간</p>
+                </div>
+                <div class="toc-item">
+                    <h3>✅ 체크리스트</h3>
+                    <p>단계별 확인 사항</p>
+                </div>
+                <div class="toc-item">
+                    <h3>⚠️ 실수하기 쉬운 부분</h3>
+                    <p>피해야 할 12가지 실수</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="guide-section">
+            <h2>Step 1️⃣ 재정 상황 파악 및 신용점수 확인</h2>
+            
+            <p>부동산을 구매하기 전에 가장 중요한 것은 현재 재정 상황을 정확히 파악하는 것입니다. CalHFA와 Rocket Mortgage의 가이드에 따르면, 첫 번째 단계에서 해야 할 일은 다음과 같습니다.</p>
+
+            <h3>신용점수 확인</h3>
+            <p>모기지 승인의 가장 중요한 요소는 신용점수입니다. 신용점수가 높을수록 더 좋은 금리를 받을 수 있습니다.</p>
+
+            <table>
+                <tr>
+                    <th>신용점수</th>
+                    <th>대출 가능성</th>
+                    <th>예상 금리</th>
+                </tr>
+                <tr>
+                    <td>760 이상</td>
+                    <td>우수</td>
+                    <td>가장 낮은 금리</td>
+                </tr>
+                <tr>
+                    <td>700-759</td>
+                    <td>양호</td>
+                    <td>낮은 금리</td>
+                </tr>
+                <tr>
+                    <td>660-699</td>
+                    <td>보통</td>
+                    <td>평균 금리</td>
+                </tr>
+                <tr>
+                    <td>620-659</td>
+                    <td>낮음</td>
+                    <td>높은 금리 또는 FHA</td>
+                </tr>
+                <tr>
+                    <td>620 미만</td>
+                    <td>어려움</td>
+                    <td>특수 프로그램 필요</td>
+                </tr>
+            </table>
+
+            <h3>신용점수 개선하기</h3>
+            <ul>
+                <li><strong>신용 리포트 확인:</strong> AnnualCreditReport.com에서 무료 조회 (연 1회)</li>
+                <li><strong>오류 정정:</strong> 오류 발견 시 이의 제기 (약 30일 소요)</li>
+                <li><strong>신용카드 잔액 상환:</strong> 50% 이상 상환 시 신용점수 +20~50점</li>
+                <li><strong>정시 납부:</strong> 모든 청구서를 제때 납부</li>
+                <li><strong>신용 신청 피하기:</strong> 모기지 신청 3-6개월 전부터 신용 신청 금지</li>
+            </ul>
+
+            <h3>저축 목표 설정</h3>
+            <p>California Housing Finance Agency(CalHFA)에 따르면, 다음을 준비해야 합니다:</p>
+
+            <div class="success-box">
+                <h4>필수 저축 항목</h4>
+                <ul>
+                    <li><strong>다운페이:</strong> 3% ~ 20% (최소 3%, 권장 10-20%)</li>
+                    <li><strong>폐기 비용:</strong> 구매가의 2% ~ 5% ($8,000 ~ $20,000)</li>
+                    <li><strong>비상금:</strong> 6개월 생활비 (대출 기관 요구)</li>
+                </ul>
+            </div>
+
+            <h4>예시: $400,000 주택 구매</h4>
+            <ul>
+                <li>다운페이 10%: $40,000</li>
+                <li>폐기 비용 (3%): $12,000</li>
+                <li>총 현금 필요: $52,000 이상</li>
+            </ul>
+
+            <h3>DTI(부채 대비 소득 비율) 계산</h3>
+            <table>
+                <tr>
+                    <td><strong>공식:</strong></td>
+                    <td colspan="3">DTI = (월 전체 부채 ÷ 월 총 소득) × 100</td>
+                </tr>
+                <tr>
+                    <td><strong>예시:</strong></td>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td>월 총 소득</td>
+                    <td>$6,000</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>월 부채</td>
+                    <td>$2,000 (신용카드, 자동차론, 학생론)</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="background: #d4edda; font-weight: bold;">
+                    <td>DTI</td>
+                    <td>33.3%</td>
+                    <td>✅ 합격</td>
+                    <td>(43% 이하 권장)</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="guide-section">
+            <h2>Step 2️⃣ 모기지 사전 승인 받기</h2>
+
+            <p>신용점수를 개선했거나 현재 상황이 양호하다면, 이제 <strong>모기지 사전 승인(Pre-Approval)</strong>을 받아야 합니다. 이것은 집을 찾을 때 판매자에게 "진지한 구매자"임을 보여줍니다.</p>
+
+            <h3>사전 적격 vs 사전 승인</h3>
+
+            <table>
+                <tr>
+                    <th>항목</th>
+                    <th>사전 적격(Pre-Qualification)</th>
+                    <th>사전 승인(Pre-Approval)</th>
+                </tr>
+                <tr>
+                    <td>소요 시간</td>
+                    <td>수 분</td>
+                    <td>1~3일</td>
+                </tr>
+                <tr>
+                    <td>정확성</td>
+                    <td>낮음 (추정)</td>
+                    <td>높음 (검증됨)</td>
+                </tr>
+                <tr>
+                    <td>신용점수 영향</td>
+                    <td>없음</td>
+                    <td>약간 (5~10점 일시적)</td>
+                </tr>
+                <tr>
+                    <td>판매자 신뢰도</td>
+                    <td>낮음</td>
+                    <td>높음</td>
+                </tr>
+            </table>
+
+            <div class="warning-box">
+                <h4>💡 팁</h4>
+                <p>"완전히 심사된 사전 승인(Fully Underwritten Pre-Approval)"을 받으세요. 언더라이터가 이미 파일을 검토했으므로 나중에 승인 과정이 훨씬 빠릅니다.</p>
+            </div>
+
+            <h3>필요한 서류</h3>
+            <ul>
+                <li>신분증 (운전면허증, 여권)</li>
+                <li>최근 2개월의 급여명세서</li>
+                <li>최근 2년의 세금신고서 (1040, Schedule C)</li>
+                <li>최근 2개월의 은행 명세서</li>
+                <li>401(k) 또는 투자 계좌 잔액 증명</li>
+            </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="guide-section">
+            <h2>Step 3️⃣ 부동산 에이전트 선택</h2>
+
+            <p>LA/OC 부동산 시장은 매우 경쟁적입니다. 경험 많은 에이전트는 다음을 제공합니다:</p>
+
+            <ul>
+                <li>지역별 시장 지식 (가격 추세, 학교, 범죄율)</li>
+                <li>협상 전략 (좋은 거래 가능)</li>
+                <li>폐기 과정 안내</li>
+                <li>예상치 못한 문제 해결</li>
+            </ul>
+
+            <h3>좋은 에이전트 찾는 팁</h3>
+            <ol>
+                <li>최소 5~10년 경험 확인</li>
+                <li>Google, Yelp 리뷰 확인</li>
+                <li>지역 전문성 (LA, Long Beach, Orange County 등)</li>
+                <li>반응성 (전화, 이메일 빠른 답변)</li>
+                <li>투명한 비용 구조</li>
+            </ol>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="guide-section">
+            <h2>Step 4️⃣ 집 찾기 및 비교</h2>
+
+            <p>효율적으로 집을 찾으려면 다양한 도구를 사용합니다:</p>
+
+            <ul>
+                <li><strong>Zillow, Redfin, Realtor.com:</strong> 온라인 검색</li>
+                <li><strong>MLS (Multiple Listing Service):</strong> 에이전트를 통한 최신 정보</li>
+                <li><strong>오픈 하우스:</strong> 실제로 둘러보기</li>
+                <li><strong>구글 맵:</strong> 지역 조사 (학교, 편의시설, 통근 시간)</li>
+            </ul>
+
+            <h3>비교할 항목</h3>
+
+            <table>
+                <tr>
+                    <th>항목</th>
+                    <th>확인 방법</th>
+                </tr>
+                <tr>
+                    <td>가격</td>
+                    <td>같은 지역 유사 주택 가격 비교 (Comparable Sales)</td>
+                </tr>
+                <tr>
+                    <td>상태</td>
+                    <td>외부/내부 검사, 지붕/기초 상태</td>
+                </tr>
+                <tr>
+                    <td>위치</td>
+                    <td>학교, 직장과의 거리, 범죄율</td>
+                </tr>
+                <tr>
+                    <td>HOA 비용</td>
+                    <td>월간 관리비 및 규정 확인</td>
+                </tr>
+                <tr>
+                    <td>재산세</td>
+                    <td>Zillow나 County Assessor에서 확인</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="guide-section">
+            <h2>Step 5️⃣ 구매 오퍼 제출</h2>
+
+            <p>마음에 드는 집을 찾았다면, <strong>구매 제안서(Purchase Agreement)</strong>를 작성해 판매자에게 제출합니다.</p>
+
+            <h3>오퍼에 포함될 항목</h3>
+            <ul>
+                <li><strong>제시 가격:</strong> 구매하고 싶은 금액</li>
+                <li><strong>계약금(Earnest Money):</strong> 보통 구매가의 1~3%</li>
+                <li><strong>다운페이:</strong> 모기지로 받을 금액의 나머지</li>
+                <li><strong>폐기 기한:</strong> 30~45일 (California 표준)</li>
+                <li><strong>검사 조건(Inspection Contingency):</strong> 문제 발견 시 협상 또는 취소 권리</li>
+                <li><strong>감정 조건(Appraisal Contingency):</strong> 감정가가 낮으면 취소 권리</li>
+                <li><strong>자금 조건(Financing Contingency):</strong> 모기지 승인 못 받으면 취소 권리</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>⚠️ 주의</h4>
+                <p>각 조건을 신중하게 생각하세요. 조건이 많을수록 판매자에게 덜 매력적입니다.</p>
+            </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="guide-section">
+            <h2>Step 6️⃣ 주택 검사 및 감정</h2>
+
+            <h3>주택 검사 (Home Inspection)</h3>
+            <p>구매가가 합의되면 <strong>공인 검사자(Home Inspector)</strong>를 고용하여 주택을 검사합니다. 비용은 $300~$500입니다.</p>
+
+            <p><strong>검사 항목:</strong></p>
+            <ul>
+                <li>지붕 및 외벽 상태</li>
+                <li>기초 및 구조</li>
+                <li>배관 및 전기</li>
+                <li>냉난방 시스템</li>
+                <li>곰팡이 및 흰개미 피해</li>
+                <li>성납 함유 여부 (Pre-1978 주택)</li>
+            </ul>
+
+            <h3>주택 감정 (Home Appraisal)</h3>
+            <p>대출 기관이 공인 감정사를 고용하여 집의 공정한 시장 가치를 판단합니다. 비용은 $400~$800입니다.</p>
+
+            <h4>감정가가 제시 가격보다 낮으면?</h4>
+            <div class="error-box">
+                <p><strong>Appraisal Gap 대처법:</strong></p>
+                <ul>
+                    <li>현금으로 차액 메우기</li>
+                    <li>판매자와 재협상</li>
+                    <li>검사 조건으로 계약 취소</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="guide-section">
+            <h2>Step 7️⃣ 최종 모기지 승인</h2>
+
+            <p>주택 검사와 감정이 완료되면, 대출 기관은 <strong>언더라이팅(Underwriting)</strong> 단계로 들어갑니다. 이는 5~14일 소요됩니다.</p>
+
+            <h3>언더라이터가 확인하는 것</h3>
+            <ul>
+                <li>신용 위험도 (신용 점수, 연체 기록)</li>
+                <li>소득 검증 (급여명세서, 세금 신고서)</li>
+                <li>부채 대비 소득 비율 (DTI ≤ 43%)</li>
+                <li>자산 및 저축금</li>
+                <li>대출가치비율 (LTV ≤ 80%)</li>
+            </ul>
+
+            <p>모든 것이 양호하면 <strong>"Clear to Close"</strong> 상태가 되어 폐기를 진행할 수 있습니다.</p>
+
+            <h3>조건부 승인</h3>
+            <p>종종 대출 기관은 추가 서류를 요청합니다:</p>
+            <ul>
+                <li>폐기일에 더 가까운 급여명세서</li>
+                <li>은행 계좌의 큰 입금/출금 설명</li>
+                <li>선물금 증명서 (부모 지원 시)</li>
+                <li>타이틀 이슈 정보</li>
+            </ul>
+        </div>
+
+        <!-- Step 8 -->
+        <div class="guide-section">
+            <h2>Step 8️⃣ 폐기 준비</h2>
+
+            <h3>제목 보험 (Title Insurance)</h3>
+            <p>제목 회사는 이전 소유자가 채무를 남기지 않았는지, 소유권 분쟁이 없는지 확인합니다. 비용은 구매가의 0.5%~1%입니다.</p>
+
+            <h3>폐기 준비 체크리스트</h3>
+            <div class="success-box">
+                <ul>
+                    <li>폐기 공개 문서(Closing Disclosure) 검토 (폐기 3일 전)</li>
+                    <li>최종 점검(Final Walk-Through) - 계약 조건 이행 확인</li>
+                    <li>다운페이 및 폐기 비용 준비 (송금 또는 현금)</li>
+                    <li>신분증, 여권 준비</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Step 9 -->
+        <div class="guide-section">
+            <h2>Step 9️⃣ 폐기 및 열쇠 인수</h2>
+
+            <p>폐기일에 할 일:</p>
+
+            <h3>서명할 문서</h3>
+            <ol>
+                <li><strong>약속어음(Promissory Note)</strong> - 대출금 상환 약속</li>
+                <li><strong>모기지/담보 증서(Deed of Trust)</strong> - 담보권 설정</li>
+                <li><strong>폐기 공개 문서(Closing Disclosure)</strong> - 최종 조건 확인</li>
+                <li><strong>권리증(Deed)</strong> - 소유권 이전</li>
+                <li><strong>각종 공시 문서</strong> - 주/지역 법적 공시</li>
+            </ol>
+
+            <p><strong>폐기 시간:</strong> 보통 1~2시간</p>
+
+            <h3>폐기 후</h3>
+            <ul>
+                <li>모든 서류에 서명하고 자금이 송금되면, 열쇠를 받습니다</li>
+                <li>권리증이 지역 기록청(County Recorder)에 등록되면, 주택은 공식적으로 여러분의 것입니다</li>
+            </ul>
+        </div>
+
+        <!-- 타임라인 -->
+        <div class="guide-section">
+            <h2>⏰ 부동산 구매 타임라인</h2>
+
+            <table>
+                <tr>
+                    <th>단계</th>
+                    <th>소요 시간</th>
+                    <th>설명</th>
+                </tr>
+                <tr>
+                    <td>1~2주</td>
+                    <td>신용점수 개선, 서류 준비</td>
+                    <td>사전 승인 전 준비</td>
+                </tr>
+                <tr>
+                    <td>1~3일</td>
+                    <td>사전 승인 신청 및 승인</td>
+                    <td>대출 기관에 서류 제출</td>
+                </tr>
+                <tr>
+                    <td>2~8주</td>
+                    <td>집 찾기</td>
+                    <td>Zillow, Redfin, 오픈 하우스</td>
+                </tr>
+                <tr>
+                    <td>1~3일</td>
+                    <td>오퍼 제출 및 협상</td>
+                    <td>구매 제안서 작성</td>
+                </tr>
+                <tr>
+                    <td>7~10일</td>
+                    <td>주택 검사 및 감정</td>
+                    <td>공인 검사자 및 감정사</td>
+                </tr>
+                <tr>
+                    <td>5~14일</td>
+                    <td>언더라이팅</td>
+                    <td>대출 기관 최종 검토</td>
+                </tr>
+                <tr>
+                    <td>3~5일</td>
+                    <td>폐기 준비</td>
+                    <td>서류 검토, 최종 점검</td>
+                </tr>
+                <tr>
+                    <td>1일</td>
+                    <td>폐기 및 열쇠 인수</td>
+                    <td>최종 서명 및 송금</td>
+                </tr>
+                <tr style="background: #1a365d; color: white; font-weight: bold;">
+                    <td colspan="3">총 소요 시간: 3~6개월 (평균 4개월)</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 체크리스트 -->
+        <div class="guide-section">
+            <h2>✅ 부동산 구매 완벽 체크리스트</h2>
+
+            <h3>준비 단계</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="check1">
+                    <label for="check1">신용 리포트 확인 및 오류 정정</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check2">
+                    <label for="check2">신용점수 개선 (목표 680+)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check3">
+                    <label for="check3">저축 계획 수립</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check4">
+                    <label for="check4">모기지 사전 승인 신청</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check5">
+                    <label for="check5">부동산 에이전트 인터뷰 및 선택</label>
+                </div>
+            </div>
+
+            <h3>집 찾기 단계</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="check6">
+                    <label for="check6">온라인 검색 (Zillow, Redfin)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check7">
+                    <label for="check7">오픈 하우스 참석</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check8">
+                    <label for="check8">지역 조사 (학교, 범죄율, 통근 시간)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check9">
+                    <label for="check9">예산 내 주택 좁히기</label>
+                </div>
+            </div>
+
+            <h3>오퍼 및 검사</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="check10">
+                    <label for="check10">구매 제안서 작성</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check11">
+                    <label for="check11">계약금 준비</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check12">
+                    <label for="check12">주택 검사 예약</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check13">
+                    <label for="check13">검사 결과 검토</label>
+                </div>
+            </div>
+
+            <h3>모기지 및 폐기</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="check14">
+                    <label for="check14">추가 서류 제출</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check15">
+                    <label for="check15">언더라이팅 완료 기다리기</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check16">
+                    <label for="check16">폐기 공개 문서 검토</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check17">
+                    <label for="check17">최종 점검(Final Walk-Through)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check18">
+                    <label for="check18">폐기일 참석 및 서명</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check19">
+                    <label for="check19">열쇠 인수</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 실수하기 쉬운 부분 -->
+        <div class="guide-section">
+            <h2>⚠️ 부동산 구매 시 실수하기 쉬운 부분</h2>
+
+            <h3>❌ 실수 1: 모기지 신청 중 새 신용 신청</h3>
+            <p><strong>문제:</strong> 신용점수 50점 하락, DTI 상승 → 모기지 거절 또는 금리 인상</p>
+            <p><strong>해결책:</strong> 폐기 후까지 신용카드, 자동차 론, 대출 신청 금지</p>
+
+            <h3>❌ 실수 2: 큰 금액 입금/출금 설명 미제출</h3>
+            <p><strong>문제:</strong> 대출 기관이 자금 출처 의심 → 승인 지연 또는 거절</p>
+            <p><strong>해결책:</strong> 보너스, 선물금, 상속 등은 서면으로 설명</p>
+
+            <h3>❌ 실수 3: 다운페이를 모두 써 버리기</h3>
+            <p><strong>문제:</strong> 폐기 비용을 낼 수 없음</p>
+            <p><strong>해결책:</strong> 다운페이 + 폐기 비용(2~5%) 모두 준비</p>
+
+            <h3>❌ 실수 4: 폐기 직전 직업 변경</h3>
+            <p><strong>문제:</strong> 소득 검증 불가능 → 승인 취소</p>
+            <p><strong>해결책:</strong> 폐기 후까지 직업 유지</p>
+
+            <h3>❌ 실수 5: 검사 결과 무시</h3>
+            <p><strong>문제:</strong> 큰 수리비 발생 → 후회</p>
+            <p><strong>해결책:</strong> 주택 검사 결과를 신중히 검토하고 큰 결함은 협상</p>
+
+            <h3>❌ 실수 6: 폐기 공개 문서 미검토</h3>
+            <p><strong>문제:</strong> 예상과 다른 금리/비용 발견 (폐기 후 변경 불가)</p>
+            <p><strong>해결책:</strong> 폐기 3일 전에 모든 숫자 확인</p>
+
+            <h3>❌ 실수 7: CMA 없이 비교</h3>
+            <p><strong>문제:</strong> 시장 가격을 모르고 오버페이</p>
+            <p><strong>해결책:</strong> 최소 3개 comp, 3-6개월 최신 데이터로 CMA 작성</p>
+
+            <h3>❌ 실수 8: 감정 조건 제거</h3>
+            <p><strong>문제:</strong> 감정가가 구매가보다 낮으면 계약 이행 강제</p>
+            <p><strong>해결책:</strong> 감정 조건은 필수, 제거하지 않기</p>
+
+            <h3>❌ 실수 9: 최종 검토(Final Walkthrough) 스킵</h3>
+            <p><strong>문제:</strong> 합의된 수리 미완료 발견 (폐기 후 대응 곤란)</p>
+            <p><strong>해결책:</strong> 폐기 24시간 전 반드시 방문 (20-30분)</p>
+
+            <h3>❌ 실수 10: 폐기일 현금 자금 미확인</h3>
+            <p><strong>문제:</strong> Wire transfer 미도착 → 폐기 연기</p>
+            <p><strong>해결책:</strong> 폐기 2-3일 전 에스크로우 확인</p>
+
+            <h3>❌ 실수 11: 부동산 보험 가입 지연</h3>
+            <p><strong>문제:</strong> 폐기 전에 보험 미가입 → 폐기 불가</p>
+            <p><strong>해결책:</strong> 폐기 전 반드시 가입, 증명서 준비</p>
+
+            <h3>❌ 실수 12: 검사 조건 없이 오퍼</h3>
+            <p><strong>문제:</strong> 큰 결함 발견해도 협상 불가</p>
+            <p><strong>해결책:</strong> 항상 검사 조건(Inspection Contingency) 포함</p>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>❓ 자주 묻는 질문 (FAQ)</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q1. 신용점수가 620인데 부동산을 살 수 있나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    가능합니다. FHA, VA, USDA 프로그램은 620 이상 승인하나, 금리가 높을 수 있습니다 (650+ 대비 1-2% 추가). 3-6개월 내 660까지 개선하면 더 나은 조건을 얻을 수 있습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q2. 부동산 매매 과정은 얼마나 오래 걸리나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    LA/OC 시장에서는 평균 3~6개월입니다. 신용 준비(2주), 집 찾기(2-8주), 검사(1-2주), 모기지 승인(2-3주), 폐기(1주)로 구성됩니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q3. 부동산 에이전트 비용은 누가 내나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    일반적으로 판매자가 내고, 판매자의 에이전트와 구매자의 에이전트가 나눕니다 (각 2.5-3%). 구매자는 직접 비용을 내지 않습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q4. 폐기 비용은 얼마나 드나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    일반적으로 2-5% ($8K-20K on $400K home). 항목: Title ($1.5K), 감정 ($500), 기록 ($300), 모기지 보험 ($500), 기타 ($2-5K).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q5. Appraisal Gap이 발생하면 어떻게 되나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    4가지 옵션: (1) 자신이 차액 현금 지불, (2) 판매자와 가격 재협상, (3) 감정 이의 제기, (4) 감정 조건이 있으면 계약 취소.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q6. 부동산 검사는 필수인가요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    필수는 아니지만 강력히 권장합니다. 주택 결함을 파악하고 협상하거나 취소할 기회를 제공합니다. 비용은 $300-500입니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q7. 부동산 구매 중 직장을 바꿨는데 괜찮나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    같은 직종이면 문제없습니다. 다른 직종도 가능하나, 설명이 필요합니다 (경력 연속성 증명). 폐기 직전의 변경은 위험합니다.
+                </div>
+            </div>
+        </div>
+
+        <!-- 참고 자료 -->
+        <div class="guide-section">
+            <h2>📚 참고 자료 & 유용한 링크</h2>
+
+            <h3>정부 기관</h3>
+            <ul>
+                <li><a href="https://www.calhfa.ca.gov/" target="_blank">CalHFA (California Housing Finance Agency)</a></li>
+                <li><a href="https://www.dre.ca.gov/" target="_blank">California Department of Real Estate</a></li>
+                <li><a href="https://assessor.lacounty.gov/" target="_blank">LA County Assessor</a></li>
+            </ul>
+
+            <h3>부동산 데이터 & 정보</h3>
+            <ul>
+                <li><a href="https://www.zillow.com/" target="_blank">Zillow</a></li>
+                <li><a href="https://www.redfin.com/" target="_blank">Redfin</a></li>
+                <li><a href="https://www.realtor.com/" target="_blank">Realtor.com</a></li>
+            </ul>
+
+            <h3>모기지 & 금융</h3>
+            <ul>
+                <li><a href="https://www.amerisave.com/" target="_blank">AmeriSave</a></li>
+                <li><a href="https://www.rocketmortgage.com/" target="_blank">Rocket Mortgage</a></li>
+                <li><a href="https://www.bankrate.com/" target="_blank">Bankrate</a></li>
+            </ul>
+
+            <h3>신용 & 재무</h3>
+            <ul>
+                <li><a href="https://www.annualcreditreport.com/" target="_blank">Annual Credit Report (무료)</a></li>
+                <li><a href="https://www.consumerfinance.gov/" target="_blank">Consumer Financial Protection Bureau</a></li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- ========== 푸터 ========== -->
+    <footer>
+        <p><strong>부동산 구매 과정 완벽 가이드</strong></p>
+        <p>공인중개사 David Lee가 경험으로 정리한 가이드</p>
+        <p style="margin-top: 1rem;">📧 <a href="mailto:info@yoursite.com">ca.realtor.david@gmail.com</a> | 📱 (818) 357-9876</p>
+        <p style="margin-top: 2rem; opacity: 0.8;">
+            본 가이드는 정보 제공 목적이며, 법적 조언은 아닙니다. 상세한 내용은 전문가와 상담하세요.
+        </p>
+        <p style="margin-top: 1rem; opacity: 0.8;">
+            &copy; 2026 LA/OC 부동산. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // FAQ 토글
+        function toggleFAQ(element) {
+            const question = element;
+            const answer = question.nextElementSibling;
+            const toggle = question.querySelector('.faq-toggle');
+            
+            document.querySelectorAll('.faq-answer.active').forEach(el => {
+                if (el !== answer) {
+                    el.classList.remove('active');
+                    el.previousElementSibling.querySelector('.faq-toggle').classList.remove('active');
+                }
+            });
+            
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
