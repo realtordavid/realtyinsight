@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitemap 자동 생성기 - 미국 부동산 인사이트 관리도구</title>
+    <title>Sitemap 자동 생성기 - 미국 부동산 인사이트</title>
     <meta name="robots" content="noindex, nofollow">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,7 +24,6 @@
             font-size: 0.9rem;
             display: inline-block;
             margin-bottom: 1.5rem;
-            transition: opacity 0.2s;
         }
         .back-link:hover { opacity: 0.7; }
 
@@ -39,51 +38,77 @@
         h1 { font-size: 1.6rem; color: #1a365d; margin-bottom: 0.4rem; }
         .subtitle { color: #888; font-size: 0.95rem; margin-bottom: 1.75rem; }
 
-        /* ── 사용 방법 ── */
-        .steps { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.75rem; }
-        .step {
-            display: flex; align-items: flex-start; gap: 0.75rem;
-            background: #f5f8ff; border-radius: 8px;
-            padding: 0.85rem 1rem; font-size: 0.93rem; color: #444; line-height: 1.5;
+        /* ── 저장 상태 표시 ── */
+        .save-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            color: #27ae60;
+            background: #d5f5e3;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-left: 0.75rem;
+            vertical-align: middle;
+            opacity: 0;
+            transition: opacity 0.4s;
         }
-        .step-num {
-            background: #1a365d; color: white;
-            width: 24px; height: 24px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.78rem; font-weight: 700; flex-shrink: 0; margin-top: 1px;
-        }
-        .step code {
-            background: #e8edf5; padding: 1px 6px; border-radius: 4px;
-            font-family: monospace; font-size: 0.88rem; color: #1a365d;
-        }
+        .save-status.show { opacity: 1; }
 
         /* ── 섹션 제목 ── */
         .section-title {
             font-size: 1rem; font-weight: 700; color: #1a365d;
             margin-bottom: 1rem; padding-bottom: 0.5rem;
             border-bottom: 2px solid #ecf0f1;
-            display: flex; align-items: center; gap: 0.5rem;
         }
 
-        /* ── 페이지 목록 ── */
-        .page-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+        /* ── 기본 URL 입력 ── */
+        .base-url-input {
+            width: 100%;
+            padding: 0.6rem 0.85rem;
+            border: 2px solid #dde3ec;
+            border-radius: 7px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            margin-bottom: 1.75rem;
+            transition: border-color 0.2s;
+        }
+        .base-url-input:focus { outline: none; border-color: #1a365d; }
+
+        /* ── 컬럼 헤더 ── */
+        .col-header {
+            display: grid;
+            grid-template-columns: 76px 1fr 130px 76px 36px;
+            gap: 0.5rem;
+            padding: 0 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+        .col-header span {
+            font-size: 0.76rem; font-weight: 700;
+            color: #aaa; text-transform: uppercase; letter-spacing: 0.03em;
+        }
+
+        /* ── 페이지 아이템 ── */
+        .page-list { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.25rem; }
 
         .page-item {
             display: grid;
-            grid-template-columns: 80px 1fr 120px 80px 36px;
+            grid-template-columns: 76px 1fr 130px 76px 36px;
             gap: 0.5rem;
             align-items: center;
-            background: #f9f9f9;
-            border: 1px solid #ecf0f1;
+            background: #f9fafb;
+            border: 1.5px solid #e8ecf2;
             border-radius: 8px;
-            padding: 0.65rem 0.85rem;
-            transition: border-color 0.2s;
+            padding: 0.6rem 0.85rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
-        .page-item:hover { border-color: #b0c4de; }
+        .page-item:hover { border-color: #b0c4de; box-shadow: 0 2px 8px rgba(26,54,93,0.07); }
 
-        .page-item input, .page-item select {
+        .page-item input[type="text"],
+        .page-item input[type="date"],
+        .page-item select {
             width: 100%;
-            padding: 0.4rem 0.6rem;
+            padding: 0.38rem 0.55rem;
             border: 1.5px solid #dde3ec;
             border-radius: 5px;
             font-size: 0.85rem;
@@ -91,66 +116,70 @@
             background: white;
             transition: border-color 0.2s;
         }
-        .page-item input:focus, .page-item select:focus {
-            outline: none; border-color: #1a365d;
-        }
+        .page-item input:focus,
+        .page-item select:focus { outline: none; border-color: #1a365d; }
 
+        .page-item input[readonly] { background: #f5f5f5; color: #aaa; cursor: not-allowed; }
+
+        /* ── 배지 ── */
         .badge {
             display: inline-flex; align-items: center; justify-content: center;
-            padding: 3px 10px; border-radius: 20px;
-            font-size: 0.78rem; font-weight: 600; white-space: nowrap;
+            padding: 3px 8px; border-radius: 20px;
+            font-size: 0.76rem; font-weight: 700; white-space: nowrap;
         }
-        .badge-main  { background: #1a365d22; color: #1a365d; }
-        .badge-blog  { background: #27ae6022; color: #1e8449; }
-        .badge-calc  { background: #e67e2222; color: #ca6f1e; }
-        .badge-guide { background: #8e44ad22; color: #7d3c98; }
+        .badge-main  { background: #e8edf5; color: #1a365d; }
+        .badge-blog  { background: #d5f5e3; color: #1a7a3c; }
+        .badge-calc  { background: #fdebd0; color: #b7600a; }
+        .badge-guide { background: #e8daef; color: #6c3483; }
+        .badge-other { background: #eaeded; color: #555; }
 
+        /* ── 삭제 버튼 ── */
         .btn-del {
+            width: 32px; height: 32px;
             background: #fee; border: 1.5px solid #fcc;
             color: #c0392b; border-radius: 5px;
-            cursor: pointer; font-size: 0.9rem;
-            width: 32px; height: 32px;
+            cursor: pointer; font-size: 0.88rem;
             display: flex; align-items: center; justify-content: center;
             transition: background 0.2s;
+            flex-shrink: 0;
         }
         .btn-del:hover { background: #fcc; }
+        .btn-del:disabled { opacity: 0.25; cursor: not-allowed; }
 
-        .col-header {
-            display: grid;
-            grid-template-columns: 80px 1fr 120px 80px 36px;
-            gap: 0.5rem;
-            padding: 0 0.85rem;
-            margin-bottom: 0.4rem;
-        }
-        .col-header span {
-            font-size: 0.78rem; font-weight: 600; color: #999; text-transform: uppercase;
-        }
+        /* ── 추가 버튼 ── */
+        .add-buttons { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
 
-        /* ── 추가 버튼들 ── */
-        .add-buttons {
-            display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem;
-        }
         .btn-add {
-            padding: 0.5rem 1rem; border: 2px dashed #b0c4de;
+            padding: 0.48rem 1rem;
+            border: 2px dashed #b0c4de;
             background: white; border-radius: 7px;
-            font-size: 0.88rem; font-weight: 600; color: #1a365d;
+            font-size: 0.87rem; font-weight: 600; color: #1a365d;
             cursor: pointer; transition: all 0.2s;
         }
         .btn-add:hover { background: #f0f4ff; border-color: #1a365d; }
 
-        /* ── 생성 버튼 ── */
+        /* ── 하단 버튼 ── */
+        .bottom-buttons { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
+
         .btn-generate {
-            width: 100%; padding: 1rem;
+            flex: 1; padding: 0.9rem;
             background: linear-gradient(135deg, #1a365d, #2d5a8e);
             color: white; border: none; border-radius: 8px;
-            font-size: 1.05rem; font-weight: 700;
-            cursor: pointer; transition: opacity 0.2s, transform 0.1s;
-            margin-top: 1rem;
+            font-size: 1rem; font-weight: 700;
+            cursor: pointer; transition: opacity 0.2s;
         }
-        .btn-generate:hover  { opacity: 0.9; }
-        .btn-generate:active { transform: scale(0.99); }
+        .btn-generate:hover { opacity: 0.88; }
 
-        /* ── 결과 ── */
+        .btn-clear-all {
+            padding: 0.9rem 1.25rem;
+            background: white; border: 2px solid #fcc;
+            color: #c0392b; border-radius: 8px;
+            font-size: 0.9rem; font-weight: 600;
+            cursor: pointer; transition: background 0.2s;
+        }
+        .btn-clear-all:hover { background: #fee; }
+
+        /* ── 결과 카드 ── */
         #output-section { display: none; }
 
         .output-header {
@@ -160,46 +189,63 @@
         }
         .output-header h2 { color: #1a365d; font-size: 1.1rem; }
 
-        .btn-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .btn-row { display: flex; gap: 0.5rem; }
 
-        .btn-copy, .btn-download {
-            padding: 0.5rem 1rem; border: none; border-radius: 6px;
+        .btn-copy {
+            padding: 0.48rem 1rem; border: none; border-radius: 6px;
             font-size: 0.88rem; font-weight: 600;
+            background: #d4af37; color: #1a365d;
             cursor: pointer; transition: opacity 0.2s;
         }
-        .btn-copy     { background: #d4af37; color: #1a365d; }
-        .btn-download { background: #27ae60; color: white; }
+        .btn-download {
+            padding: 0.48rem 1rem; border: none; border-radius: 6px;
+            font-size: 0.88rem; font-weight: 600;
+            background: #27ae60; color: white;
+            cursor: pointer; transition: opacity 0.2s;
+        }
         .btn-copy:hover, .btn-download:hover { opacity: 0.85; }
 
         #xml-output {
-            width: 100%; height: 320px;
+            width: 100%; height: 300px;
             font-family: 'Courier New', monospace;
-            font-size: 0.82rem; line-height: 1.6;
+            font-size: 0.82rem; line-height: 1.65;
             border: 2px solid #ecf0f1; border-radius: 8px;
             padding: 1rem; resize: vertical;
             color: #2d5a8e; background: #f8faff;
         }
 
-        .success-msg {
+        .copy-msg {
             display: none;
             background: #d5f5e3; color: #1e8449;
             border-left: 4px solid #27ae60;
-            padding: 0.75rem 1rem; border-radius: 6px;
+            padding: 0.65rem 1rem; border-radius: 6px;
             margin-top: 0.75rem; font-size: 0.9rem; font-weight: 600;
         }
 
+        /* ── 안내 박스 ── */
         .info-box {
             background: #fff8e1; border-left: 4px solid #d4af37;
-            padding: 1rem 1.25rem; border-radius: 6px;
-            font-size: 0.9rem; color: #555; line-height: 1.7;
+            padding: 1rem 1.25rem; border-radius: 8px;
+            font-size: 0.9rem; color: #555; line-height: 1.8;
         }
         .info-box strong { color: #1a365d; }
+
+        /* ── 빈 목록 안내 ── */
+        .empty-msg {
+            text-align: center; padding: 2rem;
+            color: #bbb; font-size: 0.92rem;
+            border: 2px dashed #e0e0e0;
+            border-radius: 8px; margin-bottom: 1.25rem;
+        }
 
         @media (max-width: 640px) {
             body { padding: 1rem; }
             h1 { font-size: 1.3rem; }
-            .page-item  { grid-template-columns: 1fr 1fr; }
+            .page-item  { grid-template-columns: 70px 1fr 36px; }
+            .page-item input[type="date"],
+            .page-item select { display: none; }
             .col-header { display: none; }
+            .bottom-buttons { flex-direction: column; }
         }
     </style>
 </head>
@@ -208,36 +254,21 @@
 
     <a class="back-link" href="index.html">← 메인으로 돌아가기</a>
 
-    <!-- ── 헤더 카드 ── -->
+    <!-- ── 메인 카드 ── -->
     <div class="card">
-        <h1>🗺️ Sitemap 자동 생성기</h1>
-        <p class="subtitle">새 페이지를 추가하고 버튼 한 번으로 sitemap.xml을 생성하세요. 로컬에서도 바로 작동합니다.</p>
+        <h1>🗺️ Sitemap 자동 생성기
+            <span class="save-status" id="save-status">💾 저장됨</span>
+        </h1>
+        <p class="subtitle">목록은 이 브라우저에 자동 저장됩니다. 다음에 열어도 그대로 유지돼요.</p>
 
-        <div class="steps">
-            <div class="step">
-                <span class="step-num">1</span>
-                <span>아래 목록에서 <strong>"+ 블로그 추가"</strong> 버튼을 눌러 새 항목을 입력하세요.</span>
-            </div>
-            <div class="step">
-                <span class="step-num">2</span>
-                <span><strong>"Sitemap 생성"</strong> 버튼을 클릭하면 XML이 자동으로 만들어집니다.</span>
-            </div>
-            <div class="step">
-                <span class="step-num">3</span>
-                <span><strong>"sitemap.xml 다운로드"</strong>로 파일을 받아 저장소 루트(<code>/</code>)에 덮어쓰고 GitHub에 Push하세요.</span>
-            </div>
-        </div>
+        <!-- 기본 URL -->
+        <div class="section-title">⚙️ 사이트 베이스 URL</div>
+        <input type="text" class="base-url-input" id="base-url"
+               value="https://realtordavid.github.io/realtyinsight"
+               placeholder="https://yourdomain.com"
+               oninput="saveToStorage()">
 
-        <!-- ── 사이트 기본 URL ── -->
-        <div class="section-title">⚙️ 기본 설정</div>
-        <div style="margin-bottom:1.5rem;">
-            <label style="font-size:0.88rem; font-weight:600; color:#1a365d; display:block; margin-bottom:0.4rem;">사이트 베이스 URL</label>
-            <input type="text" id="base-url"
-                   value="https://realtordavid.github.io/realtyinsight"
-                   style="width:100%; padding:0.6rem 0.85rem; border:2px solid #dde3ec; border-radius:7px; font-size:0.95rem; font-family:inherit;">
-        </div>
-
-        <!-- ── 페이지 목록 ── -->
+        <!-- 페이지 목록 -->
         <div class="section-title">📋 페이지 목록</div>
 
         <div class="col-header">
@@ -248,9 +279,13 @@
             <span></span>
         </div>
 
-        <div class="page-list" id="page-list"></div>
+        <div class="page-list" id="page-list">
+            <div class="empty-msg" id="empty-msg" style="display:none;">
+                아직 페이지가 없습니다. 아래 버튼으로 추가하세요!
+            </div>
+        </div>
 
-        <!-- ── 추가 버튼 ── -->
+        <!-- 추가 버튼 -->
         <div class="add-buttons">
             <button class="btn-add" onclick="addPage('blog')">＋ 블로그 추가</button>
             <button class="btn-add" onclick="addPage('guide')">＋ 가이드 추가</button>
@@ -258,7 +293,10 @@
             <button class="btn-add" onclick="addPage('other')">＋ 기타 추가</button>
         </div>
 
-        <button class="btn-generate" onclick="generateSitemap()">🚀 Sitemap 생성하기</button>
+        <div class="bottom-buttons">
+            <button class="btn-generate" onclick="generateSitemap()">🚀 Sitemap 생성하기</button>
+            <button class="btn-clear-all" onclick="clearAll()" title="전체 초기화">🗑️ 전체 초기화</button>
+        </div>
     </div>
 
     <!-- ── 결과 카드 ── -->
@@ -267,137 +305,212 @@
             <h2>✅ 생성된 sitemap.xml</h2>
             <div class="btn-row">
                 <button class="btn-copy"     onclick="copyXml()">📋 복사</button>
-                <button class="btn-download" onclick="downloadXml()">⬇️ sitemap.xml 다운로드</button>
+                <button class="btn-download" onclick="downloadXml()">⬇️ 다운로드</button>
             </div>
         </div>
         <textarea id="xml-output" readonly></textarea>
-        <div class="success-msg" id="copy-msg">✅ 클립보드에 복사되었습니다!</div>
+        <div class="copy-msg" id="copy-msg">✅ 클립보드에 복사되었습니다!</div>
     </div>
 
+    <!-- ── 안내 박스 ── -->
     <div class="info-box">
-        💡 <strong>목록은 이 파일 안의 <code>INITIAL_PAGES</code> 배열에 저장됩니다.</strong><br>
-        새 항목을 추가한 뒤 sitemap을 생성하고 싶다면, 항목을 입력하고 "Sitemap 생성" 버튼만 누르면 됩니다.<br>
-        다음번에 또 열어도 목록이 유지되도록 하려면 <strong>아래 항목을 <code>INITIAL_PAGES</code>에 직접 추가</strong>해두세요.
+        💾 <strong>자동 저장 방식</strong><br>
+        입력한 목록은 이 컴퓨터의 브라우저(localStorage)에 저장됩니다.<br>
+        파일을 다시 열어도 목록이 그대로 남아있어요.<br><br>
+        ⚠️ <strong>주의:</strong> 브라우저 캐시를 지우거나 다른 컴퓨터에서 열면 목록이 초기화됩니다.<br>
+        중요한 목록은 <strong>Sitemap 생성 → 다운로드</strong>로 백업해두세요.
     </div>
 
 </div>
 
 <script>
-/* ==============================================
-   ✅ 새 페이지를 영구 등록하려면 여기에 추가하세요!
-   (이 파일 자체를 저장하면 다음에 열어도 유지됨)
-   ============================================== */
-const INITIAL_PAGES = [
+/* ══════════════════════════════════════════
+   설정
+══════════════════════════════════════════ */
+const STORAGE_KEY = 'sitemap_pages_v1';
+const BASE_URL_KEY = 'sitemap_base_url';
 
-    /* ── 메인 ── */
-    { type: 'main',       url: '/',                                             lastmod: '2026-04-23', priority: '1.0' },
-
-    /* ── 블로그 ── 새 글 추가 시 여기에 복사해서 붙여넣으세요 ↓ */
-    { type: 'blog',       url: '/blog/la-home-buying-5-mistakes/',              lastmod: '2026-02-27', priority: '0.8' },
-
-    /* ── 계산기 ── */
-    { type: 'calculator', url: '/calculator/mortgage-calculator.html',          lastmod: '2026-04-23', priority: '0.7' },
-    { type: 'calculator', url: '/calculator/property-tax-calculator.html',      lastmod: '2026-04-23', priority: '0.7' },
-    { type: 'calculator', url: '/calculator/total-cost-calculator.html',        lastmod: '2026-04-23', priority: '0.7' },
-
-    /* ── 가이드 ── 추후 추가 예정 */
-    // { type: 'guide', url: '/guides/first-buyer-guide/', lastmod: '2026-05-01', priority: '0.8' },
-
-];
-
-/* ── 종류별 설정 ── */
 const TYPE_CONFIG = {
-    main:       { label: '메인',   cls: 'badge-main',  defaultUrl: '/',                      defaultPriority: '1.0' },
-    blog:       { label: '블로그', cls: 'badge-blog',  defaultUrl: '/blog/새글-슬러그/',      defaultPriority: '0.8' },
-    guide:      { label: '가이드', cls: 'badge-guide', defaultUrl: '/guides/새가이드/',       defaultPriority: '0.8' },
-    calculator: { label: '계산기', cls: 'badge-calc',  defaultUrl: '/calculator/새계산기.html', defaultPriority: '0.7' },
-    other:      { label: '기타',   cls: 'badge-main',  defaultUrl: '/새페이지/',              defaultPriority: '0.6' },
+    main:       { label: '메인',   cls: 'badge-main',  defaultUrl: '/',                         defaultPriority: '1.0', changefreq: 'weekly'  },
+    blog:       { label: '블로그', cls: 'badge-blog',  defaultUrl: '/blog/새글-슬러그/',         defaultPriority: '0.8', changefreq: 'monthly' },
+    guide:      { label: '가이드', cls: 'badge-guide', defaultUrl: '/guides/새가이드/',          defaultPriority: '0.8', changefreq: 'monthly' },
+    calculator: { label: '계산기', cls: 'badge-calc',  defaultUrl: '/calculator/새계산기.html',  defaultPriority: '0.7', changefreq: 'monthly' },
+    other:      { label: '기타',   cls: 'badge-other', defaultUrl: '/새페이지/',                 defaultPriority: '0.6', changefreq: 'monthly' },
 };
 
-let pages = INITIAL_PAGES.map((p, i) => ({ ...p, id: i }));
-let nextId = pages.length;
+/* ── 기본 데이터 (처음 열 때만 사용) ── */
+const DEFAULT_PAGES = [
+    { id: 1, type: 'main',       url: '/',                                          lastmod: '2026-04-23', priority: '1.0' },
+    { id: 2, type: 'blog',       url: '/blog/la-home-buying-5-mistakes/',            lastmod: '2026-02-27', priority: '0.8' },
+    { id: 3, type: 'calculator', url: '/calculator/mortgage-calculator.html',        lastmod: '2026-04-23', priority: '0.7' },
+    { id: 4, type: 'calculator', url: '/calculator/property-tax-calculator.html',    lastmod: '2026-04-23', priority: '0.7' },
+    { id: 5, type: 'calculator', url: '/calculator/total-cost-calculator.html',      lastmod: '2026-04-23', priority: '0.7' },
+];
 
-/* ── 렌더 ── */
+let pages  = [];
+let nextId = 100;
+
+/* ══════════════════════════════════════════
+   localStorage 저장 / 불러오기
+══════════════════════════════════════════ */
+function saveToStorage() {
+    localStorage.setItem(STORAGE_KEY,  JSON.stringify(pages));
+    localStorage.setItem(BASE_URL_KEY, document.getElementById('base-url').value);
+    showSaveStatus();
+}
+
+function loadFromStorage() {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+        pages  = JSON.parse(raw);
+        nextId = Math.max(...pages.map(p => p.id), 0) + 1;
+    } else {
+        // 처음 열 때 기본값 세팅
+        pages  = DEFAULT_PAGES.map(p => ({ ...p }));
+        nextId = 100;
+        saveToStorage();
+    }
+
+    const savedUrl = localStorage.getItem(BASE_URL_KEY);
+    if (savedUrl) document.getElementById('base-url').value = savedUrl;
+}
+
+function showSaveStatus() {
+    const el = document.getElementById('save-status');
+    el.classList.add('show');
+    clearTimeout(el._timer);
+    el._timer = setTimeout(() => el.classList.remove('show'), 1800);
+}
+
+/* ══════════════════════════════════════════
+   렌더링
+══════════════════════════════════════════ */
 function render() {
+    const list = document.getElementById('page-list');
+    const empty = document.getElementById('empty-msg');
+
+    if (pages.length === 0) {
+        list.innerHTML = '';
+        list.appendChild(empty);
+        empty.style.display = 'block';
+        return;
+    }
+
+    empty.style.display = 'none';
     const today = new Date().toISOString().slice(0, 10);
-    const list  = document.getElementById('page-list');
 
     list.innerHTML = pages.map(p => {
-        const cfg     = TYPE_CONFIG[p.type] || TYPE_CONFIG.other;
-        const isMain  = p.type === 'main';
+        const cfg    = TYPE_CONFIG[p.type] || TYPE_CONFIG.other;
+        const isMain = p.type === 'main';
 
         return `
         <div class="page-item" id="item-${p.id}">
-            <!-- 종류 배지 -->
             <span class="badge ${cfg.cls}">${cfg.label}</span>
 
-            <!-- URL -->
             <input type="text"
-                   value="${p.url}"
+                   value="${escHtml(p.url)}"
                    placeholder="/blog/슬러그/"
-                   ${isMain ? 'readonly style="background:#f5f5f5;color:#999;"' : ''}
-                   onchange="updatePage(${p.id}, 'url', this.value)">
+                   ${isMain ? 'readonly' : ''}
+                   onchange="updateField(${p.id},'url',this.value)">
 
-            <!-- 최종 수정일 -->
             <input type="date"
                    value="${p.lastmod}"
                    max="${today}"
-                   onchange="updatePage(${p.id}, 'lastmod', this.value)">
+                   onchange="updateField(${p.id},'lastmod',this.value)">
 
-            <!-- 중요도 -->
-            <select onchange="updatePage(${p.id}, 'priority', this.value)">
+            <select onchange="updateField(${p.id},'priority',this.value)">
                 ${['1.0','0.9','0.8','0.7','0.6','0.5'].map(v =>
-                    `<option value="${v}" ${p.priority === v ? 'selected' : ''}>${v}</option>`
+                    `<option value="${v}"${p.priority===v?' selected':''}>${v}</option>`
                 ).join('')}
             </select>
 
-            <!-- 삭제 -->
             <button class="btn-del"
                     onclick="deletePage(${p.id})"
-                    title="삭제"
-                    ${isMain ? 'disabled style="opacity:0.3;cursor:not-allowed;"' : ''}>✕</button>
+                    ${isMain ? 'disabled' : ''}
+                    title="삭제">✕</button>
         </div>`;
     }).join('');
 }
 
-function updatePage(id, field, value) {
+function escHtml(str) {
+    return String(str)
+        .replace(/&/g,'&amp;')
+        .replace(/"/g,'&quot;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;');
+}
+
+/* ══════════════════════════════════════════
+   CRUD
+══════════════════════════════════════════ */
+function updateField(id, field, value) {
     const p = pages.find(p => p.id === id);
-    if (p) p[field] = value;
+    if (p) { p[field] = value; saveToStorage(); }
 }
 
 function deletePage(id) {
     if (!confirm('이 항목을 삭제할까요?')) return;
     pages = pages.filter(p => p.id !== id);
+    saveToStorage();
     render();
 }
 
 function addPage(type) {
     const cfg   = TYPE_CONFIG[type] || TYPE_CONFIG.other;
     const today = new Date().toISOString().slice(0, 10);
-    pages.push({ id: nextId++, type, url: cfg.defaultUrl, lastmod: today, priority: cfg.defaultPriority });
+
+    pages.push({
+        id:       nextId++,
+        type,
+        url:      cfg.defaultUrl,
+        lastmod:  today,
+        priority: cfg.defaultPriority,
+    });
+
+    saveToStorage();
     render();
-    // 새 항목으로 스크롤
+
+    // 새 항목으로 스크롤 + URL 입력창 포커스
     setTimeout(() => {
-        const last = document.querySelector('.page-item:last-child');
-        if (last) last.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        // URL 입력창에 포커스
-        const input = last?.querySelector('input[type="text"]');
-        if (input) { input.select(); }
-    }, 50);
+        const last  = document.querySelector('.page-item:last-child');
+        if (!last) return;
+        last.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const input = last.querySelector('input[type="text"]:not([readonly])');
+        if (input) { input.focus(); input.select(); }
+    }, 60);
 }
 
-/* ── Sitemap 생성 ── */
+function clearAll() {
+    if (!confirm('전체 목록을 초기화할까요?\n메인 페이지 항목도 삭제됩니다.')) return;
+    pages = [];
+    nextId = 100;
+    saveToStorage();
+    render();
+}
+
+/* ══════════════════════════════════════════
+   Sitemap 생성
+══════════════════════════════════════════ */
 function generateSitemap() {
+    if (pages.length === 0) {
+        alert('페이지 목록이 비어있습니다. 항목을 추가해주세요.');
+        return;
+    }
+
     const base  = document.getElementById('base-url').value.replace(/\/$/, '');
     const today = new Date().toISOString().slice(0, 10);
+    const cfg   = TYPE_CONFIG;
 
-    const urls = pages.map(p => `
+    const urls = pages.map(p => {
+        const freq = (cfg[p.type] || cfg.other).changefreq;
+        return `
     <url>
         <loc>${base}${p.url}</loc>
         <lastmod>${p.lastmod}</lastmod>
-        <changefreq>${p.type === 'main' ? 'weekly' : 'monthly'}</changefreq>
+        <changefreq>${freq}</changefreq>
         <priority>${p.priority}</priority>
-    </url>`).join('');
+    </url>`;
+    }).join('');
 
     const xml =
 `<?xml version="1.0" encoding="UTF-8"?>
@@ -412,7 +525,9 @@ function generateSitemap() {
     sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-/* ── 복사 ── */
+/* ══════════════════════════════════════════
+   복사 / 다운로드
+══════════════════════════════════════════ */
 function copyXml() {
     const el = document.getElementById('xml-output');
     el.select();
@@ -423,17 +538,19 @@ function copyXml() {
     });
 }
 
-/* ── 다운로드 ── */
 function downloadXml() {
     const xml = document.getElementById('xml-output').value;
     if (!xml) { alert('먼저 "Sitemap 생성" 버튼을 눌러주세요.'); return; }
-    const a = document.createElement('a');
-    a.href = 'data:application/xml;charset=utf-8,' + encodeURIComponent(xml);
+    const a   = document.createElement('a');
+    a.href    = 'data:application/xml;charset=utf-8,' + encodeURIComponent(xml);
     a.download = 'sitemap.xml';
     a.click();
 }
 
-/* 초기 렌더 */
+/* ══════════════════════════════════════════
+   초기 실행
+══════════════════════════════════════════ */
+loadFromStorage();
 render();
 </script>
 </body>
