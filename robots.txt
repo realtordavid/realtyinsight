@@ -6,4 +6,5 @@ Disallow: /blog-admin.html
 Disallow: /sitemap-generator.html
 
 # Sitemap 위치
-Sitemap: https://realtordavid.github.io/realtyinsight/sitemap.xml
+Sitemap: https://real-estate-insight.com/sitemap.xml
+
