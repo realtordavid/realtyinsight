@@ -1,0 +1,335 @@
+/* ============================================
+   블로그 글 페이지 공통 스타일시트
+   (모든 블로그 포스트에서 공유)
+   ============================================ */
+
+/* ========== 기본 리셋 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* ========== 헤더 & 네비게이션 ========== */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a365d;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* ========== 블로그 컨테이너 ========== */
+.blog-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.back-link {
+    color: #1a365d;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    opacity: 0.7;
+}
+
+/* ========== 블로그 배너 ========== */
+.blog-banner {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-banner h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    max-width: 600px;
+    padding: 0 1rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ========== 블로그 메타 정보 ========== */
+.blog-meta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #ecf0f1;
+    margin-bottom: 2rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.category-badge {
+    background-color: #1a365d;
+    color: #d4af37;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ========== 블로그 본문 ========== */
+.blog-content {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.blog-content h2 {
+    font-size: 1.8rem;
+    color: #1a365d;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #d4af37;
+}
+
+.blog-content h2:first-child {
+    margin-top: 0;
+}
+
+.blog-content h3 {
+    font-size: 1.3rem;
+    color: #1a365d;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.blog-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.blog-content ul,
+.blog-content ol {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-content li {
+    margin-bottom: 0.75rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.blog-content a {
+    color: #1a365d;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #d4af37;
+    transition: opacity 0.3s;
+}
+
+.blog-content a:hover {
+    opacity: 0.75;
+}
+
+/* ========== 강조 박스 ========== */
+.highlight-box {
+    background-color: #fff3cd;
+    border-left: 4px solid #d4af37;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin: 2rem 0;
+}
+
+.highlight-box h4 {
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.highlight-box p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+/* ========== 팁 박스 ========== */
+.tip-box {
+    background-color: #e8f4f8;
+    border-left: 4px solid #3498db;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin: 2rem 0;
+}
+
+.tip-box h4 {
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.tip-box p {
+    margin-bottom: 0;
+    color: #555;
+}
+
+/* ========== 코드 블록 (계산 예시 등) ========== */
+.code-block {
+    background-color: #f4f6f8;
+    padding: 1.25rem 1.5rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-left: 4px solid #1a365d;
+}
+
+.code-block code {
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 0.9rem;
+    color: #2c3e50;
+    line-height: 1.9;
+    white-space: pre-wrap;
+}
+
+/* ========== 푸터 ========== */
+footer {
+    background-color: #1a365d;
+    color: #ecf0f1;
+    padding: 2.5rem 2rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+/* ========== 반응형 ========== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .blog-container {
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .blog-banner {
+        height: 250px;
+    }
+
+    .blog-banner h1 {
+        font-size: 1.6rem;
+    }
+
+    .blog-meta {
+        gap: 0.75rem;
+    }
+
+    .blog-content {
+        padding: 1.5rem;
+    }
+
+    .blog-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-banner {
+        height: 200px;
+    }
+
+    .blog-banner h1 {
+        font-size: 1.3rem;
+    }
+
+    .blog-content {
+        padding: 1.25rem;
+    }
+}
