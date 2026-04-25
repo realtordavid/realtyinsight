@@ -25,46 +25,40 @@
             background-color: #f9f9f9;
         }
         
-        /* ========== 헤더 ========== */
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #1a365d;
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: #d4af37;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            margin-left: 2rem;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: #d4af37;
-        }
+            /* ========== 헤더 ========== */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a365d;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.logo:hover {
+    color: #d4af37;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
         
         /* ========== 메인 컨테이너 ========== */
         .container {
@@ -461,19 +455,11 @@
 <body>
     <!-- ========== 헤더 ========== -->
     <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">🏠 LA/OC <span>부동산</span></a>
-            <nav>
-              <a href="https://real-estate-insight.com/">홈</a>
-<a href="https://real-estate-insight.com/#guides">가이드</a>
- <a href="https://real-estate-insight.com/#blog">블로그</a>
- <a href="https://real-estate-insight.com/#calculators">계산기</a>
- <a href="https://real-estate-insight.com/#contact">문의</a>
+    <div class="header-container">
+        <a href="/" class="logo">| 미국 부동산 인사이트 | <span>Real Estate Insight</span></a>
+    </div>
+</header>
 
-
-            </nav>
-        </div>
-    </header>
 
     <!-- ========== 메인 컨텐츠 ========== -->
     <main class="container">
