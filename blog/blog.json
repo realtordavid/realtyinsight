@@ -32,18 +32,17 @@
       "date": "2026.04.24",
       "image": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1200&q=80",
       "url": "/blog/proposition-13-guide/"
-    }
+    },
     {
       "id": "california-first-time-homebuyer-programs-2026",
       "title": "캘리포니아 첫 집 구매자 지원 프로그램 2026",
-      "description": "CalHFA 첫 집 구매자 지원 프로그램 2026: Dream For All, MyHome, ZIP 등 주택 자금 지원. 대출 한도, 신청 방법, 소득 제한을 완벽히 설명",
+      "description": "CalHFA 첫 집 구매자 지원 프로그램 2026: Dream For All, MyHome, ZIP 등 주택 자금 지원",
       "category": "법/제도형",
-      "emoji": "⚖️",
+      "emoji": "🏠",
       "author": "David Lee",
       "date": "2026.04.28",
       "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
-      "url": "/california-first-time-homebuyer-programs-2026/"
+      "url": "/blog/california-first-time-homebuyer-programs-2026/"
     }
-
   ]
 }
