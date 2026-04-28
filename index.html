@@ -211,39 +211,13 @@
                 </div>
             </section>
 
-            <!-- ========== 가이드 섹션 ========== -->
-            <section class="featured-section" id="guides">
-                <h2>GUIDES</h2>
-                <div class="blog-grid">
-
-                    <a href="/guides/home-buying/" class="blog-card">
-                        <div class="blog-image" style="background:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80') center/cover;height:200px"></div>
-        <div class="blog-content">
-                            <h3>LA 부동산 구매 완벽 가이드</h3>
-                            <p>구매 전 체크리스트부터 모기지 신청, 흔한 실수 20가지까지 모든 내용</p>
-                            <button class="cta-button" style="width:100%; text-align:center; margin-top:auto;">체크 리스트 보기</button>
-                        </div>
-                    </a>
-<a href="/guides/mortgage-approval/" class="blog-card">
-    <div class="blog-image" style="background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80') center/cover;height:200px"></div>
-    <div class="blog-content">
-        <h3>모기지 승인 과정 완벽 가이드</h3>
-        <p>8단계 모기지 프로세스, DTI 계산, 승인 속도 높이기, 42일 완전 가이드</p>
-                            <button class="cta-button" style="width:100%; text-align:center; margin-top:auto;">가이드 보기</button>
-                        </div>
-                    </a>
-
-                    <a href="/guides/tax-law/" class="blog-card">
-                        <div class="blog-image" style="background:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80') center/cover;height:200px"></div>
-                        <div class="blog-content">
-                            <h3>LA 부동산 세금 & 법규 완벽 가이드</h3>
-                            <p>재산세, 양도세, 자본이득세, 필수 공시, HOA 규정 정리</p>
-                            <button class="cta-button" style="width:100%; text-align:center; margin-top:auto;">가이드 보기</button>
-                        </div>
-                    </a>
-
-                </div>
-            </section>
+<!-- ========== 가이드 섹션 ========== -->
+<section class="featured-section" id="guides">
+    <h2>GUIDES</h2>
+    <div class="blog-grid" id="guides-container">
+        <!-- JSON에서 동적으로 생성됨 -->
+    </div>
+</section>
 
             <!-- ========== 도구 / 계산기 섹션 ========== -->
             <section class="featured-section" id="tools">
@@ -322,5 +296,59 @@
 
 
     <script src="js/main.js"></script>
+
+<!-- ========== 가이드 동적 로드 ========== -->
+<script>
+async function loadGuides() {
+    try {
+        console.log('가이드 로드 시작...');
+        
+        // ✅ 경로를 /guides/guides.json으로 변경
+        const response = await fetch('/guides/guides.json');
+        console.log('응답 상태:', response.status);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('로드된 데이터:', data);
+        
+        const container = document.getElementById('guides-container');
+        console.log('컨테이너:', container);
+
+        if (!container) {
+            console.error('guides-container를 찾을 수 없습니다!');
+            return;
+        }
+
+        const imageMap = {
+            'home-buying': 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
+            'mortgage-approval': 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80',
+            'tax-law': 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1200&q=80'
+        };
+
+        const guideHTML = data.guides.map(guide => `
+            <a href="${guide.url}" class="blog-card">
+                <div class="blog-image" style="background:url('${imageMap[guide.id] || 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80'}') center/cover;height:200px"></div>
+                <div class="blog-content">
+                    <h3>${guide.emoji} ${guide.title}</h3>
+                    <p>${guide.description}</p>
+                    <button class="cta-button" style="width:100%; text-align:center; margin-top:auto;">가이드 보기</button>
+                </div>
+            </a>
+        `).join('');
+
+        console.log('생성된 HTML:', guideHTML);
+        container.innerHTML = guideHTML;
+        console.log('가이드 로드 완료!');
+    } catch (error) {
+        console.error('가이드 로드 실패:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadGuides);
+</script>
+
 </body>
 </html>
