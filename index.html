@@ -289,16 +289,17 @@ async function loadGuides() {
             'tax-law': 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1200&q=80'
         };
 
-        const guideHTML = data.guides.map(guide => `
-            <a href="${guide.url}" class="blog-card">
-                <div class="blog-image" style="background:url('${imageMap[guide.id] || 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80'}') center/cover;height:200px"></div>
-                <div class="blog-content">
-                    <h3>${guide.emoji} ${guide.title}</h3>
-                    <p>${guide.description}</p>
-                    <button class="cta-button" style="width:100%; text-align:center; margin-top:auto;">가이드 보기</button>
-                </div>
-            </a>
-        `).join('');
+const guideHTML = data.guides.map(guide => `
+    <a href="${guide.url}" class="blog-card">
+        <div class="blog-image" style="background:url('${guide.image || imageMap[guide.id] || 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80'}') center/cover;height:200px"></div>
+        <div class="blog-content">
+            <h3>${guide.emoji} ${guide.title}</h3>
+            <p>${guide.description}</p>
+            <button class="cta-button" style="width:100%; text-align:center; margin-top:auto;">가이드 보기</button>
+        </div>
+    </a>
+`).join('');
+
 
         console.log('생성된 HTML:', guideHTML);
         container.innerHTML = guideHTML;
