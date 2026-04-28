@@ -23,18 +23,14 @@
       "category": "구매",
       "emoji": "🏠",
       "url": "/guides/home-buying/"
+    },
+    {
+      "id": "home-inspection-complete-guide",
+      "title": "캘리포니아 홈 인스펙션 완벽 가이드",
+      "description": "홈 인스펙션 검사 항목, 비용, 절차, 빨간 신호를 완벽하게 설명합니다. 첫 집 구매자를 위한 필수 가이드입니다.",
+      "category": "가이드",
+      "emoji": "🔍",
+      "url": "/guides/home-inspection/"
     }
-{
-  "id": "home-inspection-complete-guide",
-  "title": "캘리포니아 홈 인스펙션 완벽 가이드",
-  "description": "홈 인스펙션 검사 항목, 비용, 절차, 빨간 신호를 완벽하게 설명합니다. 첫 집 구매자를 위한 필수 가이드입니다.",
-  "category": "가이드",
-  "emoji": "🔍",
-  "author": "David Lee",
-  "date": "2026.04.28",
-  "image":"https://real-estate-insight.com/guides/1.jpg",
-  "url": "/guides/home-inspection/"
-}
-
   ]
 }
