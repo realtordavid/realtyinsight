@@ -69,6 +69,13 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+<url>
+    <loc>https://real-estate-insight.com/guides/home-inspection/</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+</url>
+
 
     <!-- 계산기 -->
     <url>
