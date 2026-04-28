@@ -30,7 +30,18 @@
       "description": "홈 인스펙션 검사 항목, 비용, 절차, 빨간 신호를 완벽하게 설명합니다. 첫 집 구매자를 위한 필수 가이드입니다.",
       "category": "가이드",
       "emoji": "🔍",
+      "image": "image":"https://real-estate-insight.com/guides/1.jpg",
       "url": "/guides/home-inspection/"
-    }
+    },
+{
+  "id": "appraisal-gap-guide",
+  "title": "감정(Appraisal)이 구매가보다 낮으면? 완벽 가이드",
+  "description": "Appraisal Gap 발생 시 4가지 선택지, 재협상 전략, ROV 신청 방법을 완벽하게 설명합니다.",
+  "category": "구매",
+  "emoji": "💰",
+  "image": "image":"https://real-estate-insight.com/guides/2.jpg",
+  "url": "/guides/appraisal-gap/"
+}
+
   ]
 }
