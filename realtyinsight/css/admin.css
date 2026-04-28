@@ -1,0 +1,393 @@
+/* ============================================
+   블로그 관리자 페이지 스타일시트
+   ============================================ */
+
+/* ========== 기본 리셋 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a8e 100%);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* ========== 비밀번호 화면 ========== */
+#password-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a8e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#password-screen.hidden {
+    display: none;
+}
+
+.password-box {
+    background: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    max-width: 400px;
+    width: 90%;
+}
+
+.password-box h2 {
+    color: #1a365d;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.password-box input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s;
+}
+
+.password-box input:focus {
+    outline: none;
+    border-color: #1a365d;
+}
+
+.password-box button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #d4af37;
+    color: #1a365d;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.password-box button:hover {
+    background: #b8860b;
+}
+
+.error-text {
+    color: #e74c3c;
+    margin-top: 1rem;
+    text-align: center;
+    display: none;
+    font-size: 0.95rem;
+}
+
+.error-text.show {
+    display: block;
+}
+
+/* ========== 관리자 콘텐츠 ========== */
+#admin-content.hidden {
+    display: none;
+}
+
+.admin-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ========== 헤더 ========== */
+.admin-header {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.admin-header h1 {
+    color: #1a365d;
+    font-size: 1.5rem;
+}
+
+.back-btn {
+    background: #d4af37;
+    color: #1a365d;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background: #b8860b;
+}
+
+/* ========== 탭 메뉴 ========== */
+.tabs {
+    display: flex;
+    gap: 1rem;
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+}
+
+.tab-btn {
+    padding: 0.6rem 1.4rem;
+    background: #ecf0f1;
+    color: #1a365d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: background 0.3s;
+}
+
+.tab-btn.active {
+    background: #d4af37;
+    color: #1a365d;
+}
+
+.tab-btn:hover:not(.active) {
+    background: #dde4e8;
+}
+
+/* ========== 폼 섹션 공통 ========== */
+.form-section {
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+}
+
+.form-section h2 {
+    color: #1a365d;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.tab-content.hidden {
+    display: none;
+}
+
+/* ========== 폼 입력 ========== */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1a365d;
+}
+
+.form-group textarea {
+    min-height: 300px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.form-hint {
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+}
+
+/* ========== 버튼 그룹 ========== */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-preview,
+.btn-submit {
+    flex: 1;
+    padding: 0.85rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-preview {
+    background: #1a365d;
+    color: white;
+}
+
+.btn-preview:hover {
+    background: #0f1f3c;
+}
+
+.btn-submit {
+    background: #d4af37;
+    color: #1a365d;
+}
+
+.btn-submit:hover {
+    background: #b8860b;
+}
+
+/* ========== 성공 메시지 ========== */
+.success-msg {
+    background: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #c3e6cb;
+    display: none;
+    font-weight: 500;
+}
+
+.success-msg.show {
+    display: block;
+}
+
+/* ========== 블로그 목록 ========== */
+.blog-list-empty {
+    color: #999;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1rem;
+}
+
+.blog-list-item {
+    background: #f9f9f9;
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ecf0f1;
+    transition: box-shadow 0.2s;
+}
+
+.blog-list-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.blog-list-item-info h3 {
+    color: #1a365d;
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+}
+
+.blog-list-item-info p {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.blog-list-item-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 0.45rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+}
+
+.btn-edit {
+    background: #3498db;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #2980b9;
+}
+
+.btn-delete {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+/* ========== 반응형 ========== */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .blog-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .blog-list-item-actions {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .btn-edit,
+    .btn-delete {
+        flex: 1;
+        text-align: center;
+    }
+}

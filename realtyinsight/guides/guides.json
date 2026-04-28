@@ -1,0 +1,36 @@
+{
+  "guides": [
+    {
+      "id": "mortgage-approval",
+      "title": "모기지 승인 과정 완벽 가이드",
+      "description": "신청부터 폐기까지 8단계, 평균 42일 완전 정리.",
+      "category": "모기지",
+      "emoji": "📋",
+      "url": "/guides/mortgage-approval/"
+    },
+    {
+      "id": "tax-law",
+      "title": "LA 부동산 세금 & 법규 완벽 가이드",
+      "description": "재산세(Prop 13), 양도세, 자본이득세, 필수 공시.",
+      "category": "세금",
+      "emoji": "⚖️",
+      "url": "/guides/tax-law/"
+    },
+    {
+      "id": "home-buying",
+      "title": "LA 부동산 구매 완벽 가이드",
+      "description": "구매 전 체크리스트부터 모기지 신청, 흔한 실수 20가지.",
+      "category": "구매",
+      "emoji": "🏠",
+      "url": "/guides/home-buying/"
+    },
+    {
+      "id": "home-inspection-complete-guide",
+      "title": "캘리포니아 홈 인스펙션 완벽 가이드",
+      "description": "홈 인스펙션 검사 항목, 비용, 절차, 빨간 신호를 완벽하게 설명합니다. 첫 집 구매자를 위한 필수 가이드입니다.",
+      "category": "가이드",
+      "emoji": "🔍",
+      "url": "/guides/home-inspection/"
+    }
+  ]
+}

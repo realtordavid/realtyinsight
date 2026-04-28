@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ========== SEO 기본 태그 ========== -->
+    <title>LA/OC 재산세 계산기 - 연간 Property Tax 계산 | 미국 부동산 인사이트</title>
+    <meta name="description" content="LA County, Orange County 등 지역별 재산세를 한국어로 계산하세요. Prop 13 기준 5년 예측, 지역별 비교표 포함. 무료 계산기.">
+    <meta name="keywords" content="LA 재산세, 미국 재산세, Property Tax 계산기, Orange County 세율, Proposition 13, LA County 세율, 한인 부동산 세금">
+    <meta name="author" content="David Lee Realtor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://real-estate-insight.com/calculator/property-tax-calculator.html">
+
+    <!-- ========== Open Graph ========== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LA/OC 재산세 계산기 - 연간 Property Tax 계산">
+    <meta property="og:description" content="LA/OC 지역별 재산세를 쉽게 계산하세요. Prop 13 5년 예측 포함.">
+    <meta property="og:url" content="https://real-estate-insight.com/calculator/property-tax-calculator.html">
+    <meta property="og:image" content="https://real-estate-insight.com/images/suk.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="미국 부동산 인사이트">
+
+    <!-- ========== Schema.org ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "LA/OC 재산세 계산기",
+        "description": "LA/OC 지역별 연간 재산세와 5년 예측을 한국어로 계산하는 무료 도구",
+        "url": "https://real-estate-insight.com/calculator/property-tax-calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "creator": {"@type": "Person", "name": "David Lee Realtor"}
+    }
+    </script>    <link rel="stylesheet" href="../css/calculator.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZCXLBWKR7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NZCXLBWKR7');
+</script>
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="../index.html">← 돌아가기</a>
+
+        <div class="calc-header">
+            <h1>🏡 재산세 계산기</h1>
+            <p>구매 가격과 지역을 선택하여 연간 재산세를 계산하세요.</p>
+        </div>
+
+        <div class="main-content">
+
+            <!-- ========== 입력 섹션 ========== -->
+            <div class="input-section">
+
+                <div class="form-group">
+                    <label for="propertyValue">구매 가격</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="propertyValue" value="500000" min="0" step="10000">
+                    </div>
+                    <input type="range" id="propertyValueSlider" min="50000" max="2000000" value="500000" step="10000" class="slider">
+                    <div class="slider-labels"><span>$50K</span><span>$2M</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="region">지역 선택</label>
+                    <div class="input-wrapper">
+                        <select id="region">
+                            <option value="1.12">Los Angeles County (1.12%)</option>
+                            <option value="1.16">Orange County (1.16%)</option>
+                            <option value="0.85">San Francisco County (0.85%)</option>
+                            <option value="1.10">San Diego County (1.10%)</option>
+                            <option value="0.98">Ventura County (0.98%)</option>
+                            <option value="1.15">Riverside County (1.15%)</option>
+                            <option value="1.08">Long Beach (1.08%)</option>
+                            <option value="custom">사용자 정의</option>
+                        </select>
+                    </div>
+                    <p class="info-text">지역 평균 유효세율 (2026년 기준)</p>
+                </div>
+
+                <div class="form-group" id="customRateGroup" style="display:none;">
+                    <label for="customRate">사용자 정의 세율</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="customRate" value="1.20" min="0" max="5" step="0.01">
+                        <span class="percent-symbol">%</span>
+                    </div>
+                    <p class="info-text">세율을 직접 입력하세요</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="exemption">세금 감면액 (선택사항)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="exemption" value="0" min="0" step="1000">
+                    </div>
+                    <p class="info-text">노인·장애인 감면 등 (CA Homeowners' Exemption: $7,000)</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>💡 Proposition 13 안내</h4>
+                    <p>California는 Prop 13에 따라 기본 1% 세율을 적용하며, 각 지역이 추가 세율을 부과합니다. 평가액은 매년 최대 2%까지만 증가합니다.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="appreciationRate">향후 예상 주택 가격 상승률</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="appreciationRate" value="3.0" min="0" max="10" step="0.5">
+                        <span class="percent-symbol">%</span>
+                    </div>
+                    <p class="info-text">CA 평균: 3~4% / 년 (Prop 13으로 세금 증가는 최대 2%)</p>
+                </div>
+
+            </div>
+
+            <!-- ========== 결과 섹션 ========== -->
+            <div class="result-section">
+
+                <div class="result-box">
+                    <div class="result-label">연간 재산세</div>
+                    <div class="result-value" id="annualTax">$0</div>
+                    <div class="result-subtext">월간 약 <span id="monthlyTax">$0</span></div>
+                </div>
+
+                <div class="breakdown">
+                    <h3>재산세 분석</h3>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">구매 가격</span>
+                        <span class="breakdown-value" id="displayValue">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">적용 세율</span>
+                        <span class="breakdown-value" id="displayRate">1.12%</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">세금 감면액</span>
+                        <span class="breakdown-value" id="displayExemption">$0</span>
+                    </div>
+                    <div class="total-item">
+                        <span>연간 재산세</span>
+                        <span id="totalTaxBreakdown">$0</span>
+                    </div>
+                </div>
+
+                <div class="breakdown">
+                    <h3>5년 예측 (Prop 13 기준, 최대 2% 증가)</h3>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">1년차</span>
+                        <span class="breakdown-value" id="year1">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">2년차</span>
+                        <span class="breakdown-value" id="year2">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">3년차</span>
+                        <span class="breakdown-value" id="year3">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">4년차</span>
+                        <span class="breakdown-value" id="year4">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">5년차</span>
+                        <span class="breakdown-value" id="year5">$0</span>
+                    </div>
+                    <div class="total-item">
+                        <span>5년 총합</span>
+                        <span id="fiveYearTotal">$0</span>
+                    </div>
+                </div>
+
+                <div class="tips-box">
+                    <h4>💡 팁</h4>
+                    <p id="tipsText">Prop 13에 따라 평가액은 매년 최대 2%만 증가합니다. 주택 가격이 많이 올라도 세금은 천천히 늘어납니다.</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-reset" onclick="resetCalculator()">초기화</button>
+                    <button class="btn-download" onclick="downloadResults()">결과 다운로드</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 지역별 비교 테이블 -->
+        <div class="extra-section">
+            <h2>📊 지역별 재산세 비교</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>지역</th>
+                        <th>세율</th>
+                        <th>연간 재산세</th>
+                        <th>월간 재산세</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Los Angeles County</td><td>1.12%</td><td id="laAnnual">$0</td><td id="laMonthly">$0</td></tr>
+                    <tr><td>Orange County</td><td>1.16%</td><td id="ocAnnual">$0</td><td id="ocMonthly">$0</td></tr>
+                    <tr><td>San Diego County</td><td>1.10%</td><td id="sdAnnual">$0</td><td id="sdMonthly">$0</td></tr>
+                    <tr><td>San Francisco County</td><td>0.85%</td><td id="sfAnnual">$0</td><td id="sfMonthly">$0</td></tr>
+                    <tr><td>Long Beach</td><td>1.08%</td><td id="lbAnnual">$0</td><td id="lbMonthly">$0</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        const propertyValueEl       = document.getElementById('propertyValue');
+        const propertyValueSliderEl = document.getElementById('propertyValueSlider');
+        const regionEl              = document.getElementById('region');
+        const customRateEl          = document.getElementById('customRate');
+        const customRateGroupEl     = document.getElementById('customRateGroup');
+        const exemptionEl           = document.getElementById('exemption');
+        const appreciationEl        = document.getElementById('appreciationRate');
+
+        propertyValueEl.addEventListener('input', () => { propertyValueSliderEl.value = propertyValueEl.value; calc(); updateTable(); });
+        propertyValueSliderEl.addEventListener('input', () => { propertyValueEl.value = propertyValueSliderEl.value; calc(); updateTable(); });
+        regionEl.addEventListener('change', () => {
+            customRateGroupEl.style.display = regionEl.value === 'custom' ? 'block' : 'none';
+            calc(); updateTable();
+        });
+        customRateEl.addEventListener('input', calc);
+        exemptionEl.addEventListener('input', calc);
+        appreciationEl.addEventListener('input', calc);
+
+        function getRate() {
+            return regionEl.value === 'custom'
+                ? (parseFloat(customRateEl.value) || 1.20)
+                : (parseFloat(regionEl.value) || 1.12);
+        }
+
+        function calc() {
+            const value      = parseFloat(propertyValueEl.value) || 0;
+            const rate       = getRate();
+            const exempt     = parseFloat(exemptionEl.value) || 0;
+            const taxable    = Math.max(0, value - exempt);
+            const annual     = taxable * (rate / 100);
+            const monthly    = annual / 12;
+
+            setText('annualTax',        fmt(annual));
+            setText('monthlyTax',       fmt(monthly));
+            setText('totalTaxBreakdown',fmt(annual));
+            setText('displayValue',     fmt(value));
+            setText('displayRate',      rate.toFixed(2) + '%');
+            setText('displayExemption', fmt(exempt));
+
+            // 5년 예측 (Prop 13: 매년 최대 2% 증가)
+            let base = taxable;
+            let sum  = 0;
+            for (let i = 1; i <= 5; i++) {
+                const yr = base * Math.pow(1.02, i - 1) * (rate / 100);
+                setText('year' + i, fmt(yr));
+                sum += yr;
+            }
+            setText('fiveYearTotal', fmt(sum));
+
+            const recIncome = annual / 0.10;
+            setText('tipsText',
+                `연간 재산세 ${fmt(annual)} 기준, 월 소득의 10% 미만을 유지하려면 월 소득 최소 ${fmt(recIncome / 12)} 이상이 권장됩니다.`);
+        }
+
+        function updateTable() {
+            const value   = parseFloat(propertyValueEl.value) || 0;
+            const exempt  = parseFloat(exemptionEl.value) || 0;
+            const taxable = Math.max(0, value - exempt);
+            const regions = [
+                { id: 'la', rate: 1.12 },
+                { id: 'oc', rate: 1.16 },
+                { id: 'sd', rate: 1.10 },
+                { id: 'sf', rate: 0.85 },
+                { id: 'lb', rate: 1.08 }
+            ];
+            regions.forEach(r => {
+                const annual  = taxable * (r.rate / 100);
+                setText(r.id + 'Annual',  fmt(annual));
+                setText(r.id + 'Monthly', fmt(annual / 12));
+            });
+        }
+
+        function setText(id, val) { document.getElementById(id).textContent = val; }
+
+        function fmt(n) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency', currency: 'USD',
+                minimumFractionDigits: 0, maximumFractionDigits: 0
+            }).format(n);
+        }
+
+        function resetCalculator() {
+            propertyValueEl.value       = 500000;
+            propertyValueSliderEl.value = 500000;
+            regionEl.value              = '1.12';
+            customRateEl.value          = 1.20;
+            exemptionEl.value           = 0;
+            appreciationEl.value        = 3.0;
+            customRateGroupEl.style.display = 'none';
+            calc(); updateTable();
+        }
+
+        function downloadResults() {
+            const value   = parseFloat(propertyValueEl.value) || 0;
+            const rate    = getRate();
+            const exempt  = parseFloat(exemptionEl.value) || 0;
+            const taxable = Math.max(0, value - exempt);
+            const annual  = taxable * (rate / 100);
+            const monthly = annual / 12;
+            let sum = 0;
+            const years = [];
+            for (let i = 1; i <= 5; i++) {
+                const yr = taxable * Math.pow(1.02, i - 1) * (rate / 100);
+                years.push(yr); sum += yr;
+            }
+            const text = `재산세 계산기 결과
+==================
+구매 가격: $${value.toLocaleString()}
+세금 감면액: $${exempt.toLocaleString()}
+세율: ${rate.toFixed(2)}%
+
+연간 재산세: ${fmt(annual)}
+월간 재산세: ${fmt(monthly)}
+
+5년 예측 (Prop 13, 매년 최대 2% 증가):
+1년차: ${fmt(years[0])}
+2년차: ${fmt(years[1])}
+3년차: ${fmt(years[2])}
+4년차: ${fmt(years[3])}
+5년차: ${fmt(years[4])}
+5년 총합: ${fmt(sum)}
+
+생성일: ${new Date().toLocaleDateString('ko-KR')}`;
+            const a = document.createElement('a');
+            a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(text);
+            a.download = '재산세계산_결과.txt';
+            a.click();
+        }
+
+        calc();
+        updateTable();
+    </script>
+</body>
+</html>

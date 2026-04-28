@@ -1,0 +1,15 @@
+# Jekyll Configuration
+title: Real Estate Insight
+description: LA/OC 부동산 완벽 가이드
+url: https://real-estate-insight.com
+timezone: America/Los_Angeles
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Cache busting
+sass:
+  style: compressed
