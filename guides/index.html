@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ========== SEO 기본 태그 ========== -->
     <title>LA 부동산 가이드 | David Lee 공인중개사</title>
-    <meta name="description" content="LA/OC 부동산 구매 완벽 가이드. 모기지, 세금, 법규, 검사까지 모든 정보를 한눈에 볼 수 있습니다.">
-    <meta name="keywords" content="LA 부동산 가이드, 부동산 구매, 모기지 가이드, 부동산 세금">
+    <meta name="description" content="LA/OC 부동산 구매 완벽 가이드. 모기지, 세금, 법규, 검사까지 모든 정보.">
+    <meta name="keywords" content="LA 부동산 가이드, 부동산 구매, 모기지 가이드">
     <meta name="author" content="David Lee">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://real-estate-insight.com/guides/">
 
-    <!-- ========== Open Graph ========== -->
     <meta property="og:title" content="LA 부동산 가이드 | David Lee">
     <meta property="og:description" content="LA/OC 부동산 구매, 모기지, 세금, 법규 완벽 가이드">
     <meta property="og:url" content="https://real-estate-insight.com/guides/">
     <meta property="og:type" content="website">
 
-    <!-- ========== Schema.org ========== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -28,8 +25,6 @@
         "url": "https://real-estate-insight.com/guides/"
     }
     </script>
-
-    <link rel="canonical" href="https://real-estate-insight.com/guides/">
 
     <style>
         * {
@@ -45,7 +40,6 @@
             background-color: #f9f9f9;
         }
 
-        /* ========== 헤더 ========== */
         header {
             background-color: #fff;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -95,14 +89,12 @@
             color: #d4af37;
         }
 
-        /* ========== 메인 컨테이너 ========== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 2rem;
         }
 
-        /* ========== 히어로 섹션 ========== */
         .hero {
             background: linear-gradient(135deg, #1a365d 0%, #0f1f3c 100%);
             color: white;
@@ -122,34 +114,35 @@
             opacity: 0.95;
         }
 
-        /* ========== 필터 섹션 ========== */
-        .filter-section {
+        /* ========== 검색 섹션 ========== */
+        .search-section {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             border-radius: 10px;
             margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap;
             align-items: center;
         }
 
-        .filter-section label {
-            font-weight: bold;
-            color: #1a365d;
-        }
-
-        .filter-section select {
-            padding: 0.5rem 1rem;
+        .search-section input {
+            flex: 1;
+            padding: 0.75rem 1rem;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
-            cursor: pointer;
+            transition: border-color 0.3s;
         }
 
-        .filter-section button {
-            padding: 0.5rem 1.5rem;
+        .search-section input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+
+        .search-section button {
+            padding: 0.75rem 1.5rem;
             background: #d4af37;
             color: #1a365d;
             border: none;
@@ -159,86 +152,76 @@
             transition: background 0.3s;
         }
 
-        .filter-section button:hover {
+        .search-section button:hover {
             background: #b8860b;
             color: white;
         }
 
-        /* ========== 가이드 그리드 ========== */
-        .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        /* ========== 결과 카운트 ========== */
+        .search-result-count {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
         }
 
-        .guide-card {
+        /* ========== 목록 스타일 ========== */
+        .guide-list {
             background: white;
             border-radius: 10px;
-            overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .guide-list ul {
+            list-style: none;
+        }
+
+        .guide-list li {
+            border-bottom: 1px solid #eee;
+        }
+
+        .guide-list li:last-child {
+            border-bottom: none;
+        }
+
+        .guide-list a {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem 2rem;
             text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .guide-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-        }
-
-        .guide-image {
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            background-color: #f0f0f0;
-        }
-
-        .guide-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .guide-category {
-            display: inline-block;
-            background: #e8f4f8;
             color: #1a365d;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-bottom: 0.75rem;
-            width: fit-content;
+            transition: all 0.3s;
         }
 
-        .guide-content h3 {
-            color: #1a365d;
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
+        .guide-list a:hover {
+            background-color: #f5f5f5;
+            padding-left: 2.5rem;
+            color: #d4af37;
         }
 
-        .guide-content p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            flex-grow: 1;
+        .guide-emoji {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            min-width: 2rem;
         }
 
-        .guide-meta {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.85rem;
+        .guide-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* ========== 검색 결과 없음 ========== */
+        .no-results {
+            text-align: center;
+            padding: 3rem 2rem;
             color: #999;
-            margin-top: auto;
         }
 
-        /* ========== 푸터 ========== */
+        .no-results p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
         footer {
             background-color: #1a365d;
             color: #ecf0f1;
@@ -256,33 +239,34 @@
             text-decoration: none;
         }
 
-        /* ========== 반응형 ========== */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 1.5rem;
-            }
-
-            .filter-section {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .filter-section select {
-                width: 100%;
-            }
-
-            .guides-grid {
-                grid-template-columns: 1fr;
             }
 
             nav ul {
                 gap: 1rem;
                 font-size: 0.9rem;
             }
+
+            .search-section {
+                flex-direction: column;
+            }
+
+            .search-section input {
+                width: 100%;
+            }
+
+            .search-section button {
+                width: 100%;
+            }
+
+            .guide-list a {
+                padding: 1rem 1.5rem;
+            }
         }
     </style>
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZCXLBWKR7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -292,7 +276,6 @@
     </script>
 </head>
 <body>
-    <!-- ========== 헤더 ========== -->
     <header>
         <div class="header-container">
             <a href="/" class="logo">| 미국 부동산 인사이트 | <span>Real Estate Insight</span></a>
@@ -307,30 +290,35 @@
         </div>
     </header>
 
-    <!-- ========== 메인 콘텐츠 ========== -->
     <main class="container">
-        <!-- 히어로 섹션 -->
         <div class="hero">
             <h1>📚 LA 부동산 가이드</h1>
             <p>부동산 구매부터 세금, 법규까지 모든 정보</p>
         </div>
 
-        <!-- 필터 섹션 -->
-        <div class="filter-section">
-            <label for="category-filter">카테고리:</label>
-            <select id="category-filter">
-                <option value="">전체</option>
-            </select>
-            <button onclick="resetFilter()">필터 초기화</button>
+        <!-- 검색 섹션 -->
+        <div class="search-section">
+            <input type="text" id="search-input" placeholder="가이드 검색... (예: 모기지, 세금)">
+            <button onclick="clearSearch()">초기화</button>
         </div>
 
-        <!-- 가이드 그리드 -->
-        <div class="guides-grid" id="guides-list">
-            <!-- JSON에서 동적으로 생성됨 -->
+        <!-- 결과 카운트 -->
+        <div class="search-result-count" id="result-count"></div>
+
+        <!-- 가이드 목록 -->
+        <div class="guide-list">
+            <ul id="guides-list">
+                <!-- JSON에서 동적으로 생성됨 -->
+            </ul>
+        </div>
+
+        <!-- 검색 결과 없음 -->
+        <div class="no-results" id="no-results" style="display:none;">
+            <p>🔍 검색 결과가 없습니다.</p>
+            <p style="font-size: 0.95rem;">다른 키워드로 시도해보세요.</p>
         </div>
     </main>
 
-    <!-- ========== 푸터 ========== -->
     <footer>
         <p><strong>LA 부동산 가이드</strong></p>
         <p>David Lee Realtor | CA License #02218947</p>
@@ -340,10 +328,8 @@
         </p>
     </footer>
 
-    <!-- ========== 가이드 로드 스크립트 ========== -->
     <script>
         let allGuides = [];
-        let filteredGuides = [];
 
         async function loadGuides() {
             try {
@@ -359,65 +345,64 @@
                 console.log('✅ 가이드 로드 완료:', data.guides.length, '개');
                 
                 allGuides = data.guides;
-                filteredGuides = [...allGuides];
-                
-                // 카테고리 필터 채우기
-                const categories = [...new Set(allGuides.map(guide => guide.category))];
-                const categorySelect = document.getElementById('category-filter');
-                
-                categories.forEach(cat => {
-                    const option = document.createElement('option');
-                    option.value = cat;
-                    option.textContent = cat;
-                    categorySelect.appendChild(option);
-                });
+                displayGuides(allGuides);
 
-                // 초기 표시
-                displayGuides();
-                
-                // 필터 이벤트 리스너
-                categorySelect.addEventListener('change', filterGuides);
+                // 검색 이벤트 리스너
+                document.getElementById('search-input').addEventListener('keyup', searchGuides);
             } catch (error) {
                 console.error('💥 가이드 로드 실패:', error);
             }
         }
 
-        function displayGuides() {
+        function displayGuides(guides) {
             const guidesList = document.getElementById('guides-list');
+            const noResults = document.getElementById('no-results');
+            const resultCount = document.getElementById('result-count');
+
+            if (guides.length === 0) {
+                guidesList.innerHTML = '';
+                noResults.style.display = 'block';
+                resultCount.textContent = '';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            resultCount.textContent = `총 ${guides.length}개의 가이드`;
             
-            const guideHTML = filteredGuides.map(guide => `
-                <a href="${guide.url}" class="guide-card">
-                    <div class="guide-image" style="background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80') center/cover;"></div>
-                    <div class="guide-content">
-                        <span class="guide-category">${guide.emoji} ${guide.category}</span>
-                        <h3>${guide.title}</h3>
-                        <p>${guide.description}</p>
-                    </div>
-                </a>
+            const guideHTML = guides.map(guide => `
+                <li>
+                    <a href="${guide.url}">
+                        <span class="guide-emoji">${guide.emoji}</span>
+                        <span class="guide-title">${guide.title}</span>
+                    </a>
+                </li>
             `).join('');
 
             guidesList.innerHTML = guideHTML;
         }
 
-        function filterGuides() {
-            const selectedCategory = document.getElementById('category-filter').value;
+        function searchGuides() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
             
-            if (selectedCategory === '') {
-                filteredGuides = [...allGuides];
-            } else {
-                filteredGuides = allGuides.filter(guide => guide.category === selectedCategory);
+            if (searchTerm === '') {
+                displayGuides(allGuides);
+                return;
             }
 
-            displayGuides();
+            const filtered = allGuides.filter(guide => 
+                guide.title.toLowerCase().includes(searchTerm) ||
+                guide.description.toLowerCase().includes(searchTerm) ||
+                guide.category.toLowerCase().includes(searchTerm)
+            );
+
+            displayGuides(filtered);
         }
 
-        function resetFilter() {
-            document.getElementById('category-filter').value = '';
-            filteredGuides = [...allGuides];
-            displayGuides();
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            displayGuides(allGuides);
         }
 
-        // 페이지 로드 시 가이드 로드
         document.addEventListener('DOMContentLoaded', loadGuides);
     </script>
 </body>
