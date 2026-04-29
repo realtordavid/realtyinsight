@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 생성일: 2026-04-28 | 총 16개 페이지 -->
+<!-- 생성일: 2026-04-28 | 총 17개 페이지 -->
 <!-- 이 파일은 sitemap-generator.html 에서 자동 생성됩니다. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- 메인 페이지 -->
@@ -69,12 +69,30 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
 <url>
     <loc>https://real-estate-insight.com/guides/home-inspection/</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
 </url>
+
+<url>
+    <loc>https://real-estate-insight.com/guides/appraisal-gap/</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+    <!-- 마켓 페이지  -->
+<url>
+    <loc>https://real-estate-insight.com/market/la-housing-supply-demand/</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
 
 
     <!-- 계산기 -->
