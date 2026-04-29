@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ========== Favicon ========== -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+
+    <!-- ========== SEO 기본 태그 ========== -->
+    <title>LA 부동산 마켓&트렌드 | David Lee Realtor</title>
+    <meta name="description" content="LA/OC 부동산 시장의 최신 뉴스와 트렌드를 분석합니다. 공급, 수요, 금리, 가격 전망까지 부동산 시장의 모든 정보.">
+    <meta name="keywords" content="LA 부동산 뉴스, 시장 트렌드, 주택 가격, 금리, 부동산 시장 분석, 캘리포니아 부동산">
+    <meta name="author" content="David Lee Realtor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://real-estate-insight.com/market/">
+
+    <!-- ========== Open Graph (SNS 공유) ========== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LA 부동산 마켓&트렌드 | David Lee Realtor">
+    <meta property="og:description" content="LA/OC 부동산 시장의 최신 뉴스와 트렌드를 분석합니다. 공급, 수요, 금리, 가격 전망까지 부동산 시장의 모든 정보.">
+    <meta property="og:url" content="https://real-estate-insight.com/market/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="미국 부동산 인사이트">
+
+    <!-- ========== Twitter Card ========== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LA 부동산 마켓&트렌드 | David Lee Realtor">
+    <meta name="twitter:description" content="LA/OC 부동산 시장의 최신 뉴스와 트렌드를 분석합니다.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80">
+
+    <!-- ========== Schema.org 구조화 데이터 ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "LA 부동산 마켓&트렌드",
+        "description": "LA/OC 부동산 시장의 최신 뉴스와 트렌드 모음",
+        "url": "https://real-estate-insight.com/market/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "미국 부동산 인사이트",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://real-estate-insight.com/favicon.ico"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1a365d;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .logo:hover {
+            color: #d4af37;
+        }
+
+        .logo span {
+            color: #d4af37;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #1a365d;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #0f1f3c 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* ========== 검색 섹션 ========== */
+        .search-section {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-section input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-section input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+
+        .search-section button {
+            padding: 0.75rem 1.5rem;
+            background: #d4af37;
+            color: #1a365d;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-section button:hover {
+            background: #b8860b;
+            color: white;
+        }
+
+        /* ========== 결과 카운트 ========== */
+        .search-result-count {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* ========== 마켓 목록 스타일 ========== */
+        .market-list {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .market-list ul {
+            list-style: none;
+        }
+
+        .market-item {
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s;
+        }
+
+        .market-item:last-child {
+            border-bottom: none;
+        }
+
+        .market-item a {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+
+        .market-item a:hover {
+            background-color: #f5f5f5;
+            padding-left: 2.5rem;
+        }
+
+        .market-emoji {
+            font-size: 2rem;
+            min-width: 2.5rem;
+            text-align: center;
+        }
+
+        .market-content {
+            flex-grow: 1;
+        }
+
+        .market-content h3 {
+            color: #1a365d;
+            font-size: 1.1rem;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .market-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0 0 0.75rem 0;
+        }
+
+        .market-date {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* ========== 검색 결과 없음 ========== */
+        .no-results {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #999;
+        }
+
+        .no-results p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #1a365d;
+            color: #ecf0f1;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .search-section {
+                flex-direction: column;
+            }
+
+            .search-section input {
+                width: 100%;
+            }
+
+            .search-section button {
+                width: 100%;
+            }
+
+            .market-item a {
+                gap: 1rem;
+                padding: 1rem 1.5rem;
+            }
+
+            .market-emoji {
+                font-size: 1.5rem;
+            }
+
+            .market-content h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZCXLBWKR7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NZCXLBWKR7');
+    </script>
+</head>
+<body>
+    <!-- ========== 헤더 ========== -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">| 미국 부동산 인사이트 | <span>Real Estate Insight</span></a>
+            <nav>
+                <ul>
+                    <li><a href="/">홈</a></li>
+                    <li><a href="/#blog">블로그</a></li>
+                    <li><a href="/#guides">가이드</a></li>
+                    <li><a href="/#contact">문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== 메인 콘텐츠 ========== -->
+    <main class="container">
+        <!-- 히어로 섹션 -->
+        <div class="hero">
+            <h1>📊 LA 부동산 마켓&트렌드</h1>
+            <p>최신 부동산 시장 정보와 투자 트렌드</p>
+        </div>
+
+        <!-- 검색 섹션 -->
+        <div class="search-section">
+            <input type="text" id="search-input" placeholder="마켓 뉴스 검색... (예: 금리, 공급, 가격)">
+            <button onclick="clearSearch()">초기화</button>
+        </div>
+
+        <!-- 결과 카운트 -->
+        <div class="search-result-count" id="result-count"></div>
+
+        <!-- 마켓 목록 -->
+        <div class="market-list">
+            <ul id="market-list">
+                <!-- JSON에서 동적으로 생성됨 -->
+            </ul>
+        </div>
+
+        <!-- 검색 결과 없음 -->
+        <div class="no-results" id="no-results" style="display:none;">
+            <p>🔍 검색 결과가 없습니다.</p>
+            <p style="font-size: 0.95rem;">다른 키워드로 시도해보세요.</p>
+        </div>
+    </main>
+
+    <!-- ========== 푸터 ========== -->
+    <footer>
+        <p><strong>LA 부동산 마켓&트렌드</strong></p>
+        <p>David Lee Realtor | CA License #02218947</p>
+        <p style="margin-top: 1rem;">📧 <a href="mailto:ca.realtor.david@gmail.com">ca.realtor.david@gmail.com</a> | 📱 (818) 357-9876</p>
+        <p style="margin-top: 2rem; opacity: 0.8;">
+            &copy; 2026 LA/OC 부동산. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- ========== 마켓 뉴스 동적 로드 ========== -->
+    <script>
+        let allMarkets = [];
+
+        async function loadMarkets() {
+            try {
+                console.log('📊 마켓 뉴스 로드 시작...');
+                
+                const response = await fetch('/market/market.json');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log('✅ 마켓 뉴스 로드 완료:', data.markets.length, '개');
+                
+                allMarkets = data.markets;
+                displayMarkets(allMarkets);
+
+                // 검색 이벤트 리스너
+                document.getElementById('search-input').addEventListener('keyup', searchMarkets);
+            } catch (error) {
+                console.error('💥 마켓 뉴스 로드 실패:', error);
+            }
+        }
+
+        function displayMarkets(markets) {
+            const marketList = document.getElementById('market-list');
+            const noResults = document.getElementById('no-results');
+            const resultCount = document.getElementById('result-count');
+
+            if (markets.length === 0) {
+                marketList.innerHTML = '';
+                noResults.style.display = 'block';
+                resultCount.textContent = '';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            resultCount.textContent = `총 ${markets.length}개의 마켓 뉴스`;
+            
+            const marketHTML = markets.map(market => `
+                <li class="market-item">
+                    <a href="${market.url}">
+                        <div class="market-emoji">${market.emoji}</div>
+                        <div class="market-content">
+                            <h3>${market.title}</h3>
+                            <p>${market.description}</p>
+                            <div class="market-date">📅 ${market.date}</div>
+                        </div>
+                    </a>
+                </li>
+            `).join('');
+
+            marketList.innerHTML = marketHTML;
+        }
+
+        function searchMarkets() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            
+            if (searchTerm === '') {
+                displayMarkets(allMarkets);
+                return;
+            }
+
+            const filtered = allMarkets.filter(market => 
+                market.title.toLowerCase().includes(searchTerm) ||
+                market.description.toLowerCase().includes(searchTerm)
+            );
+
+            displayMarkets(filtered);
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            displayMarkets(allMarkets);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadMarkets);
+    </script>
+</body>
+</html>
