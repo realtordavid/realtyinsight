@@ -175,6 +175,9 @@
     <div class="blog-grid" id="guides-container">
         <!-- JSON에서 동적으로 생성됨 -->
     </div>
+<div style="text-align: center; margin-top: 2rem;">
+    <a href="/guides/" class="cta-button">모든 가이드 글 보기 →</a>
+</div>
 </section>
 
             <!-- ========== 도구 / 계산기 섹션 ========== -->
@@ -292,7 +295,6 @@ const guideHTML = data.guides.map(guide => `
         <div class="blog-content">
             <h3>${guide.emoji} ${guide.title}</h3>
             <p>${guide.description}</p>
-            <button class="cta-button" style="width:100%; text-align:center; margin-top:auto;">가이드 보기</button>
         </div>
     </a>
 `).join('');
