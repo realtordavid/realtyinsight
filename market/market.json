@@ -1,0 +1,12 @@
+{
+  "markets": [
+    {
+            "id": "la-housing-supply-demand",
+      "title": "LA 부동산 시장: 공급 부족 vs 수요 변화의 미래",
+      "description": "LA 캘리포니아 부동산 시장의 공급 부족과 수요 변화를 심층 분석! 집값 전망과 투자기회 분석",
+      "date": "2026.04.28",
+      "emoji": "📊",
+      "url": "/market/la-housing-supply-demand/"
+    }
+  ]
+}
