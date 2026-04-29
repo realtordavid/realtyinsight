@@ -492,6 +492,92 @@ footer {
     box-shadow: 0 8px 24px rgba(230, 126, 34, 0.25);
 }
 
+
+/* ========== 마켓 리스트 스타일 ========== */
+.market-list {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.market-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.market-item {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.market-item:last-child {
+    border-bottom: none;
+}
+
+.market-item a {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+}
+
+.market-item a:hover {
+    background-color: #f5f5f5;
+    padding-left: 2.5rem;
+}
+
+.market-emoji {
+    font-size: 2rem;
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.market-content {
+    flex-grow: 1;
+}
+
+.market-content h3 {
+    color: #1a365d;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.market-content p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0 0 0.75rem 0;
+}
+
+.market-date {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .market-item a {
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .market-emoji {
+        font-size: 1.5rem;
+    }
+
+    .market-content h3 {
+        font-size: 1rem;
+    }
+}
+
+
+
 /* ========== 반응형 디자인 ========== */
 @media (max-width: 768px) {
     .header-container {
