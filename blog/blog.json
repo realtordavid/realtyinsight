@@ -76,6 +76,17 @@
       "date": "2026.04.30",
       "image": "https://images.unsplash.com/photo-1586595077384-58156c3bb585?w=800&q=80",
       "url": "/blog/home-repairs-before-selling-top-5-roi/"
+    },
+    {
+      "id": "real-estate-roi-calculation-guide",
+      "title": "부동산 수익률(ROI) 계산하는 법 - 단계별 공식 및 실제 사례",
+      "description": "캡 레이트, 캐시 온 캐시 리턴, NPV 계산 공식. 실제 사례로 배우는 ROI 완벽 가이드. 캘리포니아 2026 평균 수익률 분석",
+      "category": "정보형",
+      "emoji": "📊",
+      "author": "David Lee",
+      "date": "2026.05.02",
+      "image": "https://images.unsplash.com/photo-1460925895917-adf4e566c539?w=800&q=80",
+      "url": "/blog/real-estate-roi-calculation-guide/"
     }
   ]
 }
