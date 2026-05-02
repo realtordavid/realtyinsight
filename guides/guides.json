@@ -41,6 +41,14 @@
       "emoji": "💰",
       "image": "https://real-estate-insight.com/guides/2.jpg",
       "url": "/guides/appraisal-gap/"
+    },
+    {
+      "id": "rental-property-tax-deductions",
+      "title": "부동산 투자 세금 절감: 감가상각·공제 항목 완벽 가이드",
+      "description": "임대 부동산 감가상각 27.5년, 모기지 이자, 수리비, 관리비 모든 공제 항목 완벽 정리",
+      "category": "투자",
+      "emoji": "💼",
+      "url": "/guides/rental-property-tax-deductions/"
     }
   ]
 }
