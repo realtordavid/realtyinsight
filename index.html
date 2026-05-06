@@ -155,7 +155,7 @@
             <script src="https://elfsightcdn.com/platform.js" async></script>
             <div class="elfsight-app-a666a50f-8c1e-4193-aaa4-aeefe21e0cf3" data-elfsight-app-lazy></div>
 
-            <!-- ========== 최신 블로그 글 ========== -->
+            <!-- ========== 최신 블로그 글 (홈페이지: 6개만) ========== -->
             <section class="featured-section" id="blog">
                 <h2>BLOGS</h2>
                 <div class="blog-grid" id="blog-container">
@@ -166,7 +166,7 @@
                 </div>
             </section>
 
-            <!-- ========== 가이드 섹션 ========== -->
+            <!-- ========== 가이드 섹션 (홈페이지: 4개만) ========== -->
             <section class="featured-section" id="guides">
                 <h2>GUIDES</h2>
                 <div class="market-list" id="guides-container">
@@ -177,7 +177,7 @@
                 </div>
             </section>
 
-            <!-- ========== 마켓&트렌드 섹션 ========== -->
+            <!-- ========== 마켓&트렌드 섹션 (홈페이지: 4개만) ========== -->
             <section class="featured-section" id="market">
                 <h2>MARKET & TRENDS</h2>
                 <div class="market-list" id="market-container">
@@ -266,20 +266,19 @@
 
     <script src="js/main.js"></script>
 
-    <!-- ========== 가이드 동적 로드 ========== -->
+    <!-- ========== 가이드 동적 로드 (홈페이지: 4개만) ========== -->
     <script>
     async function loadGuides() {
       try {
         console.log('가이드 로드 시작...');
         const response = await fetch('/guides/guides.json');
-        console.log('응답 상태:', response.status);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
-        console.log('로드된 데이터:', data);
         const container = document.getElementById('guides-container');
         if (!container) { console.error('guides-container를 찾을 수 없습니다!'); return; }
         
-        const guideHTML = data.guides.slice(0, 3).map(g => `
+        // 홈페이지: 4개만 표시
+        const guideHTML = data.guides.slice(0, 4).map(g => `
           <a href="${g.url}" class="market-item">
             <div class="market-emoji">${g.emoji}</div>
             <div class="market-info">
@@ -298,7 +297,7 @@
     document.addEventListener('DOMContentLoaded', loadGuides);
     </script>
 
-    <!-- ========== 블로그 동적 로드 ========== -->
+    <!-- ========== 블로그 동적 로드 (홈페이지: 6개만) ========== -->
     <script>
     async function loadBlogs() {
         try {
@@ -308,7 +307,8 @@
             const data = await response.json();
             const container = document.getElementById('blog-container');
             
-            const blogHTML = data.blogs.map(blog => `
+            // 홈페이지: 6개만 표시
+            const blogHTML = data.blogs.slice(0, 6).map(blog => `
                 <a href="${blog.url}" class="blog-card">
                     <div class="blog-image" style="background: url('${blog.image}') center/cover;"></div>
                     <div class="blog-content">
@@ -331,31 +331,25 @@
     document.addEventListener('DOMContentLoaded', loadBlogs);
     </script>
 
-    <!-- ========== 마켓&트렌드 동적 로드 ========== -->
+    <!-- ========== 마켓&트렌드 동적 로드 (홈페이지: 4개만) ========== -->
     <script>
     async function loadMarkets() {
         try {
             console.log('마켓 뉴스 로드 시작...');
             
             const response = await fetch('/market/market.json');
-            console.log('응답 상태:', response.status);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             
             const data = await response.json();
-            console.log('로드된 데이터:', data);
-            
             const container = document.getElementById('market-container');
-            console.log('컨테이너:', container);
 
             if (!container) {
                 console.error('market-container를 찾을 수 없습니다!');
                 return;
             }
 
-            const marketHTML = data.markets.slice(0, 3).map(market => `
+            // 홈페이지: 4개만 표시
+            const marketHTML = data.markets.slice(0, 4).map(market => `
                 <a href="${market.url}" class="market-item">
                     <div class="market-emoji">${market.emoji}</div>
                     <div class="market-content">
@@ -366,7 +360,6 @@
                 </a>
             `).join('');
 
-            console.log('생성된 HTML:', marketHTML);
             container.innerHTML = marketHTML;
             console.log('마켓 뉴스 로드 완료!');
         } catch (error) {
