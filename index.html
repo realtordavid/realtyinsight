@@ -171,15 +171,13 @@
 
 <!-- ========== 가이드 섹션 ========== -->
 <section class="featured-section" id="guides">
-    <h2>GUIDES</h2>
-    <div class="guide-list-home" id="guides-container">
-        <ul id="guides-list-home">
-            <!-- JSON에서 동적으로 생성됨 -->
-        </ul>
-    </div>
-    <div style="text-align: center; margin-top: 2rem;">
-        <a href="/guides/" class="cta-button">모든 가이드 글 보기 →</a>
-    </div>
+  <h2>GUIDES</h2>
+  <div class="blog-grid" id="guides-container">
+    <!-- JSON‑generated items will be inserted here -->
+  </div>
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="/guides/" class="cta-button">모든 가이드 글 보기 →</a>
+  </div>
 </section>
 
 <!-- ========== 마켓&트렌드 섹션 ========== -->
@@ -276,46 +274,30 @@
 <!-- ========== 가이드 동적 로드 ========== -->
 <script>
 async function loadGuides() {
-    try {
-        console.log('가이드 로드 시작...');
-        
-        const response = await fetch('/guides/guides.json');
-        console.log('응답 상태:', response.status);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        console.log('로드된 데이터:', data);
-        
-        const container = document.getElementById('guides-list-home');
-        console.log('컨테이너:', container);
-
-        if (!container) {
-            console.error('guides-list-home를 찾을 수 없습니다!');
-            return;
-        }
-
-        const guideHTML = data.guides.slice(0, 4).map(guide => `
-            <li>
-                <a href="${guide.url}">
-                    <div class="guide-emoji">${guide.emoji}</div>
-                    <div class="guide-content">
-                        <h3>${guide.title}</h3>
-                        <p>${guide.description}</p>
-                        <div class="guide-category">📁 ${guide.category}</div>
-                    </div>
-                </a>
-            </li>
-        `).join('');
-
-        console.log('생성된 HTML:', guideHTML);
-        container.innerHTML = guideHTML;
-        console.log('가이드 로드 완료!');
-    } catch (error) {
-        console.error('가이드 로드 실패:', error);
-    }
+  try {
+    console.log('가이드 로드 시작...');
+    const response = await fetch('/guides/guides.json');
+    console.log('응답 상태:', response.status);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const data = await response.json();
+    console.log('로드된 데이터:', data);
+    const container = document.getElementById('guides-container');
+    if (!container) { console.error('guides-container를 찾을 수 없습니다!'); return; }
+    
+    const guideHTML = data.guides.slice(0, 3).map(g => `
+      <a href="${g.url}" class="blog-card">
+        <div class="card-emoji">${g.emoji}</div>
+        <div class="card-content">
+          <h3>${g.title}</h3>
+          <p>${g.description}</p>
+          <div class="card-category">📁 ${g.category}</div>
+        </div>
+      </a>
+    `).join('');
+    
+    container.innerHTML = guideHTML;
+    console.log('가이드 로드 완료!');
+  } catch (error) { console.error('가이드 로드 실패:', error); }
 }
 
 document.addEventListener('DOMContentLoaded', loadGuides);
