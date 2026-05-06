@@ -682,3 +682,32 @@ footer {
         font-size: 0.85rem;
     }
 }
+
+
+/* ========== 프로필 이미지 최적화 (리플로우 최소화) ========== */
+.expert-image {
+    display: block;
+}
+
+.expert-image.hidden {
+    display: none;
+}
+
+.expert-image-fallback {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a8e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.expert-image-fallback.hidden {
+    display: none;
+}
+
+
