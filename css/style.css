@@ -656,4 +656,120 @@ footer {
     .container {
         padding: 1rem;
     }
+
+/* ========== Home Guide List Styling ========== */
+.guide-list-home {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.guide-list-home ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guide-list-home li {
+  border-bottom: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+}
+
+.guide-list-home li:last-child {
+  border-bottom: none;
+}
+
+.guide-list-home a {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.guide-list-home a:hover {
+  background: #f5f5f5;
+  padding-left: 2.5rem;
+}
+
+.guide-list-home .guide-emoji {
+  font-size: 2rem;
+  min-width: 2.5rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.guide-list-home .guide-content {
+  flex-grow: 1;
+}
+
+.guide-list-home .guide-content h3 {
+  color: #1a365d;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.guide-list-home .guide-content p {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.guide-list-home .guide-category {
+  color: #999;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Responsive design for guide list */
+@media (max-width: 768px) {
+  .guide-list-home a {
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .guide-list-home a:hover {
+    padding-left: 2rem;
+  }
+
+  .guide-list-home .guide-emoji {
+    font-size: 1.5rem;
+    min-width: 2rem;
+  }
+
+  .guide-list-home .guide-content h3 {
+    font-size: 1rem;
+  }
+
+  .guide-list-home .guide-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-list-home a {
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .guide-list-home .guide-emoji {
+    font-size: 1.25rem;
+    min-width: 1.5rem;
+  }
+
+  .guide-list-home .guide-content h3 {
+    font-size: 0.95rem;
+  }
+}
+
+
 }
