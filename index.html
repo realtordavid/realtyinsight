@@ -142,13 +142,15 @@
             <!-- ========== 전문가 프로필 섹션 ========== -->
             <section class="trust-section">
                 <div class="expert-profile">
-<img src="images/suk.jpg"
+<img 
+     src="images/suk-small.jpg"
+     srcset="images/suk-small.jpg 400w, images/suk-medium.jpg 600w, images/suk-large.jpg 1000w"
+     sizes="(max-width: 768px) 150px, 200px"
      alt="David Lee Realtor 프로필 사진"
      class="expert-image"
      loading="lazy"
      onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
-<div class="expert-image-fallback hidden">👤</div>
-                    <div class="expert-info">
+<div class="expert-image-fallback hidden">👤</div>                    <div class="expert-info">
                         <h2>Realtor David Lee</h2>
                         <p>📍 CA Real Estate License #02218947</p>
                         <p>✓ LA/OC 부동산 중개 경험</p>
