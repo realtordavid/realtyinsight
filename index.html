@@ -172,7 +172,7 @@
 <!-- ========== 가이드 섹션 ========== -->
 <section class="featured-section" id="guides">
   <h2>GUIDES</h2>
-  <div class="blog-grid" id="guides-container">
+  <div class="market-list" id="guides-container">
     <!-- JSON‑generated items will be inserted here -->
   </div>
   <div style="text-align:center; margin-top:2rem;">
@@ -285,12 +285,12 @@ async function loadGuides() {
     if (!container) { console.error('guides-container를 찾을 수 없습니다!'); return; }
     
     const guideHTML = data.guides.slice(0, 3).map(g => `
-      <a href="${g.url}" class="blog-card">
-        <div class="card-emoji">${g.emoji}</div>
-        <div class="card-content">
+      <a href="${g.url}" class="market-item">
+        <div class="market-emoji">${g.emoji}</div>
+        <div class="market-info">
           <h3>${g.title}</h3>
           <p>${g.description}</p>
-          <div class="card-category">📁 ${g.category}</div>
+          <div class="market-category">📁 ${g.category}</div>
         </div>
       </a>
     `).join('');
