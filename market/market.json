@@ -1,7 +1,7 @@
 {
   "markets": [
     {
-            "id": "la-housing-supply-demand",
+      "id": "la-housing-supply-demand",
       "title": "LA 부동산 시장: 공급 부족 vs 수요 변화의 미래",
       "description": "LA 캘리포니아 부동산 시장의 공급 부족과 수요 변화를 심층 분석! 집값 전망과 투자기회 분석",
       "date": "2026.04.28",
@@ -23,6 +23,38 @@
       "date": "2026.05.01",
       "emoji": "🏅",
       "url": "/market/2028-olympics-real-estate-impact/"
+    },
+    {
+      "id": "when-to-sell-house-real-estate-peak",
+      "title": "집값이 올랐을 때 팔아야 하나? 최고점을 찾는 완벽 가이드",
+      "description": "부동산 시장 사이클 4단계, 최고점 판단 지표 7가지, 최적의 판매 타이밍, 판매 성공 전략.",
+      "date": "2026.05.06",
+      "emoji": "📊",
+      "url": "/market/when-to-sell-house-real-estate-peak/"
+    },
+    {
+      "id": "rent-vs-buy-breakeven-calculator",
+      "title": "렌트 vs 구매 손익분기점 계산 - LA에서 언제부터 집 사는 게 이득일까?",
+      "description": "LA 부동산 월세와 구매의 손익분기점을 계산, 5년 법칙, 가격대별 월간 비용 비교",
+      "date": "2026.05.07",
+      "emoji": "💰",
+      "url": "/market/rent-vs-buy-breakeven-calculator/"
+    },
+    {
+      "id": "luxury-old-homes-trend-2026",
+      "title": "고급 주택 시장이 'Old Money' 선호로 돌아가는 중 - 건축 연도의 역설",
+      "description": "2026년 캘리포니아 럭셔리 주택 시장의 변화: 1920-1970년대 저택이 신축 고급주택보다 선호되는 이유, 부동산 가치의 역설, 투자 전략",
+      "date": "2026.05.08",
+      "emoji": "🏛️",
+      "url": "/market/luxury-old-homes-trend-2026/"
+    },
+    {
+      "id": "california-solar-panels-home-value-2026",
+      "title": "캘리포니아 태양광 패널과 집값",
+      "description": "소유 vs 임차: 집값 영향의 차이, 2026년 설치 비용, 연방 세액공제, 투자 수익 계산, 회수 기간",
+      "date": "2026.05.09",
+      "emoji": "☀️",
+      "url": "/market/california-solar-panels-home-value-2026/"
     }
   ]
 }

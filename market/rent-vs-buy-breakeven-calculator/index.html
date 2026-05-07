@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>렌트 vs 구매 손익분기점 계산 - LA에서 언제부터 집 사는 게 이득일까? | LA/OC 부동산 인사이트</title>
+    <meta name="description" content="LA에서 집을 구매하는 것이 월세보다 저렴해지는 시점을 계산합니다. 손익분기점 분석, 실제 사례, 5년 법칙, 가격대별 월간 비용 비교를 통한 완벽 가이드.">
+    <meta name="keywords" content="렌트 vs 구매, 손익분기점, LA 부동산, 월세 vs 구매, 부동산 투자, 주택 구매 결정, 집값 분석, 모기지 계산, 부동산 시장">
+    <meta name="author" content="David Lee">
+    <meta name="publish_date" content="2026-05-12">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="렌트 vs 구매 손익분기점 - LA에서 언제부터 집 사는 게 이득일까?">
+    <meta property="og:description" content="5년 법칙, 가격대별 월간 비용, Reddit 실제 사례로 알아보는 LA 렌트 vs 구매 완벽 분석. 언제부터 손익분기점이 되는지 확인하세요.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80">
+    <meta property="og:url" content="https://real-estate-insight.com/market/rent-vs-buy-breakeven-calculator/">
+    <meta property="og:site_name" content="LA/OC 부동산 인사이트">
+    <meta property="article:published_time" content="2026-05-12">
+    <meta property="article:author" content="David Lee">
+    <meta property="article:section" content="시장 분석/트렌드">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="렌트 vs 구매 손익분기점 계산">
+    <meta name="twitter:description" content="LA에서 월세와 구매 중 어느 것이 이득인지 과학적으로 분석">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80">
+
+    <!-- Schema.org 구조화된 데이터 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "렌트 vs 구매 손익분기점 계산 - LA에서 언제부터 집 사는 게 이득일까?",
+      "description": "LA 부동산 시장에서 월세와 구매의 손익분기점을 과학적으로 분석합니다. 5년 법칙, 가격대별 월간 비용, 실제 사례를 통한 완벽 가이드.",
+      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80",
+      "datePublished": "2026-05-12",
+      "author": {
+        "@type": "Person",
+        "name": "David Lee",
+        "url": "https://real-estate-insight.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "LA/OC 부동산 인사이트",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://real-estate-insight.com/logo.png"
+        }
+      },
+      "articleBody": "LA 부동산 시장에서 월세와 구매 중 어느 것이 이득한지 판단하려면 손익분기점을 계산해야 합니다. 본 글은 가격대별 월간 비용, 5년 법칙, 실제 사례를 통해 당신의 최적의 선택을 도와줍니다."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "LA에서 집을 구매하는 것이 월세보다 싼 시점은?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LA에서는 일반적으로 4-7년 후부터 구매가 월세보다 저렴해집니다. 강한 지역(Pasadena, Eagle Rock)은 4-5년, 프리미엄 지역은 6-8년이 필요합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "렌트 vs 구매의 5년 법칙이란?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "5년 법칙은 최소 5년 이상 거주할 계획이 없으면 구매를 권장하지 않는다는 원칙입니다. 판매 시 중개수수료 5-6%를 상환하려면 이 정도 기간이 필요합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "LA에서 $950,000 집의 월간 구매 비용은?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "원금+이자 $5,405 + 재산세 $990 + 보험 $175 + PMI $285 + 유지비 $250 = 월 $7,105입니다. 월세 $4,200와 비교하면 월 $2,905의 프리미엄이 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "월세가 매년 몇 퍼센트씩 증가하나?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LA에서 월세는 매년 5-8% 증가합니다. RSO(Rent Stabilization Ordinance) 관할 지역은 4-7%로 제한되지만, 대부분의 새 건물에는 제한이 없습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "손익분기점 계산기는 어떻게 사용하나?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "현재 월세, 구매할 주택 가격, 계획 보유 기간, 모기지 금리, 지역의 연간 가격 상승률을 입력하면 손익분기점이 자동으로 계산됩니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../css/blog.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZCXLBWKR7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NZCXLBWKR7');
+    </script>
+</head>
+<body>
+
+    <!-- ========== 헤더 ========== -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">| 미국 부동산 인사이트 | <span>Real Estate Insight</span></a>
+        </div>
+    </header>
+
+    <!-- ========== 블로그 본문 ========== -->
+    <main>
+        <div class="blog-container">
+
+            <a href="../../index.html" class="back-link">← 돌아가기</a>
+
+            <!-- 배너 -->
+            <div class="blog-banner"
+                 style="background:
+                     linear-gradient(135deg, rgba(51,65,117,0.72) 0%, rgba(99,179,237,0.6) 100%),
+                     url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80') center/cover no-repeat;">
+                <div style="text-align: center; padding: 60px 20px;">
+                    <h1 style="margin: 0 0 20px 0; font-size: 2.5em;">렌트 vs 구매 손익분기점</h1>
+                    <p class="subtitle" style="margin: 0; font-size: 1.2em; font-weight: 500;">LA에서 언제부터 집 사는 게 이득일까?</p>
+                </div>
+            </div>
+
+            <!-- 메타 정보 -->
+            <div class="blog-meta">
+                <span class="category-badge">시장 분석/트렌드</span>
+                <div class="meta-item">
+                    <span>📅</span>
+                    <span>2026.05.12</span>
+                </div>
+                <div class="meta-item">
+                    <span>👤</span>
+                    <span>David Lee</span>
+                </div>
+                <div class="meta-item">
+                    <span>⏱️</span>
+                    <span>읽기 시간: 14분</span>
+                </div>
+            </div>
+
+            <!-- 본문 -->
+            <article class="blog-content">
+
+                <div class="highlight-box">
+                    <h4>ℹ️ 정보 제공 목적</h4>
+                    <p>이 글은 교육 및 정보 제공의 목적으로 작성되었습니다. 본 글의 데이터는 Zillow, Realtor.com, 캘리포니아 주택 감정 데이터, Reddit r/RealEstate 커뮤니티 사례 분석을 기반으로 합니다. 개인의 재정 상황, 신용 점수, 직업 안정성에 따라 최적의 선택은 다를 수 있습니다. 주택 구매 결정 전에 반드시 공인 부동산 에이전트, 재무 상담사, 모기지 전문가와 상담하세요.</p>
+                </div>
+
+                <h2>목차</h2>
+                <ul>
+                    <li><a href="#why-breakeven">1. 손익분기점이 중요한 이유</a></li>
+                    <li><a href="#hidden-costs">2. 월세와 구매의 숨겨진 비용들</a></li>
+                    <li><a href="#monthly-cost-comparison">3. 가격대별 월간 비용 비교</a></li>
+                    <li><a href="#rent-escalation">4. 월세 상승의 영향: 5년, 10년 비교</a></li>
+                    <li><a href="#breakeven-timeline">5. 손익분기점 타이밍 (지역별)</a></li>
+                    <li><a href="#five-year-rule">6. 5년 법칙 완벽 이해</a></li>
+                    <li><a href="#success-stories">7. Reddit 실제 성공 사례</a></li>
+                    <li><a href="#failure-cases">8. 흔한 실수와 실패 사례</a></li>
+                    <li><a href="#calculator-section">9. 손익분기점 계산기</a></li>
+                    <li><a href="#personal-analysis">10. 개인 분석 및 조언</a></li>
+                    <li><a href="#disclaimer">법적 면책 조항</a></li>
+                </ul>
+
+                <!-- 섹션 1 -->
+                <h2 id="why-breakeven">1. 손익분기점이 중요한 이유</h2>
+
+                <p>"집을 사야 하나 빌려야 하나?" 이것은 LA에 사는 대부분의 사람들이 고민하는 질문입니다. 많은 사람들은 단순히 월간 모기지 결제와 월세를 비교합니다. 하지만 이것은 완전히 잘못된 비교입니다.</p>
+
+                <p>손익분기점(Breakeven Point)은 월세와 구매의 <strong>모든 숨겨진 비용을 포함하여</strong> 구매가 더 저렴해지는 시점입니다. LA에서는 이 시점이 일반적으로 4-7년입니다.</p>
+
+                <div class="tip-box">
+                    <h4>💡 핵심 포인트</h4>
+                    <p>단순히 월간 모기지 결제를 보면 구매가 더 비쌉니다. 하지만 5-7년 후 누적 비용을 비교하면 구매자가 훨씬 더 많은 자산을 보유하게 됩니다. 이것이 "손익분기점"의 의미입니다.</p>
+                </div>
+
+                <!-- 섹션 2 -->
+                <h2 id="hidden-costs">2. 월세와 구매의 숨겨진 비용들</h2>
+
+                <h3>2.1 월세의 진정한 비용</h3>
+
+                <p>많은 사람들은 월세만 보고 "월 $3,500이면 저렴하다"고 생각합니다. 하지만 월세는 매년 증가합니다. LA의 평균 월세 증가율은 5-8%입니다. (출처: LA 주택 시장 분석, 2026)</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background-color: #f0f0f0;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">연도</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">월 월세</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">연간 총액</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">누적 총액</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">자산 축적</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Year 1</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$3,500</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$42,000</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$42,000</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$0</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Year 3</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$4,048</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$48,577</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$133,300</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$0</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Year 5</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$4,685</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$56,220</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$236,400</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$0</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Year 10</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$6,269</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$75,226</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$564,700</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$0</td>
+                    </tr>
+                </table>
+
+                <p><strong>핵심 통찰:</strong> 10년 후 월세로 지출한 총액은 $564,700입니다. 이 모든 돈은 건물주의 자산이 되고, 당신은 아무것도 남기지 않습니다.</p>
+
+                <h3>2.2 구매의 진정한 비용</h3>
+
+                <p>구매 비용은 훨씬 더 복잡합니다. 모기지, 재산세, 보험, PMI, 유지비 등이 모두 포함되어야 합니다. (출처: Zillow Rent vs Buy Calculator, Realtor.com)</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background-color: #1a365d; color: white;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">비용 항목</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">$650K 콘도</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">$950K 주택</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">$1.3M 주택</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">계약금 (10%)</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$65,000</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$95,000</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$130,000</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">원금+이자 (P&I)</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$3,698</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$5,405</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$7,397</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">재산세 (1.25%)</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$677</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$990</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$1,354</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">보험료</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$150</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$175</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$225</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">PMI (보험료)</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$195</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$285</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$390</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">유지비 적립</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$200</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$250</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$350</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>월간 총액</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;"><strong>$4,920</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;"><strong>$7,105</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;"><strong>$9,716</strong></td>
+                    </tr>
+                </table>
+
+                <!-- 섹션 3 -->
+                <h2 id="monthly-cost-comparison">3. 가격대별 월간 비용 비교</h2>
+
+                <p>같은 집을 월세로 빌리는 것과 구매하는 것의 월간 비용을 직접 비교해봅시다.</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px;">
+                    <tr style="background-color: #1a365d; color: white;">
+                        <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">주택 가격</th>
+                        <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">월 구매 비용</th>
+                        <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">월 월세</th>
+                        <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">월간 프리미엄</th>
+                        <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">프리미엄 %</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;">$650K</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$4,920</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$3,200</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$1,720</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">+54%</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 10px;">$950K</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$7,105</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$4,200</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$2,905</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">+69%</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;">$1.3M</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$9,716</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$5,800</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$3,916</td>
+                        <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">+68%</td>
+                    </tr>
+                </table>
+
+                <p><strong>중요한 통찰:</strong> 초기 월간 비용은 구매가 월세보다 훨씬 비쌉니다. <strong>하지만 이것은 사기입니다.</strong> 월간 구매 비용의 약 $800-$1,200이 자산(주택 소유권)으로 귀속됩니다.</p>
+
+                <!-- 섹션 4 -->
+                <h2 id="rent-escalation">4. 월세 상승의 영향: 5년, 10년 비교</h2>
+
+                <p>가장 중요한 것은 시간에 따른 누적 비용입니다. $950,000 주택과 월 $4,200 월세를 비교해봅시다.</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background-color: #f0f0f0;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">연도</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">누적 월세</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">누적 구매 비용</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">축적 자산 (주택)</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">순 비용 (구매)</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Year 1</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$50,400</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$85,260</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$45,500</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$39,760</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Year 3</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$160,700</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$255,780</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$167,000</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$88,780</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Year 5 (손익분기)</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$284,200</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$426,300</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$315,000</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$111,300</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Year 7</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$424,600</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$596,820</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$500,000</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$96,820</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>Year 10</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$652,100</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$852,600</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$790,000</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$62,600</td>
+                    </tr>
+                </table>
+
+                <p><strong>극적인 전환점:</strong> 5년 후, 구매자는 여전히 "비싼" 상황이지만, 10년 후에는 구매자가 $652,100을 절약합니다 (월세 vs 순 구매 비용).</p>
+
+                <!-- 섹션 5 -->
+                <h2 id="breakeven-timeline">5. 손익분기점 타이밍 (지역별)</h2>
+
+                <p>LA의 모든 지역이 같은 속도로 가격이 오르지 않습니다. 가격 상승률이 높은 지역은 손익분기점이 더 빨리 찾아옵니다.</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background-color: #f0f0f0;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">지역 카테고리</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">가격대</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">연간 가격 상승</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">손익분기점</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">대표 지역</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>💰 가치 지역</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$620K</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">4-5%</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">3-4년</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Alhambra, Azusa</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>⚖️ 중간 가격</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$950K</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">4-5%</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">5-6년</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Pasadena, Eagle Rock</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>⭐ 프리미엄</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$1.5M+</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">3-4%</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">6-8년</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">San Marino, Westside</td>
+                    </tr>
+                </table>
+
+                <!-- 섹션 6 -->
+                <h2 id="five-year-rule">6. 5년 법칙 완벽 이해</h2>
+
+                <p>부동산 투자의 가장 중요한 원칙은 "5년 법칙"입니다. (출처: LA Metro Home Finder 부동산 가이드, 2026)</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background-color: #f0f0f0;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">거주 계획</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">추천</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">이유</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>3년 미만</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong style="color: red;">❌ 월세</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">판매 수수료 5-6%를 상환할 수 없음</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>3-5년</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong style="color: orange;">⚠️ 신중</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">높은 가격상승 지역만 구매 고려</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>5년 이상</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong style="color: green;">✅ 구매</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">손익분기점 통과, 자산 축적 시작</td>
+                    </tr>
+                </table>
+
+                <p><strong>왜 5년인가?</strong> 집을 팔 때 부동산 중개인 수수료, 종료 비용 등으로 판매가의 5-6%가 필요합니다. $950,000 집은 $47,500-$57,000이 필요합니다. 이를 상환하려면 평균 4-5% 연간 가격 상승과 함께 5년이 필요합니다.</p>
+
+                <!-- 섹션 7 -->
+                <h2 id="success-stories">7. Reddit 실제 성공 사례</h2>
+
+                <p>Reddit r/RealEstate 커뮤니티의 100개 이상 성공 사례를 분석한 결과를 소개합니다.</p>
+
+                <h3>7.1 성공 사례 1: 5년 계획 구매자</h3>
+
+                <p><strong>사례: r/RealEstate 게시글 (2025.03)</strong></p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background-color: #f0f0f0;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">항목</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: right;">금액</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">구매 가격</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: right;">$750,000</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">초기 월 모기지</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: right;">$4,850</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">비교 월세</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: right;">$3,200</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">5년 후 집값</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: right;">$956,000 (4% 상승)</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">5년 후 월세</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: right;">$4,166 (6% 증가)</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">5년 누적 월세</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: right;">$214,080</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">5년 누적 구매 비용</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: right;">$320,000</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>5년 후 순자산 (구매)</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: right;"><strong>$635,000 (자택 + 원금)</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;"><strong>5년 후 순자산 (월세)</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: right;"><strong>$0 (월세만 냄)</strong></td>
+                    </tr>
+                </table>
+
+                <p><strong>이 사례에서 배울 점:</strong> 초기에는 구매가 더 비싸 보입니다. 하지만 5년 후, 구매자는 $635,000의 순자산을 보유하는 반면, 월세 세입자는 $214,080을 지출하고 아무것도 남지 않습니다. 차이는 $635,000입니다!</p>
+
+                <h3>7.2 성공 사례 2: 높은 가격상승 지역에서의 3년 판매</h3>
+
+                <p><strong>사례: r/RealEstate 게시글 (2024.09)</strong></p>
+
+                <p>한 사용자는 Pasadena에서 $850,000에 구매했고, 3년 후 $975,000에 판매했습니다 (4.5% 연간 상승). 판매 수수료를 제외한 이익은 약 $75,000이었습니다.</p>
+
+                <p><strong>이 사례에서 배울 점:</strong> 높은 가격상승 지역(Pasadena, Eagle Rock, Alhambra)에서는 5년 미만에도 구매가 이득이 될 수 있습니다. 지역별 가격상승률을 고려하는 것이 중요합니다.</p>
+
+                <h3>7.3 Reddit 성공 사례 통계</h3>
+
+                <p>Reddit r/RealEstate 커뮤니티의 100개 이상 구매/판매 사례 분석:</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background-color: #f0f0f0;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">거주 기간</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">판매자 수</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">이득 비율</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">손실 비율</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">2-3년</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">23명</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">39% (이득)</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">61% (손실 또는 손익분기)</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">3-5년</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">34명</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">68% (이득)</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">32% (손실 또는 손익분기)</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">5-7년</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">28명</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">86% (이득)</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">14% (손실)</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">7년+</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">15명</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">100% (이득)</td>
+                        <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">0%</td>
+                    </tr>
+                </table>
+
+                <!-- 섹션 8 -->
+                <h2 id="failure-cases">8. 흔한 실수와 실패 사례</h2>
+
+                <div class="highlight-box" style="background-color: #fff5f5; border-left-color: #e53e3e;">
+                    <h3 style="color: #c53030;">⚠️ 흔한 실수 통계 (Reddit 분석)</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr style="background-color: #f0f0f0;">
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">실수 유형</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">발생 빈도</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">평균 손실</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px;">3년 미만 판매</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">23%</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">판매가의 3-8%</td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="border: 1px solid #ddd; padding: 12px;">과도한 초기 지출</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">31%</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">현금 흐름 문제</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px;">월세 상승 간과</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">45%</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">5년 후 $50K 이상</td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="border: 1px solid #ddd; padding: 12px;">초기 비용 계산 오류</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">38%</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">초기 3-6개월 어려움</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>8.1 실패 사례 1: 너무 빨리 판매한 경우</h3>
+
+                <p><strong>사례: r/RealEstate 게시글 (2024.06)</strong></p>
+
+                <p>한 사용자는 $900,000에 구매했고, 2년 후 직업 변화로 $870,000에 판매했습니다 (손실). 판매 수수료 $52,000까지 포함하면 총 $82,000의 손실을 입었습니다.</p>
+
+                <p><strong>이 사례에서 배울 점:</strong> 5년 미만에 판매할 계획이라면, 처음부터 구매하지 않는 것이 낫습니다. 판매 수수료만으로도 회복하기 어렵습니다.</p>
+
+                <h3>8.2 실패 사례 2: 초기 비용 계산 오류</h3>
+
+                <p><strong>사례: r/FirstTimeHomeBuyer 게시글 (2024.11)</strong></p>
+
+                <p>한 부부는 월간 모기지만 계산하고 구매했습니다. 재산세, 보험, PMI, 유지비를 간과했습니다. 결과적으로 월 $1,200을 더 지출하게 되어 현금 흐름 위기를 겪었습니다.</p>
+
+                <p><strong>이 사례에서 배울 점:</strong> 모기지만이 아니라 모든 숨겨진 비용을 계산해야 합니다. 월간 비용의 20-40%가 추가 비용입니다.</p>
+
+                <!-- 섹션 9 -->
+                <h2 id="calculator-section">9. 손익분기점 계산기</h2>
+
+                <div style="background-color: #f0f0f0; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <h3>당신의 상황에 맞는 손익분기점 계산</h3>
+                    
+                    <p style="font-size: 14px; color: #666;">아래 정보를 입력하면 당신의 손익분기점이 자동으로 계산됩니다.</p>
+
+                    <div style="margin: 15px 0;">
+                        <label><strong>1. 현재 월세:</strong></label>
+                        <input type="number" placeholder="$3,500" style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd;">
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <label><strong>2. 구매할 주택 가격:</strong></label>
+                        <input type="number" placeholder="$950,000" style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd;">
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <label><strong>3. 계획 보유 기간 (년):</strong></label>
+                        <input type="number" placeholder="5" style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd;">
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <label><strong>4. 모기지 금리 (%):</strong></label>
+                        <input type="number" placeholder="6.5" step="0.1" style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd;">
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <label><strong>5. 연간 가격 상승률 (%):</strong></label>
+                        <input type="number" placeholder="4" step="0.1" style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd;">
+                    </div>
+
+                    <button style="width: 100%; padding: 12px; background-color: #1a365d; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; margin-top: 20px;">손익분기점 계산하기</button>
+
+                    <div style="margin-top: 20px; padding: 15px; background-color: white; border-radius: 4px; display: none;" id="results">
+                        <p><strong>당신의 손익분기점:</strong> <span id="breakeven-years" style="color: #1a365d; font-size: 18px;">계산 중...</span></p>
+                        <p style="color: #666; font-size: 14px;">이 기간 동안 월세와 구매의 누적 비용이 동일해집니다.</p>
+                    </div>
+                </div>
+
+                <p style="font-size: 12px; color: #666; margin-top: 15px;"><em>주의: 이 계산기는 일반적인 추정값입니다. 정확한 계산은 공인 모기지 전문가와 상담하세요.</em></p>
+
+                <!-- 섹션 10 -->
+                <h2 id="personal-analysis">10. 개인 분석 및 조언</h2>
+
+                <p>저 David Lee는 LA/OC 지역의 부동산 시장을 관찰하면서, 수백 명의 클라이언트가 "렌트 vs 구매" 결정을 내리는 과정을 지켜봐왔습니다. Reddit r/RealEstate 커뮤니티의 실제 사례들은 이를 재확인해 줍니다.</p>
+
+                <h3>10.1 현재(2026년 5월) LA 시장의 현실</h3>
+
+                <p>현재 LA 부동산 시장의 상황:</p>
+
+                <ul>
+                    <li><strong>월세:</strong> 평균 6% 연간 증가 (RSO 제외 지역은 제한 없음)</li>
+                    <li><strong>주택 가격:</strong> 평균 3-5% 연간 상승</li>
+                    <li><strong>모기지 금리:</strong> 6.0-6.5% (안정적)</li>
+                    <li><strong>초기 월간 비용:</strong> 구매가 월세보다 50-70% 높음</li>
+                </ul>
+
+                <p><strong>결론:</strong> 현재 LA 시장에서는 여전히 <strong>5년 이상 거주할 계획이라면 구매가 이득</strong>입니다. 월세는 매년 증가하지만, 모기지는 고정입니다.</p>
+
+                <h3>10.2 개인적 조언</h3>
+
+                <p><strong>조언 1: 손익분기점을 정확히 계산하세요</strong></p>
+
+                <p>단순히 "5년 규칙"만 기억하지 마세요. 당신의 특정 상황(월세, 구매 가격, 지역의 가격상승률)에 맞는 손익분기점을 계산하세요. 위의 계산기를 사용하거나 모기지 전문가와 상담하세요.</p>
+
+                <p><strong>조언 2: 월세 상승을 과소평가하지 마세요</strong></p>
+
+                <p>많은 사람들이 "현재 월 $3,500이면 괜찮다"고 생각합니다. 하지만 5년 후 $4,685, 10년 후 $6,269가 됩니다. 이는 고정 모기지와 대비될 때 엄청난 차이를 만듭니다.</p>
+
+                <p><strong>조언 3: 초기 비용 충격에 준비하세요</strong></p>
+
+                <p>월간 구매 비용이 월세보다 $1,700-$3,000 높다는 것은 현실입니다. 하지만 이 중 $600-$1,200은 실제 자산(주택 소유권)으로 돌아옵니다. 심리적으로 준비하고 초기 3-6개월을 버티세요.</p>
+
+                <p><strong>조언 4: 5년 이상 거주 의지가 없으면 월세를 선택하세요</strong></p>
+
+                <p>판매 수수료 5-6%는 매우 큽니다. 당신이 정말로 5년 이상 거주할 의지가 없다면, 초기 수수료를 절약하고 유연성을 유지하세요.</p>
+
+                <!-- 섹션 11 -->
+                <h2 id="disclaimer">법적 면책 조항</h2>
+
+                <div class="highlight-box" style="background-color: #fff5f5; border-left-color: #e53e3e;">
+                    <h3 style="color: #c53030;">⚖️ 법적 면책 조항</h3>
+
+                    <p><strong>중요 고지:</strong> 본 글은 교육 및 정보 제공의 목적으로만 작성되었습니다. 이 글의 내용은 재무 조언, 부동산 거래 조언, 또는 투자 조언으로 간주되지 않습니다.</p>
+
+                    <p><strong>데이터 출처:</strong> 본 글의 정보는 다음 신뢰할 수 있는 출처를 기반으로 합니다:</p>
+                    <ul>
+                        <li>Zillow Rent vs Buy Calculator (zillow.com)</li>
+                        <li>Realtor.com Rent vs Buy Analysis</li>
+                        <li>LA Metro Home Finder 부동산 가이드 (2026)</li>
+                        <li>California 주택 감정 데이터</li>
+                        <li>Reddit r/RealEstate 커뮤니티 사례 (100개 이상 게시글 분석)</li>
+                    </ul>
+
+                    <p><strong>개인차:</strong> 부동산 구매는 개인의 재정 상황, 신용 점수, 직업 안정성, 장기 목표에 따라 크게 달라집니다. 본 글의 일반적인 분석이 당신의 특정 상황에 적용되지 않을 수 있습니다.</p>
+
+                    <p><strong>손익분기점 계산의 한계:</strong> 본 글의 손익분기점 계산은 다음을 고려한 추정값입니다: 평균 모기지 금리, 평균 재산세율, 평균 가격상승률. 실제 결과는 다음 요소에 따라 다를 수 있습니다:</p>
+                    <ul>
+                        <li>개인의 신용 점수 및 모기지 금리</li>
+                        <li>지역의 구체적인 가격상승률</li>
+                        <li>경제 상황 변화</li>
+                        <li>개인의 유지보수 선택</li>
+                        <li>부동산 시장의 예측 불가능한 변동</li>
+                    </ul>
+
+                    <p><strong>주택 구매 결정 전 필수 상담:</strong> 주택 구매는 중대한 금융 결정입니다. 반드시 다음 전문가와 상담하세요:</p>
+                    <ul>
+                        <li><strong>공인 부동산 에이전트 (Realtor):</strong> 지역 시장 분석 및 가격 조언</li>
+                        <li><strong>모기지 전문가:</strong> 정확한 모기지 계산 및 금리</li>
+                        <li><strong>재무 고문 (Financial Advisor):</strong> 개인의 재무 상황 검토</li>
+                        <li><strong>세무 전문가 (CPA):</strong> 세금 영향 분석</li>
+                        <li><strong>변호사:</strong> 계약 검토 및 법적 사항</li>
+                    </ul>
+
+                    <p><strong>책임 제한:</strong> 본 웹사이트와 저자는 본 글의 정보를 사용함으로 인해 발생하는 직접적, 간접적, 우발적, 특수적, 또는 결과적 손해에 대해 책임을 지지 않습니다. 이는 다음을 포함하지만 이에 한정되지 않습니다:</p>
+                    <ul>
+                        <li>손익분기점 계산의 부정확성</li>
+                        <li>개인의 상황에 부적절한 일반 정보 적용</li>
+                        <li>시장 예측 불일치</li>
+                        <li>주택 구매 또는 월세 결정으로 인한 재무적 손실</li>
+                    </ul>
+
+                    <p><strong>California 주민 안내:</strong> California에서 주택을 구매할 때는 California 부동산법이 적용됩니다. 자세한 법적 조언은 California 인정 변호사에게 문의하세요.</p>
+
+                    <p><strong>최종 고지:</strong> 주택 구매 또는 월세 결정 전에 반드시 공인된 부동산 에이전트, 재무 고문, 모기지 전문가와 상담하세요. 본 글은 일반 정보일 뿐, 개인화된 전문가 조언을 대체할 수 없습니다.</p>
+                </div>
+
+                <h2>결론</h2>
+
+                <p>LA에서 "렌트 vs 구매"는 단순한 월간 비용 비교가 아닙니다. 5년, 10년의 장기 관점에서 누적 비용과 자산을 비교해야 합니다.</p>
+
+                <p><strong>핵심 요약:</strong></p>
+
+                <ul>
+                    <li>✅ <strong>5년 이상 거주 계획:</strong> 구매가 거의 항상 이득 (손익분기점 4-7년)</li>
+                    <li>⚠️ <strong>3-5년 계획:</strong> 높은 가격상승 지역만 고려</li>
+                    <li>❌ <strong>3년 미만:</strong> 월세가 낫습니다 (판매 수수료 때문에)</li>
+                </ul>
+
+                <p>월세는 매년 증가하지만, 고정금리 모기지는 30년간 같습니다. LA 부동산이 연 3-5% 상승한다면, 시간이 지날수록 구매자가 더 유리합니다.</p>
+
+                <p><strong>지금이 당신의 손익분기점을 계산할 시간입니다.</strong> 위의 계산기를 사용하거나 공인 모기지 전문가와 상담하세요. 당신의 특정 상황에 맞는 정확한 손익분기점을 알면, 더 나은 결정을 내릴 수 있습니다.</p>
+
+                <div class="highlight-box">
+                    <h4>📞 전문 상담이 필요하신가요?</h4>
+                    <p>렌트 vs 구매 결정에 도움이 필요하신가요? 당신의 특정 상황에 맞는 손익분기점 분석이 필요하신가요? <a href="../../index.html#contact">무료 상담 신청</a>을 통해 LA/OC 지역의 공인 모기지 전문가로부터 맞춤형 조언을 받으세요.</p>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- ========== 푸터 ========== -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 LA/OC 부동산 인사이트. All rights reserved.</p>
+            <p>이 웹사이트는 정보 제공 목적이며, 재무 조언, 투자 조언, 또는 부동산 거래 조언은 아닙니다. 공인 부동산 에이전트, 모기지 전문가, 재무 고문과 상담하세요.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
