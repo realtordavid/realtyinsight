@@ -30,7 +30,6 @@
       "description": "홈 인스펙션 검사 항목, 비용, 절차, 빨간 신호 설명.",
       "category": "가이드",
       "emoji": "🔍",
-      "image": "https://real-estate-insight.com/guides/1.jpg",
       "url": "/guides/home-inspection/"
     },
     {
@@ -39,7 +38,6 @@
       "description": "Appraisal Gap 발생 시 4가지 선택지, 재협상 전략, ROV 신청 방법 설명.",
       "category": "구매",
       "emoji": "💰",
-      "image": "https://real-estate-insight.com/guides/2.jpg",
       "url": "/guides/appraisal-gap/"
     },
     {
@@ -49,6 +47,39 @@
       "category": "투자",
       "emoji": "💼",
       "url": "/guides/rental-property-tax-deductions/"
+    },
+ {
+      "id": "title-insurance-vs-homeowners-insurance",
+      "title": "타이틀 보험 제대로 이해하기: 타이틀 보험 vs 주택 보험",
+      "description": "타이틀 보험과 주택 보험의 차이점. 캘리포니아 부동산 거래 필수 정보 완벽 가이드.",
+      "category": "보험",
+      "emoji": "🛡️",
+      "url": "/guides/title-insurance-vs-homeowners-insurance/"
+    },
+ {
+      "id": "seller-disclosure-requirements",
+      "title": "California 부동산 판매자 공시의무 완벽 가이드",
+      "description": "TDS 작성부터 2026년 신규 법(AB 723, AB 455), 실패 사례, 법적 책임",
+      "category": "판매",
+      "emoji": "📋",
+      "url": "/guides/seller-disclosure-requirements/"
+    },
+ {
+      "id": "hoa-complete-guide",
+      "title": "HOA(Home Owner Association) 완전 분석 가이드 2026",
+      "description": "HOA 비용, 규칙, 장단점, 2026 법칙 변경사항 완벽 정리. 콘도/타운하우스 구매자 필수 가이드. 실제 사례와 대처 방법 포함.",
+      "category": "구매",
+      "emoji": "🏘️",
+      "url": "/guides/hoa-complete-guide/"
+    },
+ {
+      "id": "cap-rate-complete-guide",
+      "title": "Cap Rate(자본화율) 완벽 가이드: 캘리포니아 부동산 투자자 필독",
+      "description": "NOI 계산부터 성공/실패 사례. 부동산 투자 수익률을 정확히 분석하는 완벽 가이드 202.",
+      "category": "투자분석",
+      "emoji": "📈",
+      "url": "/guides/cap-rate-complete-guide/"
     }
+
   ]
 }
