@@ -87,6 +87,57 @@
       "date": "2026.05.02",
       "image": "https://real-estate-insight.com/blog/2.jpg",
       "url": "/blog/real-estate-roi-calculation-guide/"
-    }
+    },
+ {
+      "id": "adu-investment-guide-2026",
+      "title": "ADU(부속주택) 투자 완벽 가이드 2026 - $150K로 $1.5M 자산 만들기",
+      "description": "2026년 캘리포니아 ADU 투자 완벽 가이드: 설치비용 $150K-$400K, 월 임대료 $1,500-$2,500, ROI 30-40%, 2년 이내 회수 가능한 투자 수익 분석.",
+      "category": "부동산 투자 가이드",
+      "emoji": "🏠",
+      "author": "David Lee",
+      "date": "2026.05.11",
+      "image": "https://real-estate-insight.com/blog/adu-investment-guide-2026.jpg",
+      "url": "/blog/adu-investment-guide-2026/"
+    },
+{
+  "id": "improve-credit-score-700-to-760-6-months",
+  "title": "크레딧 스코어 올리는 법 - 집 사기 전 6개월, 700→760 만들기",
+  "description": "부동산 구매 전 6개월 안에 크레딧 스코어를 700에서 760으로 올리는 실용적인 전략. 정시 납부, 신용 사용률 관리, 성공 사례 분석. 760점으로 모기지 금리 월 $300 절약, 30년간 $108,000 절약.",
+  "category": "정보형",
+  "emoji": "💳",
+  "author": "David Lee",
+  "date": "2026.05.12",
+  "image": "https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=800&q=80",
+  "url": "/blog/improve-credit-score-700-to-760-6-months/"
+},
+{
+  "id": "la-mortgage-pre-approval-bank-comparison",
+  "title": "LA에서 사전 승인받기: 은행 3곳 비교 (Chase vs BofA vs Wells Fargo)",
+  "description": "로스앤젤레스 첫 주택 구매자를 위한 모기지 사전 승인. Chase, Bank of America, Wells Fargo의 금리, 수수료, 승인 시간, 장단점 상세 비교",
+  "category": "정보형",
+  "emoji": "🏦",
+  "author": "David Lee",
+  "date": "2026.05.13",
+  "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+  "url": "/blog/la-mortgage-pre-approval-bank-comparison/"
+},
+{
+  "id": "rental-income-how-many-properties-needed",
+  "title": "임대료 수익으로 생활하기: 필요한 물건 수는? 2026 완벽 계산 가이드",
+  "description": "Reddit 100+ 호스트 실제 경험담, 캘리포니아 임대료 데이터, 월별 현금흐름 시뮬레이션으로 배우는 부동산 수익화 전략. 당신은 몇 개의 부동산이 필요할까?",
+  "category": "정보형",
+  "emoji": "💰",
+  "author": "David Lee",
+  "date": "2026.05.14",
+  "image": "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&q=80",
+  "url": "/blog/rental-income-how-many-properties-needed/"
+}
+
+
+
+
+
+
+
   ]
 }
